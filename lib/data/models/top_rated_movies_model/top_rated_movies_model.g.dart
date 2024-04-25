@@ -22,7 +22,7 @@ Map<String, dynamic> _$$TopRatedMoviesModelImplToJson(
         _$TopRatedMoviesModelImpl instance) =>
     <String, dynamic>{
       'page': instance.page,
-      'results': instance.results,
+      'results': instance.results.map((e) => e.toJson()).toList(),
       'total_pages': instance.totalPages,
       'total_results': instance.totalResults,
     };

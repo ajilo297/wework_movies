@@ -20,7 +20,7 @@ _$ConfigurationModelImpl _$$ConfigurationModelImplFromJson(
 Map<String, dynamic> _$$ConfigurationModelImplToJson(
         _$ConfigurationModelImpl instance) =>
     <String, dynamic>{
-      'images': instance.images,
+      'images': instance.images.toJson(),
       'change_keys': instance.changeKeys,
     };
 

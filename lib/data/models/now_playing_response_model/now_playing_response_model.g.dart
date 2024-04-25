@@ -33,7 +33,7 @@ Map<String, dynamic> _$$DateRangeModelImplToJson(
       'minimum': instance.minimum.toIso8601String(),
       'maximum': instance.maximum.toIso8601String(),
       'page': instance.page,
-      'results': instance.results,
+      'results': instance.results.map((e) => e.toJson()).toList(),
       'total_pages': instance.totalPages,
       'total_results': instance.totalResults,
     };

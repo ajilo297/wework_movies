@@ -23,8 +23,8 @@ _$DateRangeModelImpl _$$DateRangeModelImplFromJson(Map<String, dynamic> json) =>
               ?.map((e) => MovieModel.fromJson(e as Map<String, dynamic>))
               .toList() ??
           const [],
-      totalPages: (json['totalPages'] as num?)?.toInt() ?? 1,
-      totalResults: (json['totalResults'] as num?)?.toInt() ?? 0,
+      totalPages: (json['total_pages'] as num?)?.toInt() ?? 1,
+      totalResults: (json['total_results'] as num?)?.toInt() ?? 0,
     );
 
 Map<String, dynamic> _$$DateRangeModelImplToJson(
@@ -34,6 +34,6 @@ Map<String, dynamic> _$$DateRangeModelImplToJson(
       'maximum': instance.maximum.toIso8601String(),
       'page': instance.page,
       'results': instance.results,
-      'totalPages': instance.totalPages,
-      'totalResults': instance.totalResults,
+      'total_pages': instance.totalPages,
+      'total_results': instance.totalResults,
     };

@@ -13,7 +13,7 @@ class HomePage extends StatelessWidget implements AutoRouteWrapper {
       ),
       body: CustomScrollView(
         slivers: [
-          NowPlayingMovieList(builder: (context, movie) => Text(movie.movieName)),
+          NowPlayingMovieListBuilder(builder: (context, movie) => Text(movie.movieName)),
         ],
       ),
     );

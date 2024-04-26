@@ -8,4 +8,5 @@ export 'data/data.dart';
 export 'domain/domain.dart';
 export 'main.dart';
 export 'movie_app.dart';
+export 'presentation/presentation.dart';
 export 'utilities/utilities.dart';

@@ -13,30 +13,55 @@ class HomePage extends StatelessWidget implements AutoRouteWrapper {
       ),
       body: CustomScrollView(
         slivers: [
-          NowPlayingMovieListBuilder(builder: (context, movie) => Text(movie.movieName)),
+          SliverToBoxAdapter(
+            child: SizedBox(
+              height: 310,
+              child: CustomScrollView(
+                scrollDirection: Axis.horizontal,
+                slivers: [
+                  NowPlayingMovieListBuilder(
+                    builder: (context, movie) => NowPlayingMovieCard(movie: movie),
+                  ),
+                ],
+              ),
+            ),
+          ),
+          TopRatedMovieListBuilder(
+            builder: (context, movie) => TopRatedMovieCard(movie: movie),
+          ),
         ],
       ),
     );
   }
 
   @override
-  Widget wrappedRoute(BuildContext context) => BlocProvider(
-        create: (context) => NowPlayingMovieListBloc(
-          useCase: NowPlayingMoviesUseCase(
-            RemoteMovieRepository(
-              apiClient: TmdbApiClient(
-                Dio()
-                  ..interceptors.addAll(
-                    const [
-                      TmdbAuthTokenInterceptor(),
-                      TmdbLanguageInterceptor(),
-                      TmdbLoggerInterceptor(),
-                    ],
-                  ),
+  Widget wrappedRoute(BuildContext context) => RepositoryProvider(
+        create: (context) => RemoteMovieRepository(
+          apiClient: TmdbApiClient(
+            Dio()
+              ..interceptors.addAll(
+                const [
+                  TmdbAuthTokenInterceptor(),
+                  TmdbLanguageInterceptor(),
+                  TmdbLoggerInterceptor(),
+                ],
               ),
-            ),
           ),
-        )..add(const LoadMovieListEvent()),
-        child: this,
+        ),
+        child: MultiBlocProvider(
+          providers: [
+            BlocProvider(
+              create: (context) => TopRatedMovieListBloc(
+                useCase: TopRatedMoviesUseCase(context.read<RemoteMovieRepository>()),
+              )..add(const LoadMovieListEvent()),
+            ),
+            BlocProvider(
+              create: (context) => NowPlayingMovieListBloc(
+                useCase: NowPlayingMoviesUseCase(context.read<RemoteMovieRepository>()),
+              )..add(const LoadMovieListEvent()),
+            ),
+          ],
+          child: this,
+        ),
       );
 }

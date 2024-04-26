@@ -6,7 +6,7 @@ export 'top_rated_movie_list_builder.dart';
 class MovieListBuilder<T extends MovieListBloc> extends StatelessWidget {
   const MovieListBuilder({super.key, required this.builder});
 
-  final Widget Function(BuildContext context, MovieEntity movie) builder;
+  final MovieCard Function(BuildContext context, MovieEntity movie) builder;
 
   @override
   Widget build(BuildContext context) => BlocBuilder<T, MovieListState>(

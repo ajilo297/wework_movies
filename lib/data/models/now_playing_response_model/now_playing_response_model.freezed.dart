@@ -21,7 +21,16 @@ NowPlayingResponseModel _$NowPlayingResponseModelFromJson(
 
 /// @nodoc
 mixin _$NowPlayingResponseModel {
+  DateRangeModel? get dates => throw _privateConstructorUsedError;
+  int get page => throw _privateConstructorUsedError;
+  List<MovieModel> get results => throw _privateConstructorUsedError;
+  int get totalPages => throw _privateConstructorUsedError;
+  int get totalResults => throw _privateConstructorUsedError;
+
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $NowPlayingResponseModelCopyWith<NowPlayingResponseModel> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -29,6 +38,15 @@ abstract class $NowPlayingResponseModelCopyWith<$Res> {
   factory $NowPlayingResponseModelCopyWith(NowPlayingResponseModel value,
           $Res Function(NowPlayingResponseModel) then) =
       _$NowPlayingResponseModelCopyWithImpl<$Res, NowPlayingResponseModel>;
+  @useResult
+  $Res call(
+      {DateRangeModel? dates,
+      int page,
+      List<MovieModel> results,
+      int totalPages,
+      int totalResults});
+
+  $DateRangeModelCopyWith<$Res>? get dates;
 }
 
 /// @nodoc
@@ -41,129 +59,21 @@ class _$NowPlayingResponseModelCopyWithImpl<$Res,
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
-}
-
-/// @nodoc
-abstract class _$$NowPlayingResponseModelImplCopyWith<$Res> {
-  factory _$$NowPlayingResponseModelImplCopyWith(
-          _$NowPlayingResponseModelImpl value,
-          $Res Function(_$NowPlayingResponseModelImpl) then) =
-      __$$NowPlayingResponseModelImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$NowPlayingResponseModelImplCopyWithImpl<$Res>
-    extends _$NowPlayingResponseModelCopyWithImpl<$Res,
-        _$NowPlayingResponseModelImpl>
-    implements _$$NowPlayingResponseModelImplCopyWith<$Res> {
-  __$$NowPlayingResponseModelImplCopyWithImpl(
-      _$NowPlayingResponseModelImpl _value,
-      $Res Function(_$NowPlayingResponseModelImpl) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$NowPlayingResponseModelImpl implements _NowPlayingResponseModel {
-  const _$NowPlayingResponseModelImpl();
-
-  factory _$NowPlayingResponseModelImpl.fromJson(Map<String, dynamic> json) =>
-      _$$NowPlayingResponseModelImplFromJson(json);
-
-  @override
-  String toString() {
-    return 'NowPlayingResponseModel()';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$NowPlayingResponseModelImpl);
-  }
-
-  @JsonKey(ignore: true)
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$NowPlayingResponseModelImplToJson(
-      this,
-    );
-  }
-}
-
-abstract class _NowPlayingResponseModel implements NowPlayingResponseModel {
-  const factory _NowPlayingResponseModel() = _$NowPlayingResponseModelImpl;
-
-  factory _NowPlayingResponseModel.fromJson(Map<String, dynamic> json) =
-      _$NowPlayingResponseModelImpl.fromJson;
-}
-
-DateRangeModel _$DateRangeModelFromJson(Map<String, dynamic> json) {
-  return _DateRangeModel.fromJson(json);
-}
-
-/// @nodoc
-mixin _$DateRangeModel {
-  DateTime get minimum => throw _privateConstructorUsedError;
-  DateTime get maximum => throw _privateConstructorUsedError;
-  int get page => throw _privateConstructorUsedError;
-  List<MovieModel> get results => throw _privateConstructorUsedError;
-  int get totalPages => throw _privateConstructorUsedError;
-  int get totalResults => throw _privateConstructorUsedError;
-
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $DateRangeModelCopyWith<DateRangeModel> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $DateRangeModelCopyWith<$Res> {
-  factory $DateRangeModelCopyWith(
-          DateRangeModel value, $Res Function(DateRangeModel) then) =
-      _$DateRangeModelCopyWithImpl<$Res, DateRangeModel>;
-  @useResult
-  $Res call(
-      {DateTime minimum,
-      DateTime maximum,
-      int page,
-      List<MovieModel> results,
-      int totalPages,
-      int totalResults});
-}
-
-/// @nodoc
-class _$DateRangeModelCopyWithImpl<$Res, $Val extends DateRangeModel>
-    implements $DateRangeModelCopyWith<$Res> {
-  _$DateRangeModelCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
 
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? minimum = null,
-    Object? maximum = null,
+    Object? dates = freezed,
     Object? page = null,
     Object? results = null,
     Object? totalPages = null,
     Object? totalResults = null,
   }) {
     return _then(_value.copyWith(
-      minimum: null == minimum
-          ? _value.minimum
-          : minimum // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-      maximum: null == maximum
-          ? _value.maximum
-          : maximum // ignore: cast_nullable_to_non_nullable
-              as DateTime,
+      dates: freezed == dates
+          ? _value.dates
+          : dates // ignore: cast_nullable_to_non_nullable
+              as DateRangeModel?,
       page: null == page
           ? _value.page
           : page // ignore: cast_nullable_to_non_nullable
@@ -182,52 +92,64 @@ class _$DateRangeModelCopyWithImpl<$Res, $Val extends DateRangeModel>
               as int,
     ) as $Val);
   }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $DateRangeModelCopyWith<$Res>? get dates {
+    if (_value.dates == null) {
+      return null;
+    }
+
+    return $DateRangeModelCopyWith<$Res>(_value.dates!, (value) {
+      return _then(_value.copyWith(dates: value) as $Val);
+    });
+  }
 }
 
 /// @nodoc
-abstract class _$$DateRangeModelImplCopyWith<$Res>
-    implements $DateRangeModelCopyWith<$Res> {
-  factory _$$DateRangeModelImplCopyWith(_$DateRangeModelImpl value,
-          $Res Function(_$DateRangeModelImpl) then) =
-      __$$DateRangeModelImplCopyWithImpl<$Res>;
+abstract class _$$NowPlayingResponseModelImplCopyWith<$Res>
+    implements $NowPlayingResponseModelCopyWith<$Res> {
+  factory _$$NowPlayingResponseModelImplCopyWith(
+          _$NowPlayingResponseModelImpl value,
+          $Res Function(_$NowPlayingResponseModelImpl) then) =
+      __$$NowPlayingResponseModelImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
-      {DateTime minimum,
-      DateTime maximum,
+      {DateRangeModel? dates,
       int page,
       List<MovieModel> results,
       int totalPages,
       int totalResults});
+
+  @override
+  $DateRangeModelCopyWith<$Res>? get dates;
 }
 
 /// @nodoc
-class __$$DateRangeModelImplCopyWithImpl<$Res>
-    extends _$DateRangeModelCopyWithImpl<$Res, _$DateRangeModelImpl>
-    implements _$$DateRangeModelImplCopyWith<$Res> {
-  __$$DateRangeModelImplCopyWithImpl(
-      _$DateRangeModelImpl _value, $Res Function(_$DateRangeModelImpl) _then)
+class __$$NowPlayingResponseModelImplCopyWithImpl<$Res>
+    extends _$NowPlayingResponseModelCopyWithImpl<$Res,
+        _$NowPlayingResponseModelImpl>
+    implements _$$NowPlayingResponseModelImplCopyWith<$Res> {
+  __$$NowPlayingResponseModelImplCopyWithImpl(
+      _$NowPlayingResponseModelImpl _value,
+      $Res Function(_$NowPlayingResponseModelImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? minimum = null,
-    Object? maximum = null,
+    Object? dates = freezed,
     Object? page = null,
     Object? results = null,
     Object? totalPages = null,
     Object? totalResults = null,
   }) {
-    return _then(_$DateRangeModelImpl(
-      minimum: null == minimum
-          ? _value.minimum
-          : minimum // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-      maximum: null == maximum
-          ? _value.maximum
-          : maximum // ignore: cast_nullable_to_non_nullable
-              as DateTime,
+    return _then(_$NowPlayingResponseModelImpl(
+      dates: freezed == dates
+          ? _value.dates
+          : dates // ignore: cast_nullable_to_non_nullable
+              as DateRangeModel?,
       page: null == page
           ? _value.page
           : page // ignore: cast_nullable_to_non_nullable
@@ -250,29 +172,24 @@ class __$$DateRangeModelImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$DateRangeModelImpl implements _DateRangeModel {
-  const _$DateRangeModelImpl(
-      {required this.minimum,
-      required this.maximum,
-      this.page = 1,
-      final List<MovieModel> results = const [],
-      this.totalPages = 1,
-      this.totalResults = 0})
+class _$NowPlayingResponseModelImpl implements _NowPlayingResponseModel {
+  const _$NowPlayingResponseModelImpl(
+      {this.dates,
+      required this.page,
+      required final List<MovieModel> results,
+      required this.totalPages,
+      required this.totalResults})
       : _results = results;
 
-  factory _$DateRangeModelImpl.fromJson(Map<String, dynamic> json) =>
-      _$$DateRangeModelImplFromJson(json);
+  factory _$NowPlayingResponseModelImpl.fromJson(Map<String, dynamic> json) =>
+      _$$NowPlayingResponseModelImplFromJson(json);
 
   @override
-  final DateTime minimum;
+  final DateRangeModel? dates;
   @override
-  final DateTime maximum;
-  @override
-  @JsonKey()
   final int page;
   final List<MovieModel> _results;
   @override
-  @JsonKey()
   List<MovieModel> get results {
     if (_results is EqualUnmodifiableListView) return _results;
     // ignore: implicit_dynamic_type
@@ -280,24 +197,21 @@ class _$DateRangeModelImpl implements _DateRangeModel {
   }
 
   @override
-  @JsonKey()
   final int totalPages;
   @override
-  @JsonKey()
   final int totalResults;
 
   @override
   String toString() {
-    return 'DateRangeModel(minimum: $minimum, maximum: $maximum, page: $page, results: $results, totalPages: $totalPages, totalResults: $totalResults)';
+    return 'NowPlayingResponseModel(dates: $dates, page: $page, results: $results, totalPages: $totalPages, totalResults: $totalResults)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$DateRangeModelImpl &&
-            (identical(other.minimum, minimum) || other.minimum == minimum) &&
-            (identical(other.maximum, maximum) || other.maximum == maximum) &&
+            other is _$NowPlayingResponseModelImpl &&
+            (identical(other.dates, dates) || other.dates == dates) &&
             (identical(other.page, page) || other.page == page) &&
             const DeepCollectionEquality().equals(other._results, _results) &&
             (identical(other.totalPages, totalPages) ||
@@ -308,8 +222,172 @@ class _$DateRangeModelImpl implements _DateRangeModel {
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, minimum, maximum, page,
+  int get hashCode => Object.hash(runtimeType, dates, page,
       const DeepCollectionEquality().hash(_results), totalPages, totalResults);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$NowPlayingResponseModelImplCopyWith<_$NowPlayingResponseModelImpl>
+      get copyWith => __$$NowPlayingResponseModelImplCopyWithImpl<
+          _$NowPlayingResponseModelImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$NowPlayingResponseModelImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _NowPlayingResponseModel implements NowPlayingResponseModel {
+  const factory _NowPlayingResponseModel(
+      {final DateRangeModel? dates,
+      required final int page,
+      required final List<MovieModel> results,
+      required final int totalPages,
+      required final int totalResults}) = _$NowPlayingResponseModelImpl;
+
+  factory _NowPlayingResponseModel.fromJson(Map<String, dynamic> json) =
+      _$NowPlayingResponseModelImpl.fromJson;
+
+  @override
+  DateRangeModel? get dates;
+  @override
+  int get page;
+  @override
+  List<MovieModel> get results;
+  @override
+  int get totalPages;
+  @override
+  int get totalResults;
+  @override
+  @JsonKey(ignore: true)
+  _$$NowPlayingResponseModelImplCopyWith<_$NowPlayingResponseModelImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+DateRangeModel _$DateRangeModelFromJson(Map<String, dynamic> json) {
+  return _DateRangeModel.fromJson(json);
+}
+
+/// @nodoc
+mixin _$DateRangeModel {
+  DateTime get minimum => throw _privateConstructorUsedError;
+  DateTime get maximum => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $DateRangeModelCopyWith<DateRangeModel> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $DateRangeModelCopyWith<$Res> {
+  factory $DateRangeModelCopyWith(
+          DateRangeModel value, $Res Function(DateRangeModel) then) =
+      _$DateRangeModelCopyWithImpl<$Res, DateRangeModel>;
+  @useResult
+  $Res call({DateTime minimum, DateTime maximum});
+}
+
+/// @nodoc
+class _$DateRangeModelCopyWithImpl<$Res, $Val extends DateRangeModel>
+    implements $DateRangeModelCopyWith<$Res> {
+  _$DateRangeModelCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? minimum = null,
+    Object? maximum = null,
+  }) {
+    return _then(_value.copyWith(
+      minimum: null == minimum
+          ? _value.minimum
+          : minimum // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      maximum: null == maximum
+          ? _value.maximum
+          : maximum // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$DateRangeModelImplCopyWith<$Res>
+    implements $DateRangeModelCopyWith<$Res> {
+  factory _$$DateRangeModelImplCopyWith(_$DateRangeModelImpl value,
+          $Res Function(_$DateRangeModelImpl) then) =
+      __$$DateRangeModelImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({DateTime minimum, DateTime maximum});
+}
+
+/// @nodoc
+class __$$DateRangeModelImplCopyWithImpl<$Res>
+    extends _$DateRangeModelCopyWithImpl<$Res, _$DateRangeModelImpl>
+    implements _$$DateRangeModelImplCopyWith<$Res> {
+  __$$DateRangeModelImplCopyWithImpl(
+      _$DateRangeModelImpl _value, $Res Function(_$DateRangeModelImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? minimum = null,
+    Object? maximum = null,
+  }) {
+    return _then(_$DateRangeModelImpl(
+      minimum: null == minimum
+          ? _value.minimum
+          : minimum // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      maximum: null == maximum
+          ? _value.maximum
+          : maximum // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$DateRangeModelImpl implements _DateRangeModel {
+  const _$DateRangeModelImpl({required this.minimum, required this.maximum});
+
+  factory _$DateRangeModelImpl.fromJson(Map<String, dynamic> json) =>
+      _$$DateRangeModelImplFromJson(json);
+
+  @override
+  final DateTime minimum;
+  @override
+  final DateTime maximum;
+
+  @override
+  String toString() {
+    return 'DateRangeModel(minimum: $minimum, maximum: $maximum)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$DateRangeModelImpl &&
+            (identical(other.minimum, minimum) || other.minimum == minimum) &&
+            (identical(other.maximum, maximum) || other.maximum == maximum));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(runtimeType, minimum, maximum);
 
   @JsonKey(ignore: true)
   @override
@@ -329,11 +407,7 @@ class _$DateRangeModelImpl implements _DateRangeModel {
 abstract class _DateRangeModel implements DateRangeModel {
   const factory _DateRangeModel(
       {required final DateTime minimum,
-      required final DateTime maximum,
-      final int page,
-      final List<MovieModel> results,
-      final int totalPages,
-      final int totalResults}) = _$DateRangeModelImpl;
+      required final DateTime maximum}) = _$DateRangeModelImpl;
 
   factory _DateRangeModel.fromJson(Map<String, dynamic> json) =
       _$DateRangeModelImpl.fromJson;
@@ -342,14 +416,6 @@ abstract class _DateRangeModel implements DateRangeModel {
   DateTime get minimum;
   @override
   DateTime get maximum;
-  @override
-  int get page;
-  @override
-  List<MovieModel> get results;
-  @override
-  int get totalPages;
-  @override
-  int get totalResults;
   @override
   @JsonKey(ignore: true)
   _$$DateRangeModelImplCopyWith<_$DateRangeModelImpl> get copyWith =>

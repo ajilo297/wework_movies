@@ -48,7 +48,7 @@ class _TmdbApiClient implements TmdbApiClient {
   }
 
   @override
-  Future<NowPlayingResponseModel> loadNowPlayingMovies({int page = 1}) async {
+  Future<NowPlayingResponseModel> loadNowPlayingMovies([int page = 1]) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{r'page': page};
     final _headers = <String, dynamic>{};
@@ -75,7 +75,7 @@ class _TmdbApiClient implements TmdbApiClient {
   }
 
   @override
-  Future<TopRatedMoviesModel> loadTopRatedMovies({int page = 1}) async {
+  Future<TopRatedMoviesModel> loadTopRatedMovies([int page = 1]) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{r'page': page};
     final _headers = <String, dynamic>{};

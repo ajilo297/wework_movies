@@ -11,8 +11,8 @@ abstract class TmdbApiClient {
   Future<ConfigurationModel> loadConfiguration();
 
   @GET('/movie/now_playing')
-  Future<NowPlayingResponseModel> loadNowPlayingMovies({@Query('page') int page = 1});
+  Future<NowPlayingResponseModel> loadNowPlayingMovies([@Query('page') int page = 1]);
 
   @GET('/movie/top_rated')
-  Future<TopRatedMoviesModel> loadTopRatedMovies({@Query('page') int page = 1});
+  Future<TopRatedMoviesModel> loadTopRatedMovies([@Query('page') int page = 1]);
 }

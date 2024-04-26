@@ -5,7 +5,13 @@ part 'now_playing_response_model.g.dart';
 
 @freezed
 class NowPlayingResponseModel with _$NowPlayingResponseModel {
-  const factory NowPlayingResponseModel() = _NowPlayingResponseModel;
+  const factory NowPlayingResponseModel({
+    DateRangeModel? dates,
+    required int page,
+    required List<MovieModel> results,
+    required int totalPages,
+    required int totalResults,
+  }) = _NowPlayingResponseModel;
 
   factory NowPlayingResponseModel.fromJson(Map<String, dynamic> json) => _$NowPlayingResponseModelFromJson(json);
 }
@@ -15,10 +21,6 @@ class DateRangeModel with _$DateRangeModel {
   const factory DateRangeModel({
     required DateTime minimum,
     required DateTime maximum,
-    @Default(1) int page,
-    @Default([]) List<MovieModel> results,
-    @Default(1) int totalPages,
-    @Default(0) int totalResults,
   }) = _DateRangeModel;
 
   factory DateRangeModel.fromJson(Map<String, dynamic> json) => _$DateRangeModelFromJson(json);

@@ -5,5 +5,7 @@ export 'package:freezed_annotation/freezed_annotation.dart';
 
 export 'config/config.dart';
 export 'data/data.dart';
+export 'domain/domain.dart';
 export 'main.dart';
 export 'movie_app.dart';
+export 'utilities/utilities.dart';

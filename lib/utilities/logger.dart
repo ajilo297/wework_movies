@@ -6,8 +6,9 @@ void _print(
   required String name,
   String? title,
 }) {
+  dev.log('', name: name);
   if (title != null) {
-    dev.log('\n$title', name: name);
+    dev.log(title, name: name);
     dev.log('-' * title.length, name: name);
   }
   dev.log('$message', name: name);

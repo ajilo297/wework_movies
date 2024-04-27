@@ -14,6 +14,23 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
+MovieListEvent _$MovieListEventFromJson(Map<String, dynamic> json) {
+  switch (json['runtimeType']) {
+    case 'loadMovies':
+      return LoadMovieListEvent.fromJson(json);
+    case 'searchMovies':
+      return SearchMovieListEvent.fromJson(json);
+    case 'loadNextMoviePage':
+      return LoadMoreMovieListEvent.fromJson(json);
+    case 'loadPreviousMoviePage':
+      return LoadPreviousMovieListEvent.fromJson(json);
+
+    default:
+      throw CheckedFromJsonException(json, 'runtimeType', 'MovieListEvent',
+          'Invalid union type "${json['runtimeType']}"!');
+  }
+}
+
 /// @nodoc
 mixin _$MovieListEvent {
   @optionalTypeArgs
@@ -67,6 +84,7 @@ mixin _$MovieListEvent {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -119,13 +137,20 @@ class __$$LoadMovieListEventImplCopyWithImpl<$Res>
 }
 
 /// @nodoc
-
+@JsonSerializable()
 class _$LoadMovieListEventImpl implements LoadMovieListEvent {
-  const _$LoadMovieListEventImpl({this.page = 1});
+  const _$LoadMovieListEventImpl({this.page = 1, final String? $type})
+      : $type = $type ?? 'loadMovies';
+
+  factory _$LoadMovieListEventImpl.fromJson(Map<String, dynamic> json) =>
+      _$$LoadMovieListEventImplFromJson(json);
 
   @override
   @JsonKey()
   final int page;
+
+  @JsonKey(name: 'runtimeType')
+  final String $type;
 
   @override
   String toString() {
@@ -140,6 +165,7 @@ class _$LoadMovieListEventImpl implements LoadMovieListEvent {
             (identical(other.page, page) || other.page == page));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, page);
 
@@ -224,10 +250,20 @@ class _$LoadMovieListEventImpl implements LoadMovieListEvent {
     }
     return orElse();
   }
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$LoadMovieListEventImplToJson(
+      this,
+    );
+  }
 }
 
 abstract class LoadMovieListEvent implements MovieListEvent {
   const factory LoadMovieListEvent({final int page}) = _$LoadMovieListEventImpl;
+
+  factory LoadMovieListEvent.fromJson(Map<String, dynamic> json) =
+      _$LoadMovieListEventImpl.fromJson;
 
   int get page;
   @JsonKey(ignore: true)
@@ -267,12 +303,19 @@ class __$$SearchMovieListEventImplCopyWithImpl<$Res>
 }
 
 /// @nodoc
-
+@JsonSerializable()
 class _$SearchMovieListEventImpl implements SearchMovieListEvent {
-  const _$SearchMovieListEventImpl({required this.query});
+  const _$SearchMovieListEventImpl({required this.query, final String? $type})
+      : $type = $type ?? 'searchMovies';
+
+  factory _$SearchMovieListEventImpl.fromJson(Map<String, dynamic> json) =>
+      _$$SearchMovieListEventImplFromJson(json);
 
   @override
   final String query;
+
+  @JsonKey(name: 'runtimeType')
+  final String $type;
 
   @override
   String toString() {
@@ -287,6 +330,7 @@ class _$SearchMovieListEventImpl implements SearchMovieListEvent {
             (identical(other.query, query) || other.query == query));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, query);
 
@@ -372,11 +416,21 @@ class _$SearchMovieListEventImpl implements SearchMovieListEvent {
     }
     return orElse();
   }
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$SearchMovieListEventImplToJson(
+      this,
+    );
+  }
 }
 
 abstract class SearchMovieListEvent implements MovieListEvent {
   const factory SearchMovieListEvent({required final String query}) =
       _$SearchMovieListEventImpl;
+
+  factory SearchMovieListEvent.fromJson(Map<String, dynamic> json) =
+      _$SearchMovieListEventImpl.fromJson;
 
   String get query;
   @JsonKey(ignore: true)
@@ -403,9 +457,16 @@ class __$$LoadMoreMovieListEventImplCopyWithImpl<$Res>
 }
 
 /// @nodoc
-
+@JsonSerializable()
 class _$LoadMoreMovieListEventImpl implements LoadMoreMovieListEvent {
-  const _$LoadMoreMovieListEventImpl();
+  const _$LoadMoreMovieListEventImpl({final String? $type})
+      : $type = $type ?? 'loadNextMoviePage';
+
+  factory _$LoadMoreMovieListEventImpl.fromJson(Map<String, dynamic> json) =>
+      _$$LoadMoreMovieListEventImplFromJson(json);
+
+  @JsonKey(name: 'runtimeType')
+  final String $type;
 
   @override
   String toString() {
@@ -419,6 +480,7 @@ class _$LoadMoreMovieListEventImpl implements LoadMoreMovieListEvent {
             other is _$LoadMoreMovieListEventImpl);
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => runtimeType.hashCode;
 
@@ -496,10 +558,20 @@ class _$LoadMoreMovieListEventImpl implements LoadMoreMovieListEvent {
     }
     return orElse();
   }
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$LoadMoreMovieListEventImplToJson(
+      this,
+    );
+  }
 }
 
 abstract class LoadMoreMovieListEvent implements MovieListEvent {
   const factory LoadMoreMovieListEvent() = _$LoadMoreMovieListEventImpl;
+
+  factory LoadMoreMovieListEvent.fromJson(Map<String, dynamic> json) =
+      _$LoadMoreMovieListEventImpl.fromJson;
 }
 
 /// @nodoc
@@ -521,9 +593,17 @@ class __$$LoadPreviousMovieListEventImplCopyWithImpl<$Res>
 }
 
 /// @nodoc
-
+@JsonSerializable()
 class _$LoadPreviousMovieListEventImpl implements LoadPreviousMovieListEvent {
-  const _$LoadPreviousMovieListEventImpl();
+  const _$LoadPreviousMovieListEventImpl({final String? $type})
+      : $type = $type ?? 'loadPreviousMoviePage';
+
+  factory _$LoadPreviousMovieListEventImpl.fromJson(
+          Map<String, dynamic> json) =>
+      _$$LoadPreviousMovieListEventImplFromJson(json);
+
+  @JsonKey(name: 'runtimeType')
+  final String $type;
 
   @override
   String toString() {
@@ -537,6 +617,7 @@ class _$LoadPreviousMovieListEventImpl implements LoadPreviousMovieListEvent {
             other is _$LoadPreviousMovieListEventImpl);
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => runtimeType.hashCode;
 
@@ -614,10 +695,35 @@ class _$LoadPreviousMovieListEventImpl implements LoadPreviousMovieListEvent {
     }
     return orElse();
   }
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$LoadPreviousMovieListEventImplToJson(
+      this,
+    );
+  }
 }
 
 abstract class LoadPreviousMovieListEvent implements MovieListEvent {
   const factory LoadPreviousMovieListEvent() = _$LoadPreviousMovieListEventImpl;
+
+  factory LoadPreviousMovieListEvent.fromJson(Map<String, dynamic> json) =
+      _$LoadPreviousMovieListEventImpl.fromJson;
+}
+
+MovieListState _$MovieListStateFromJson(Map<String, dynamic> json) {
+  switch (json['runtimeType']) {
+    case 'empty':
+      return MovieListEmptyState.fromJson(json);
+    case 'data':
+      return MovieListDataState.fromJson(json);
+    case 'error':
+      return MovieListErrorState.fromJson(json);
+
+    default:
+      throw CheckedFromJsonException(json, 'runtimeType', 'MovieListState',
+          'Invalid union type "${json['runtimeType']}"!');
+  }
 }
 
 /// @nodoc
@@ -682,7 +788,7 @@ mixin _$MovieListState {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
-
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $MovieListStateCopyWith<MovieListState> get copyWith =>
       throw _privateConstructorUsedError;
@@ -775,11 +881,18 @@ class __$$MovieListEmptyStateImplCopyWithImpl<$Res>
 }
 
 /// @nodoc
-
+@JsonSerializable()
 class _$MovieListEmptyStateImpl extends MovieListEmptyState {
   const _$MovieListEmptyStateImpl(
-      {this.isLoading = false, this.page = 1, this.searchQuery = ''})
-      : super._();
+      {this.isLoading = false,
+      this.page = 1,
+      this.searchQuery = '',
+      final String? $type})
+      : $type = $type ?? 'empty',
+        super._();
+
+  factory _$MovieListEmptyStateImpl.fromJson(Map<String, dynamic> json) =>
+      _$$MovieListEmptyStateImplFromJson(json);
 
   @override
   @JsonKey()
@@ -790,6 +903,9 @@ class _$MovieListEmptyStateImpl extends MovieListEmptyState {
   @override
   @JsonKey()
   final String searchQuery;
+
+  @JsonKey(name: 'runtimeType')
+  final String $type;
 
   @override
   String toString() {
@@ -808,6 +924,7 @@ class _$MovieListEmptyStateImpl extends MovieListEmptyState {
                 other.searchQuery == searchQuery));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, isLoading, page, searchQuery);
 
@@ -898,6 +1015,13 @@ class _$MovieListEmptyStateImpl extends MovieListEmptyState {
     }
     return orElse();
   }
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$MovieListEmptyStateImplToJson(
+      this,
+    );
+  }
 }
 
 abstract class MovieListEmptyState extends MovieListState {
@@ -906,6 +1030,9 @@ abstract class MovieListEmptyState extends MovieListState {
       final int page,
       final String searchQuery}) = _$MovieListEmptyStateImpl;
   const MovieListEmptyState._() : super._();
+
+  factory MovieListEmptyState.fromJson(Map<String, dynamic> json) =
+      _$MovieListEmptyStateImpl.fromJson;
 
   @override
   bool get isLoading;
@@ -969,12 +1096,19 @@ class __$$MovieListDataStateImplCopyWithImpl<$Res>
 }
 
 /// @nodoc
-
+@JsonSerializable()
 class _$MovieListDataStateImpl extends MovieListDataState {
   const _$MovieListDataStateImpl(final List<MovieEntity> data,
-      {this.isLoading = false, this.page = 1, this.searchQuery = ''})
+      {this.isLoading = false,
+      this.page = 1,
+      this.searchQuery = '',
+      final String? $type})
       : _data = data,
+        $type = $type ?? 'data',
         super._();
+
+  factory _$MovieListDataStateImpl.fromJson(Map<String, dynamic> json) =>
+      _$$MovieListDataStateImplFromJson(json);
 
   final List<MovieEntity> _data;
   @override
@@ -994,6 +1128,9 @@ class _$MovieListDataStateImpl extends MovieListDataState {
   @JsonKey()
   final String searchQuery;
 
+  @JsonKey(name: 'runtimeType')
+  final String $type;
+
   @override
   String toString() {
     return 'MovieListState.data(data: $data, isLoading: $isLoading, page: $page, searchQuery: $searchQuery)';
@@ -1012,6 +1149,7 @@ class _$MovieListDataStateImpl extends MovieListDataState {
                 other.searchQuery == searchQuery));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType,
       const DeepCollectionEquality().hash(_data), isLoading, page, searchQuery);
@@ -1103,6 +1241,13 @@ class _$MovieListDataStateImpl extends MovieListDataState {
     }
     return orElse();
   }
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$MovieListDataStateImplToJson(
+      this,
+    );
+  }
 }
 
 abstract class MovieListDataState extends MovieListState {
@@ -1111,6 +1256,9 @@ abstract class MovieListDataState extends MovieListState {
       final int page,
       final String searchQuery}) = _$MovieListDataStateImpl;
   const MovieListDataState._() : super._();
+
+  factory MovieListDataState.fromJson(Map<String, dynamic> json) =
+      _$MovieListDataStateImpl.fromJson;
 
   List<MovieEntity> get data;
   @override
@@ -1174,14 +1322,19 @@ class __$$MovieListErrorStateImplCopyWithImpl<$Res>
 }
 
 /// @nodoc
-
+@JsonSerializable()
 class _$MovieListErrorStateImpl extends MovieListErrorState {
   const _$MovieListErrorStateImpl(
       {this.isLoading = false,
       required this.message,
       this.page = 1,
-      this.searchQuery = ''})
-      : super._();
+      this.searchQuery = '',
+      final String? $type})
+      : $type = $type ?? 'error',
+        super._();
+
+  factory _$MovieListErrorStateImpl.fromJson(Map<String, dynamic> json) =>
+      _$$MovieListErrorStateImplFromJson(json);
 
   @override
   @JsonKey()
@@ -1194,6 +1347,9 @@ class _$MovieListErrorStateImpl extends MovieListErrorState {
   @override
   @JsonKey()
   final String searchQuery;
+
+  @JsonKey(name: 'runtimeType')
+  final String $type;
 
   @override
   String toString() {
@@ -1213,6 +1369,7 @@ class _$MovieListErrorStateImpl extends MovieListErrorState {
                 other.searchQuery == searchQuery));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode =>
       Object.hash(runtimeType, isLoading, message, page, searchQuery);
@@ -1304,6 +1461,13 @@ class _$MovieListErrorStateImpl extends MovieListErrorState {
     }
     return orElse();
   }
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$MovieListErrorStateImplToJson(
+      this,
+    );
+  }
 }
 
 abstract class MovieListErrorState extends MovieListState {
@@ -1313,6 +1477,9 @@ abstract class MovieListErrorState extends MovieListState {
       final int page,
       final String searchQuery}) = _$MovieListErrorStateImpl;
   const MovieListErrorState._() : super._();
+
+  factory MovieListErrorState.fromJson(Map<String, dynamic> json) =
+      _$MovieListErrorStateImpl.fromJson;
 
   @override
   bool get isLoading;

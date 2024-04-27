@@ -13,4 +13,6 @@ class MovieListEvent with _$MovieListEvent {
   const factory MovieListEvent.loadNextMoviePage() = LoadMoreMovieListEvent;
 
   const factory MovieListEvent.loadPreviousMoviePage() = LoadPreviousMovieListEvent;
+
+  factory MovieListEvent.fromJson(Map<String, dynamic> json) => _$MovieListEventFromJson(json);
 }

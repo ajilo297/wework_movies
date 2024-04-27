@@ -14,6 +14,10 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
+MovieEntity _$MovieEntityFromJson(Map<String, dynamic> json) {
+  return _MovieEntity.fromJson(json);
+}
+
 /// @nodoc
 mixin _$MovieEntity {
   int get movieId => throw _privateConstructorUsedError;
@@ -23,6 +27,7 @@ mixin _$MovieEntity {
   int get voteCount => throw _privateConstructorUsedError;
   double get averageVotes => throw _privateConstructorUsedError;
 
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $MovieEntityCopyWith<MovieEntity> get copyWith =>
       throw _privateConstructorUsedError;
@@ -157,7 +162,7 @@ class __$$MovieEntityImplCopyWithImpl<$Res>
 }
 
 /// @nodoc
-
+@JsonSerializable()
 class _$MovieEntityImpl implements _MovieEntity {
   const _$MovieEntityImpl(
       {required this.movieId,
@@ -166,6 +171,9 @@ class _$MovieEntityImpl implements _MovieEntity {
       this.language = 'Unknown',
       this.voteCount = 0,
       this.averageVotes = 0.0});
+
+  factory _$MovieEntityImpl.fromJson(Map<String, dynamic> json) =>
+      _$$MovieEntityImplFromJson(json);
 
   @override
   final int movieId;
@@ -207,6 +215,7 @@ class _$MovieEntityImpl implements _MovieEntity {
                 other.averageVotes == averageVotes));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, movieId, movieName,
       movieDescription, language, voteCount, averageVotes);
@@ -216,6 +225,13 @@ class _$MovieEntityImpl implements _MovieEntity {
   @pragma('vm:prefer-inline')
   _$$MovieEntityImplCopyWith<_$MovieEntityImpl> get copyWith =>
       __$$MovieEntityImplCopyWithImpl<_$MovieEntityImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$MovieEntityImplToJson(
+      this,
+    );
+  }
 }
 
 abstract class _MovieEntity implements MovieEntity {
@@ -226,6 +242,9 @@ abstract class _MovieEntity implements MovieEntity {
       final String language,
       final int voteCount,
       final double averageVotes}) = _$MovieEntityImpl;
+
+  factory _MovieEntity.fromJson(Map<String, dynamic> json) =
+      _$MovieEntityImpl.fromJson;
 
   @override
   int get movieId;

@@ -24,6 +24,8 @@ sealed class MovieListState with _$MovieListState {
     @Default('') String searchQuery,
   }) = MovieListErrorState;
 
+  factory MovieListState.fromJson(Map<String, dynamic> json) => _$MovieListStateFromJson(json);
+
   List<MovieEntity> get movies => switch (this) {
         MovieListDataState data => data.data.where((movie) {
             return movie.movieName.toLowerCase().contains(searchQuery.toLowerCase());

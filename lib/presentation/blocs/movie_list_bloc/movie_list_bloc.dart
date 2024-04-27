@@ -4,12 +4,13 @@ export 'now_playing_movie_list_bloc.dart';
 export 'top_rated_movie_list_bloc.dart';
 
 part 'movie_list_bloc.freezed.dart';
+part 'movie_list_bloc.g.dart';
 part 'movie_list_event.dart';
 part 'movie_list_state.dart';
 
 typedef _MovieListEmitter = Emitter<MovieListState>;
 
-abstract base class MovieListBloc extends Bloc<MovieListEvent, MovieListState> {
+abstract base class MovieListBloc extends HydratedBloc<MovieListEvent, MovieListState> {
   MovieListBloc({required this.useCase}) : super(const MovieListEmptyState()) {
     on<LoadMovieListEvent>(_loadMovies);
     on<SearchMovieListEvent>(_searchMovies);
@@ -31,5 +32,15 @@ abstract base class MovieListBloc extends Bloc<MovieListEvent, MovieListState> {
 
   void _searchMovies(SearchMovieListEvent event, _MovieListEmitter emit) async {
     emit(state.copyWith(searchQuery: event.query));
+  }
+
+  @override
+  Map<String, dynamic> toJson(MovieListState state) {
+    return state.toJson();
+  }
+
+  @override
+  MovieListState fromJson(Map<String, dynamic> json) {
+    return MovieListState.fromJson(json);
   }
 }

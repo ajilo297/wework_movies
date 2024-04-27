@@ -26,4 +26,15 @@ final class RemoteMovieRepository extends MovieRepository {
       throw FailedToFetchTopRatedMoviesException();
     }
   }
+
+  @override
+  Future<ImageConfigurationEntity> getImageConfiguration() async {
+    try {
+      final response = await apiClient.loadConfiguration();
+      return response.images.toEntity();
+    } catch (exception) {
+      log(exception, title: 'getImageConfiguration', name: 'RemoteMovieRepository');
+      throw FailedToFetchImageConfigurationException();
+    }
+  }
 }

@@ -6,7 +6,7 @@ part 'configuration_model.g.dart';
 @freezed
 class ConfigurationModel with _$ConfigurationModel {
   const factory ConfigurationModel({
-    required ImageConfiguration images,
+    required ImageConfigurationModel images,
     @Default([]) List<String> changeKeys,
   }) = _ConfigurationModel;
 
@@ -14,8 +14,8 @@ class ConfigurationModel with _$ConfigurationModel {
 }
 
 @freezed
-class ImageConfiguration with _$ImageConfiguration {
-  const factory ImageConfiguration({
+class ImageConfigurationModel with _$ImageConfigurationModel {
+  const factory ImageConfigurationModel({
     required String baseUrl,
     required String secureBaseUrl,
     @Default([]) List<String> backdropSizes,
@@ -23,7 +23,7 @@ class ImageConfiguration with _$ImageConfiguration {
     @Default([]) List<String> posterSizes,
     @Default([]) List<String> profileSizes,
     @Default([]) List<String> stillSizes,
-  }) = _ImageConfiguration;
+  }) = _ImageConfigurationModel;
 
-  factory ImageConfiguration.fromJson(Map<String, dynamic> json) => _$ImageConfigurationFromJson(json);
+  factory ImageConfigurationModel.fromJson(Map<String, dynamic> json) => _$ImageConfigurationModelFromJson(json);
 }

@@ -35,20 +35,39 @@ class HomePage extends StatelessWidget implements AutoRouteWrapper {
 
   @override
   Widget wrappedRoute(BuildContext context) => RemoteMovieRepositoryProvider(
-        child: MultiBlocProvider(
-          providers: [
-            BlocProvider(
-              create: (context) => TopRatedMovieListBloc(
-                useCase: TopRatedMoviesUseCase(context.read<RemoteMovieRepository>()),
-              )..add(const LoadMovieListEvent()),
+        child: BlocProvider(
+          create: (context) => ImageConfigurationCubit(
+            useCase: ImageConfigurationUseCase(context.read<RemoteMovieRepository>()),
+          )..loadConfiguration(),
+          child: MultiBlocProvider(
+            providers: [
+              BlocProvider(
+                create: (context) => TopRatedMovieListBloc(
+                  useCase: TopRatedMoviesUseCase(context.read<RemoteMovieRepository>()),
+                ),
+              ),
+              BlocProvider(
+                create: (context) => NowPlayingMovieListBloc(
+                  useCase: NowPlayingMoviesUseCase(context.read<RemoteMovieRepository>()),
+                ),
+              ),
+            ],
+            child: BlocListener<ImageConfigurationCubit, ImageConfigurationState>(
+              listener: (context, state) {
+                if (state is ImageConfigurationDataState) {
+                  final movieBlocs = <MovieListBloc>[
+                    context.read<TopRatedMovieListBloc>(),
+                    context.read<NowPlayingMovieListBloc>(),
+                  ];
+                  for (final bloc in movieBlocs) {
+                    bloc.add(const LoadMovieListEvent());
+                  }
+                }
+              },
+              listenWhen: (o, n) => o != n && n is ImageConfigurationDataState,
+              child: this,
             ),
-            BlocProvider(
-              create: (context) => NowPlayingMovieListBloc(
-                useCase: NowPlayingMoviesUseCase(context.read<RemoteMovieRepository>()),
-              )..add(const LoadMovieListEvent()),
-            ),
-          ],
-          child: this,
+          ),
         ),
       );
 }

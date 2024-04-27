@@ -17,4 +17,9 @@ abstract class MovieRepository {
   /// [page] is the page number of the results to fetch. Defaults to 1.
   /// /// Throws a [FailedToFetchTopRatedMoviesException] if the movies could not be fetched.
   Future<List<MovieEntity>> getTopRatedMovies({int page = 1});
+
+  /// Get configuration information for images.
+  ///
+  /// Throws a [FailedToFetchImageConfigurationException] if the configuration could not be fetched.
+  Future<ImageConfigurationEntity> getImageConfiguration();
 }

@@ -9,8 +9,8 @@ part of 'configuration_model.dart';
 _$ConfigurationModelImpl _$$ConfigurationModelImplFromJson(
         Map<String, dynamic> json) =>
     _$ConfigurationModelImpl(
-      images:
-          ImageConfiguration.fromJson(json['images'] as Map<String, dynamic>),
+      images: ImageConfigurationModel.fromJson(
+          json['images'] as Map<String, dynamic>),
       changeKeys: (json['change_keys'] as List<dynamic>?)
               ?.map((e) => e as String)
               .toList() ??
@@ -24,9 +24,9 @@ Map<String, dynamic> _$$ConfigurationModelImplToJson(
       'change_keys': instance.changeKeys,
     };
 
-_$ImageConfigurationImpl _$$ImageConfigurationImplFromJson(
+_$ImageConfigurationModelImpl _$$ImageConfigurationModelImplFromJson(
         Map<String, dynamic> json) =>
-    _$ImageConfigurationImpl(
+    _$ImageConfigurationModelImpl(
       baseUrl: json['base_url'] as String,
       secureBaseUrl: json['secure_base_url'] as String,
       backdropSizes: (json['backdrop_sizes'] as List<dynamic>?)
@@ -51,8 +51,8 @@ _$ImageConfigurationImpl _$$ImageConfigurationImplFromJson(
           const [],
     );
 
-Map<String, dynamic> _$$ImageConfigurationImplToJson(
-        _$ImageConfigurationImpl instance) =>
+Map<String, dynamic> _$$ImageConfigurationModelImplToJson(
+        _$ImageConfigurationModelImpl instance) =>
     <String, dynamic>{
       'base_url': instance.baseUrl,
       'secure_base_url': instance.secureBaseUrl,

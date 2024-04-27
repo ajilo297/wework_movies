@@ -8,7 +8,7 @@ class TopRatedMovieImage extends MovieImage {
   }) : super(
           // TODO(ajilo297): Move to constants
           borderRadius: const BorderRadius.all(
-            Radius.circular(8.0),
+            Radius.circular(20),
           ),
         );
 }

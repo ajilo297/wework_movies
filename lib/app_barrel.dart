@@ -1,6 +1,7 @@
 export 'package:cached_network_image/cached_network_image.dart';
 export 'package:collection/collection.dart';
 export 'package:dio/dio.dart';
+export 'package:flutter/cupertino.dart' show CupertinoIcons;
 export 'package:flutter/material.dart' hide ImageConfiguration;
 export 'package:flutter_bloc/flutter_bloc.dart';
 export 'package:freezed_annotation/freezed_annotation.dart';

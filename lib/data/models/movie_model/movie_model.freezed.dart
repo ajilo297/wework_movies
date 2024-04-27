@@ -20,18 +20,18 @@ MovieModel _$MovieModelFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$MovieModel {
-  bool get adult => throw _privateConstructorUsedError;
-  String? get backdropPath => throw _privateConstructorUsedError;
-  List<int> get genreIds => throw _privateConstructorUsedError;
   int get id => throw _privateConstructorUsedError;
   String get originalLanguage => throw _privateConstructorUsedError;
   String get originalTitle => throw _privateConstructorUsedError;
   String get overview => throw _privateConstructorUsedError;
+  String get title => throw _privateConstructorUsedError;
+  bool get adult => throw _privateConstructorUsedError;
+  bool get video => throw _privateConstructorUsedError;
+  List<int> get genreIds => throw _privateConstructorUsedError;
   double? get popularity => throw _privateConstructorUsedError;
   String? get posterPath => throw _privateConstructorUsedError;
+  String? get backdropPath => throw _privateConstructorUsedError;
   String? get releaseDate => throw _privateConstructorUsedError;
-  String get title => throw _privateConstructorUsedError;
-  bool get video => throw _privateConstructorUsedError;
   double? get voteAverage => throw _privateConstructorUsedError;
   int? get voteCount => throw _privateConstructorUsedError;
 
@@ -48,18 +48,18 @@ abstract class $MovieModelCopyWith<$Res> {
       _$MovieModelCopyWithImpl<$Res, MovieModel>;
   @useResult
   $Res call(
-      {bool adult,
-      String? backdropPath,
-      List<int> genreIds,
-      int id,
+      {int id,
       String originalLanguage,
       String originalTitle,
       String overview,
+      String title,
+      bool adult,
+      bool video,
+      List<int> genreIds,
       double? popularity,
       String? posterPath,
+      String? backdropPath,
       String? releaseDate,
-      String title,
-      bool video,
       double? voteAverage,
       int? voteCount});
 }
@@ -77,34 +77,22 @@ class _$MovieModelCopyWithImpl<$Res, $Val extends MovieModel>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? adult = null,
-    Object? backdropPath = freezed,
-    Object? genreIds = null,
     Object? id = null,
     Object? originalLanguage = null,
     Object? originalTitle = null,
     Object? overview = null,
+    Object? title = null,
+    Object? adult = null,
+    Object? video = null,
+    Object? genreIds = null,
     Object? popularity = freezed,
     Object? posterPath = freezed,
+    Object? backdropPath = freezed,
     Object? releaseDate = freezed,
-    Object? title = null,
-    Object? video = null,
     Object? voteAverage = freezed,
     Object? voteCount = freezed,
   }) {
     return _then(_value.copyWith(
-      adult: null == adult
-          ? _value.adult
-          : adult // ignore: cast_nullable_to_non_nullable
-              as bool,
-      backdropPath: freezed == backdropPath
-          ? _value.backdropPath
-          : backdropPath // ignore: cast_nullable_to_non_nullable
-              as String?,
-      genreIds: null == genreIds
-          ? _value.genreIds
-          : genreIds // ignore: cast_nullable_to_non_nullable
-              as List<int>,
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -121,6 +109,22 @@ class _$MovieModelCopyWithImpl<$Res, $Val extends MovieModel>
           ? _value.overview
           : overview // ignore: cast_nullable_to_non_nullable
               as String,
+      title: null == title
+          ? _value.title
+          : title // ignore: cast_nullable_to_non_nullable
+              as String,
+      adult: null == adult
+          ? _value.adult
+          : adult // ignore: cast_nullable_to_non_nullable
+              as bool,
+      video: null == video
+          ? _value.video
+          : video // ignore: cast_nullable_to_non_nullable
+              as bool,
+      genreIds: null == genreIds
+          ? _value.genreIds
+          : genreIds // ignore: cast_nullable_to_non_nullable
+              as List<int>,
       popularity: freezed == popularity
           ? _value.popularity
           : popularity // ignore: cast_nullable_to_non_nullable
@@ -129,18 +133,14 @@ class _$MovieModelCopyWithImpl<$Res, $Val extends MovieModel>
           ? _value.posterPath
           : posterPath // ignore: cast_nullable_to_non_nullable
               as String?,
+      backdropPath: freezed == backdropPath
+          ? _value.backdropPath
+          : backdropPath // ignore: cast_nullable_to_non_nullable
+              as String?,
       releaseDate: freezed == releaseDate
           ? _value.releaseDate
           : releaseDate // ignore: cast_nullable_to_non_nullable
               as String?,
-      title: null == title
-          ? _value.title
-          : title // ignore: cast_nullable_to_non_nullable
-              as String,
-      video: null == video
-          ? _value.video
-          : video // ignore: cast_nullable_to_non_nullable
-              as bool,
       voteAverage: freezed == voteAverage
           ? _value.voteAverage
           : voteAverage // ignore: cast_nullable_to_non_nullable
@@ -162,18 +162,18 @@ abstract class _$$MovieModelImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {bool adult,
-      String? backdropPath,
-      List<int> genreIds,
-      int id,
+      {int id,
       String originalLanguage,
       String originalTitle,
       String overview,
+      String title,
+      bool adult,
+      bool video,
+      List<int> genreIds,
       double? popularity,
       String? posterPath,
+      String? backdropPath,
       String? releaseDate,
-      String title,
-      bool video,
       double? voteAverage,
       int? voteCount});
 }
@@ -189,34 +189,22 @@ class __$$MovieModelImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? adult = null,
-    Object? backdropPath = freezed,
-    Object? genreIds = null,
     Object? id = null,
     Object? originalLanguage = null,
     Object? originalTitle = null,
     Object? overview = null,
+    Object? title = null,
+    Object? adult = null,
+    Object? video = null,
+    Object? genreIds = null,
     Object? popularity = freezed,
     Object? posterPath = freezed,
+    Object? backdropPath = freezed,
     Object? releaseDate = freezed,
-    Object? title = null,
-    Object? video = null,
     Object? voteAverage = freezed,
     Object? voteCount = freezed,
   }) {
     return _then(_$MovieModelImpl(
-      adult: null == adult
-          ? _value.adult
-          : adult // ignore: cast_nullable_to_non_nullable
-              as bool,
-      backdropPath: freezed == backdropPath
-          ? _value.backdropPath
-          : backdropPath // ignore: cast_nullable_to_non_nullable
-              as String?,
-      genreIds: null == genreIds
-          ? _value._genreIds
-          : genreIds // ignore: cast_nullable_to_non_nullable
-              as List<int>,
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -233,6 +221,22 @@ class __$$MovieModelImplCopyWithImpl<$Res>
           ? _value.overview
           : overview // ignore: cast_nullable_to_non_nullable
               as String,
+      title: null == title
+          ? _value.title
+          : title // ignore: cast_nullable_to_non_nullable
+              as String,
+      adult: null == adult
+          ? _value.adult
+          : adult // ignore: cast_nullable_to_non_nullable
+              as bool,
+      video: null == video
+          ? _value.video
+          : video // ignore: cast_nullable_to_non_nullable
+              as bool,
+      genreIds: null == genreIds
+          ? _value._genreIds
+          : genreIds // ignore: cast_nullable_to_non_nullable
+              as List<int>,
       popularity: freezed == popularity
           ? _value.popularity
           : popularity // ignore: cast_nullable_to_non_nullable
@@ -241,18 +245,14 @@ class __$$MovieModelImplCopyWithImpl<$Res>
           ? _value.posterPath
           : posterPath // ignore: cast_nullable_to_non_nullable
               as String?,
+      backdropPath: freezed == backdropPath
+          ? _value.backdropPath
+          : backdropPath // ignore: cast_nullable_to_non_nullable
+              as String?,
       releaseDate: freezed == releaseDate
           ? _value.releaseDate
           : releaseDate // ignore: cast_nullable_to_non_nullable
               as String?,
-      title: null == title
-          ? _value.title
-          : title // ignore: cast_nullable_to_non_nullable
-              as String,
-      video: null == video
-          ? _value.video
-          : video // ignore: cast_nullable_to_non_nullable
-              as bool,
       voteAverage: freezed == voteAverage
           ? _value.voteAverage
           : voteAverage // ignore: cast_nullable_to_non_nullable
@@ -269,38 +269,24 @@ class __$$MovieModelImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$MovieModelImpl implements _MovieModel {
   const _$MovieModelImpl(
-      {this.adult = false,
-      this.backdropPath,
-      final List<int> genreIds = const [],
-      required this.id,
+      {required this.id,
       required this.originalLanguage,
       required this.originalTitle,
       required this.overview,
+      required this.title,
+      this.adult = false,
+      this.video = false,
+      final List<int> genreIds = const [],
       this.popularity,
       this.posterPath,
+      this.backdropPath,
       this.releaseDate,
-      required this.title,
-      this.video = false,
       this.voteAverage,
       this.voteCount})
       : _genreIds = genreIds;
 
   factory _$MovieModelImpl.fromJson(Map<String, dynamic> json) =>
       _$$MovieModelImplFromJson(json);
-
-  @override
-  @JsonKey()
-  final bool adult;
-  @override
-  final String? backdropPath;
-  final List<int> _genreIds;
-  @override
-  @JsonKey()
-  List<int> get genreIds {
-    if (_genreIds is EqualUnmodifiableListView) return _genreIds;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_genreIds);
-  }
 
   @override
   final int id;
@@ -311,16 +297,30 @@ class _$MovieModelImpl implements _MovieModel {
   @override
   final String overview;
   @override
+  final String title;
+  @override
+  @JsonKey()
+  final bool adult;
+  @override
+  @JsonKey()
+  final bool video;
+  final List<int> _genreIds;
+  @override
+  @JsonKey()
+  List<int> get genreIds {
+    if (_genreIds is EqualUnmodifiableListView) return _genreIds;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_genreIds);
+  }
+
+  @override
   final double? popularity;
   @override
   final String? posterPath;
   @override
+  final String? backdropPath;
+  @override
   final String? releaseDate;
-  @override
-  final String title;
-  @override
-  @JsonKey()
-  final bool video;
   @override
   final double? voteAverage;
   @override
@@ -328,7 +328,7 @@ class _$MovieModelImpl implements _MovieModel {
 
   @override
   String toString() {
-    return 'MovieModel(adult: $adult, backdropPath: $backdropPath, genreIds: $genreIds, id: $id, originalLanguage: $originalLanguage, originalTitle: $originalTitle, overview: $overview, popularity: $popularity, posterPath: $posterPath, releaseDate: $releaseDate, title: $title, video: $video, voteAverage: $voteAverage, voteCount: $voteCount)';
+    return 'MovieModel(id: $id, originalLanguage: $originalLanguage, originalTitle: $originalTitle, overview: $overview, title: $title, adult: $adult, video: $video, genreIds: $genreIds, popularity: $popularity, posterPath: $posterPath, backdropPath: $backdropPath, releaseDate: $releaseDate, voteAverage: $voteAverage, voteCount: $voteCount)';
   }
 
   @override
@@ -336,10 +336,6 @@ class _$MovieModelImpl implements _MovieModel {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$MovieModelImpl &&
-            (identical(other.adult, adult) || other.adult == adult) &&
-            (identical(other.backdropPath, backdropPath) ||
-                other.backdropPath == backdropPath) &&
-            const DeepCollectionEquality().equals(other._genreIds, _genreIds) &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.originalLanguage, originalLanguage) ||
                 other.originalLanguage == originalLanguage) &&
@@ -347,14 +343,18 @@ class _$MovieModelImpl implements _MovieModel {
                 other.originalTitle == originalTitle) &&
             (identical(other.overview, overview) ||
                 other.overview == overview) &&
+            (identical(other.title, title) || other.title == title) &&
+            (identical(other.adult, adult) || other.adult == adult) &&
+            (identical(other.video, video) || other.video == video) &&
+            const DeepCollectionEquality().equals(other._genreIds, _genreIds) &&
             (identical(other.popularity, popularity) ||
                 other.popularity == popularity) &&
             (identical(other.posterPath, posterPath) ||
                 other.posterPath == posterPath) &&
+            (identical(other.backdropPath, backdropPath) ||
+                other.backdropPath == backdropPath) &&
             (identical(other.releaseDate, releaseDate) ||
                 other.releaseDate == releaseDate) &&
-            (identical(other.title, title) || other.title == title) &&
-            (identical(other.video, video) || other.video == video) &&
             (identical(other.voteAverage, voteAverage) ||
                 other.voteAverage == voteAverage) &&
             (identical(other.voteCount, voteCount) ||
@@ -365,18 +365,18 @@ class _$MovieModelImpl implements _MovieModel {
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      adult,
-      backdropPath,
-      const DeepCollectionEquality().hash(_genreIds),
       id,
       originalLanguage,
       originalTitle,
       overview,
+      title,
+      adult,
+      video,
+      const DeepCollectionEquality().hash(_genreIds),
       popularity,
       posterPath,
+      backdropPath,
       releaseDate,
-      title,
-      video,
       voteAverage,
       voteCount);
 
@@ -396,30 +396,24 @@ class _$MovieModelImpl implements _MovieModel {
 
 abstract class _MovieModel implements MovieModel {
   const factory _MovieModel(
-      {final bool adult,
-      final String? backdropPath,
-      final List<int> genreIds,
-      required final int id,
+      {required final int id,
       required final String originalLanguage,
       required final String originalTitle,
       required final String overview,
+      required final String title,
+      final bool adult,
+      final bool video,
+      final List<int> genreIds,
       final double? popularity,
       final String? posterPath,
+      final String? backdropPath,
       final String? releaseDate,
-      required final String title,
-      final bool video,
       final double? voteAverage,
       final int? voteCount}) = _$MovieModelImpl;
 
   factory _MovieModel.fromJson(Map<String, dynamic> json) =
       _$MovieModelImpl.fromJson;
 
-  @override
-  bool get adult;
-  @override
-  String? get backdropPath;
-  @override
-  List<int> get genreIds;
   @override
   int get id;
   @override
@@ -429,15 +423,21 @@ abstract class _MovieModel implements MovieModel {
   @override
   String get overview;
   @override
+  String get title;
+  @override
+  bool get adult;
+  @override
+  bool get video;
+  @override
+  List<int> get genreIds;
+  @override
   double? get popularity;
   @override
   String? get posterPath;
   @override
+  String? get backdropPath;
+  @override
   String? get releaseDate;
-  @override
-  String get title;
-  @override
-  bool get video;
   @override
   double? get voteAverage;
   @override

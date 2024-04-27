@@ -5,33 +5,31 @@ class HomePage extends StatelessWidget implements AutoRouteWrapper {
   const HomePage({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('WeWork Movies'),
-      ),
-      body: CustomScrollView(
-        slivers: [
-          SliverToBoxAdapter(
-            child: SizedBox(
-              height: 310,
-              child: CustomScrollView(
-                scrollDirection: Axis.horizontal,
-                slivers: [
-                  NowPlayingMovieListBuilder(
-                    builder: (context, movie) => NowPlayingMovieCard(movie: movie),
-                  ),
-                ],
+  Widget build(BuildContext context) => Scaffold(
+        appBar: AppBar(
+          title: const Text('WeWork Movies'),
+        ),
+        body: CustomScrollView(
+          slivers: [
+            SliverToBoxAdapter(
+              child: SizedBox(
+                height: 310,
+                child: CustomScrollView(
+                  scrollDirection: Axis.horizontal,
+                  slivers: [
+                    NowPlayingMovieListBuilder(
+                      builder: (context, movie) => NowPlayingMovieCard(movie: movie),
+                    ),
+                  ],
+                ),
               ),
             ),
-          ),
-          TopRatedMovieListBuilder(
-            builder: (context, movie) => TopRatedMovieCard(movie: movie),
-          ),
-        ],
-      ),
-    );
-  }
+            TopRatedMovieListBuilder(
+              builder: (context, movie) => TopRatedMovieCard(movie: movie),
+            ),
+          ],
+        ),
+      );
 
   @override
   Widget wrappedRoute(BuildContext context) => RemoteMovieRepositoryProvider(
@@ -52,7 +50,7 @@ class HomePage extends StatelessWidget implements AutoRouteWrapper {
                 ),
               ),
             ],
-            child: BlocListener<ImageConfigurationCubit, ImageConfigurationState>(
+            child: BlocConsumer<ImageConfigurationCubit, ImageConfigurationState>(
               listener: (context, state) {
                 if (state is ImageConfigurationDataState) {
                   final movieBlocs = <MovieListBloc>[
@@ -65,7 +63,14 @@ class HomePage extends StatelessWidget implements AutoRouteWrapper {
                 }
               },
               listenWhen: (o, n) => o != n && n is ImageConfigurationDataState,
-              child: this,
+              builder: (context, state) {
+                return switch (state) {
+                  ImageConfigurationDataState() => this,
+                  ImageConfigurationLoadingState() => const Center(child: CircularProgressIndicator()),
+                  ImageConfigurationErrorState error => Center(child: Text(error.message)),
+                  _ => const Center(child: Text('Could not load image configuration')),
+                };
+              },
             ),
           ),
         ),

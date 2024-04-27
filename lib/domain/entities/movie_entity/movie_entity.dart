@@ -12,6 +12,8 @@ class MovieEntity with _$MovieEntity {
     @Default('Unknown') String language,
     @Default(0) int voteCount,
     @Default(0.0) double averageVotes,
+    String? posterPath,
+    String? backdropPath,
   }) = _MovieEntity;
 
   factory MovieEntity.fromJson(Map<String, dynamic> json) => _$MovieEntityFromJson(json);

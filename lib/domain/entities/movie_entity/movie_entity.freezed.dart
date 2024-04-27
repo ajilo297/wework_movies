@@ -26,6 +26,8 @@ mixin _$MovieEntity {
   String get language => throw _privateConstructorUsedError;
   int get voteCount => throw _privateConstructorUsedError;
   double get averageVotes => throw _privateConstructorUsedError;
+  String? get posterPath => throw _privateConstructorUsedError;
+  String? get backdropPath => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -45,7 +47,9 @@ abstract class $MovieEntityCopyWith<$Res> {
       String description,
       String language,
       int voteCount,
-      double averageVotes});
+      double averageVotes,
+      String? posterPath,
+      String? backdropPath});
 }
 
 /// @nodoc
@@ -67,6 +71,8 @@ class _$MovieEntityCopyWithImpl<$Res, $Val extends MovieEntity>
     Object? language = null,
     Object? voteCount = null,
     Object? averageVotes = null,
+    Object? posterPath = freezed,
+    Object? backdropPath = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -93,6 +99,14 @@ class _$MovieEntityCopyWithImpl<$Res, $Val extends MovieEntity>
           ? _value.averageVotes
           : averageVotes // ignore: cast_nullable_to_non_nullable
               as double,
+      posterPath: freezed == posterPath
+          ? _value.posterPath
+          : posterPath // ignore: cast_nullable_to_non_nullable
+              as String?,
+      backdropPath: freezed == backdropPath
+          ? _value.backdropPath
+          : backdropPath // ignore: cast_nullable_to_non_nullable
+              as String?,
     ) as $Val);
   }
 }
@@ -111,7 +125,9 @@ abstract class _$$MovieEntityImplCopyWith<$Res>
       String description,
       String language,
       int voteCount,
-      double averageVotes});
+      double averageVotes,
+      String? posterPath,
+      String? backdropPath});
 }
 
 /// @nodoc
@@ -131,6 +147,8 @@ class __$$MovieEntityImplCopyWithImpl<$Res>
     Object? language = null,
     Object? voteCount = null,
     Object? averageVotes = null,
+    Object? posterPath = freezed,
+    Object? backdropPath = freezed,
   }) {
     return _then(_$MovieEntityImpl(
       id: null == id
@@ -157,6 +175,14 @@ class __$$MovieEntityImplCopyWithImpl<$Res>
           ? _value.averageVotes
           : averageVotes // ignore: cast_nullable_to_non_nullable
               as double,
+      posterPath: freezed == posterPath
+          ? _value.posterPath
+          : posterPath // ignore: cast_nullable_to_non_nullable
+              as String?,
+      backdropPath: freezed == backdropPath
+          ? _value.backdropPath
+          : backdropPath // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -170,7 +196,9 @@ class _$MovieEntityImpl implements _MovieEntity {
       this.description = '',
       this.language = 'Unknown',
       this.voteCount = 0,
-      this.averageVotes = 0.0});
+      this.averageVotes = 0.0,
+      this.posterPath,
+      this.backdropPath});
 
   factory _$MovieEntityImpl.fromJson(Map<String, dynamic> json) =>
       _$$MovieEntityImplFromJson(json);
@@ -191,10 +219,14 @@ class _$MovieEntityImpl implements _MovieEntity {
   @override
   @JsonKey()
   final double averageVotes;
+  @override
+  final String? posterPath;
+  @override
+  final String? backdropPath;
 
   @override
   String toString() {
-    return 'MovieEntity(id: $id, name: $name, description: $description, language: $language, voteCount: $voteCount, averageVotes: $averageVotes)';
+    return 'MovieEntity(id: $id, name: $name, description: $description, language: $language, voteCount: $voteCount, averageVotes: $averageVotes, posterPath: $posterPath, backdropPath: $backdropPath)';
   }
 
   @override
@@ -211,13 +243,17 @@ class _$MovieEntityImpl implements _MovieEntity {
             (identical(other.voteCount, voteCount) ||
                 other.voteCount == voteCount) &&
             (identical(other.averageVotes, averageVotes) ||
-                other.averageVotes == averageVotes));
+                other.averageVotes == averageVotes) &&
+            (identical(other.posterPath, posterPath) ||
+                other.posterPath == posterPath) &&
+            (identical(other.backdropPath, backdropPath) ||
+                other.backdropPath == backdropPath));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType, id, name, description, language, voteCount, averageVotes);
+  int get hashCode => Object.hash(runtimeType, id, name, description, language,
+      voteCount, averageVotes, posterPath, backdropPath);
 
   @JsonKey(ignore: true)
   @override
@@ -240,7 +276,9 @@ abstract class _MovieEntity implements MovieEntity {
       final String description,
       final String language,
       final int voteCount,
-      final double averageVotes}) = _$MovieEntityImpl;
+      final double averageVotes,
+      final String? posterPath,
+      final String? backdropPath}) = _$MovieEntityImpl;
 
   factory _MovieEntity.fromJson(Map<String, dynamic> json) =
       _$MovieEntityImpl.fromJson;
@@ -257,6 +295,10 @@ abstract class _MovieEntity implements MovieEntity {
   int get voteCount;
   @override
   double get averageVotes;
+  @override
+  String? get posterPath;
+  @override
+  String? get backdropPath;
   @override
   @JsonKey(ignore: true)
   _$$MovieEntityImplCopyWith<_$MovieEntityImpl> get copyWith =>

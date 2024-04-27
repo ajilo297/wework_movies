@@ -15,10 +15,12 @@ class TopRatedMovieCard extends MovieCard {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const AspectRatio(
+              AspectRatio(
                 aspectRatio: 21 / 9,
-                child: Placeholder(
-                  child: Center(child: Text('Image')),
+                child: MovieImage(
+                  // TODO(ajil): Handle null values
+                  resourceUrl: movie.backdropPath ?? '',
+                  imageType: ImageType.backdrop,
                 ),
               ),
               vSpacer2,

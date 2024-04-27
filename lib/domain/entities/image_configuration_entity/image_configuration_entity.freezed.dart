@@ -22,6 +22,8 @@ ImageConfigurationEntity _$ImageConfigurationEntityFromJson(
 /// @nodoc
 mixin _$ImageConfigurationEntity {
   String get baseUrl => throw _privateConstructorUsedError;
+  String get mobilePosterSize => throw _privateConstructorUsedError;
+  String get mobileBackdropSize => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -35,7 +37,8 @@ abstract class $ImageConfigurationEntityCopyWith<$Res> {
           $Res Function(ImageConfigurationEntity) then) =
       _$ImageConfigurationEntityCopyWithImpl<$Res, ImageConfigurationEntity>;
   @useResult
-  $Res call({String baseUrl});
+  $Res call(
+      {String baseUrl, String mobilePosterSize, String mobileBackdropSize});
 }
 
 /// @nodoc
@@ -53,11 +56,21 @@ class _$ImageConfigurationEntityCopyWithImpl<$Res,
   @override
   $Res call({
     Object? baseUrl = null,
+    Object? mobilePosterSize = null,
+    Object? mobileBackdropSize = null,
   }) {
     return _then(_value.copyWith(
       baseUrl: null == baseUrl
           ? _value.baseUrl
           : baseUrl // ignore: cast_nullable_to_non_nullable
+              as String,
+      mobilePosterSize: null == mobilePosterSize
+          ? _value.mobilePosterSize
+          : mobilePosterSize // ignore: cast_nullable_to_non_nullable
+              as String,
+      mobileBackdropSize: null == mobileBackdropSize
+          ? _value.mobileBackdropSize
+          : mobileBackdropSize // ignore: cast_nullable_to_non_nullable
               as String,
     ) as $Val);
   }
@@ -72,7 +85,8 @@ abstract class _$$ImageConfigurationEntityImplCopyWith<$Res>
       __$$ImageConfigurationEntityImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String baseUrl});
+  $Res call(
+      {String baseUrl, String mobilePosterSize, String mobileBackdropSize});
 }
 
 /// @nodoc
@@ -89,11 +103,21 @@ class __$$ImageConfigurationEntityImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? baseUrl = null,
+    Object? mobilePosterSize = null,
+    Object? mobileBackdropSize = null,
   }) {
     return _then(_$ImageConfigurationEntityImpl(
       baseUrl: null == baseUrl
           ? _value.baseUrl
           : baseUrl // ignore: cast_nullable_to_non_nullable
+              as String,
+      mobilePosterSize: null == mobilePosterSize
+          ? _value.mobilePosterSize
+          : mobilePosterSize // ignore: cast_nullable_to_non_nullable
+              as String,
+      mobileBackdropSize: null == mobileBackdropSize
+          ? _value.mobileBackdropSize
+          : mobileBackdropSize // ignore: cast_nullable_to_non_nullable
               as String,
     ));
   }
@@ -102,17 +126,24 @@ class __$$ImageConfigurationEntityImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$ImageConfigurationEntityImpl implements _ImageConfigurationEntity {
-  const _$ImageConfigurationEntityImpl({required this.baseUrl});
+  const _$ImageConfigurationEntityImpl(
+      {required this.baseUrl,
+      required this.mobilePosterSize,
+      required this.mobileBackdropSize});
 
   factory _$ImageConfigurationEntityImpl.fromJson(Map<String, dynamic> json) =>
       _$$ImageConfigurationEntityImplFromJson(json);
 
   @override
   final String baseUrl;
+  @override
+  final String mobilePosterSize;
+  @override
+  final String mobileBackdropSize;
 
   @override
   String toString() {
-    return 'ImageConfigurationEntity(baseUrl: $baseUrl)';
+    return 'ImageConfigurationEntity(baseUrl: $baseUrl, mobilePosterSize: $mobilePosterSize, mobileBackdropSize: $mobileBackdropSize)';
   }
 
   @override
@@ -120,12 +151,17 @@ class _$ImageConfigurationEntityImpl implements _ImageConfigurationEntity {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ImageConfigurationEntityImpl &&
-            (identical(other.baseUrl, baseUrl) || other.baseUrl == baseUrl));
+            (identical(other.baseUrl, baseUrl) || other.baseUrl == baseUrl) &&
+            (identical(other.mobilePosterSize, mobilePosterSize) ||
+                other.mobilePosterSize == mobilePosterSize) &&
+            (identical(other.mobileBackdropSize, mobileBackdropSize) ||
+                other.mobileBackdropSize == mobileBackdropSize));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, baseUrl);
+  int get hashCode =>
+      Object.hash(runtimeType, baseUrl, mobilePosterSize, mobileBackdropSize);
 
   @JsonKey(ignore: true)
   @override
@@ -143,7 +179,10 @@ class _$ImageConfigurationEntityImpl implements _ImageConfigurationEntity {
 }
 
 abstract class _ImageConfigurationEntity implements ImageConfigurationEntity {
-  const factory _ImageConfigurationEntity({required final String baseUrl}) =
+  const factory _ImageConfigurationEntity(
+          {required final String baseUrl,
+          required final String mobilePosterSize,
+          required final String mobileBackdropSize}) =
       _$ImageConfigurationEntityImpl;
 
   factory _ImageConfigurationEntity.fromJson(Map<String, dynamic> json) =
@@ -151,6 +190,10 @@ abstract class _ImageConfigurationEntity implements ImageConfigurationEntity {
 
   @override
   String get baseUrl;
+  @override
+  String get mobilePosterSize;
+  @override
+  String get mobileBackdropSize;
   @override
   @JsonKey(ignore: true)
   _$$ImageConfigurationEntityImplCopyWith<_$ImageConfigurationEntityImpl>

@@ -6,18 +6,18 @@ part 'movie_model.g.dart';
 @freezed
 class MovieModel with _$MovieModel {
   const factory MovieModel({
-    @Default(false) bool adult,
-    String? backdropPath,
-    @Default([]) List<int> genreIds,
     required int id,
     required String originalLanguage,
     required String originalTitle,
     required String overview,
+    required String title,
+    @Default(false) bool adult,
+    @Default(false) bool video,
+    @Default([]) List<int> genreIds,
     double? popularity,
     String? posterPath,
+    String? backdropPath,
     String? releaseDate,
-    required String title,
-    @Default(false) bool video,
     double? voteAverage,
     int? voteCount,
   }) = _MovieModel;

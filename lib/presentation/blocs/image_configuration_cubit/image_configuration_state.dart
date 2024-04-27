@@ -1,7 +1,7 @@
 part of 'image_configuration_cubit.dart';
 
 @freezed
-class ImageConfigurationState with _$ImageConfigurationState {
+sealed class ImageConfigurationState with _$ImageConfigurationState {
   const factory ImageConfigurationState.empty() = ImageConfigurationEmptyState;
 
   const factory ImageConfigurationState.loading() = ImageConfigurationLoadingState;

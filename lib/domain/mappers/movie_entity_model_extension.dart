@@ -8,5 +8,7 @@ extension MovieModelToEntityExtension on MovieModel {
         language: originalLanguage,
         description: overview,
         voteCount: voteCount ?? 0,
+        backdropPath: backdropPath,
+        posterPath: posterPath,
       );
 }

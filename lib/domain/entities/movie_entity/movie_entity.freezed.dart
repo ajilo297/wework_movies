@@ -20,9 +20,9 @@ MovieEntity _$MovieEntityFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$MovieEntity {
-  int get movieId => throw _privateConstructorUsedError;
-  String get movieName => throw _privateConstructorUsedError;
-  String get movieDescription => throw _privateConstructorUsedError;
+  int get id => throw _privateConstructorUsedError;
+  String get name => throw _privateConstructorUsedError;
+  String get description => throw _privateConstructorUsedError;
   String get language => throw _privateConstructorUsedError;
   int get voteCount => throw _privateConstructorUsedError;
   double get averageVotes => throw _privateConstructorUsedError;
@@ -40,9 +40,9 @@ abstract class $MovieEntityCopyWith<$Res> {
       _$MovieEntityCopyWithImpl<$Res, MovieEntity>;
   @useResult
   $Res call(
-      {int movieId,
-      String movieName,
-      String movieDescription,
+      {int id,
+      String name,
+      String description,
       String language,
       int voteCount,
       double averageVotes});
@@ -61,25 +61,25 @@ class _$MovieEntityCopyWithImpl<$Res, $Val extends MovieEntity>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? movieId = null,
-    Object? movieName = null,
-    Object? movieDescription = null,
+    Object? id = null,
+    Object? name = null,
+    Object? description = null,
     Object? language = null,
     Object? voteCount = null,
     Object? averageVotes = null,
   }) {
     return _then(_value.copyWith(
-      movieId: null == movieId
-          ? _value.movieId
-          : movieId // ignore: cast_nullable_to_non_nullable
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
               as int,
-      movieName: null == movieName
-          ? _value.movieName
-          : movieName // ignore: cast_nullable_to_non_nullable
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
               as String,
-      movieDescription: null == movieDescription
-          ? _value.movieDescription
-          : movieDescription // ignore: cast_nullable_to_non_nullable
+      description: null == description
+          ? _value.description
+          : description // ignore: cast_nullable_to_non_nullable
               as String,
       language: null == language
           ? _value.language
@@ -106,9 +106,9 @@ abstract class _$$MovieEntityImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {int movieId,
-      String movieName,
-      String movieDescription,
+      {int id,
+      String name,
+      String description,
       String language,
       int voteCount,
       double averageVotes});
@@ -125,25 +125,25 @@ class __$$MovieEntityImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? movieId = null,
-    Object? movieName = null,
-    Object? movieDescription = null,
+    Object? id = null,
+    Object? name = null,
+    Object? description = null,
     Object? language = null,
     Object? voteCount = null,
     Object? averageVotes = null,
   }) {
     return _then(_$MovieEntityImpl(
-      movieId: null == movieId
-          ? _value.movieId
-          : movieId // ignore: cast_nullable_to_non_nullable
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
               as int,
-      movieName: null == movieName
-          ? _value.movieName
-          : movieName // ignore: cast_nullable_to_non_nullable
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
               as String,
-      movieDescription: null == movieDescription
-          ? _value.movieDescription
-          : movieDescription // ignore: cast_nullable_to_non_nullable
+      description: null == description
+          ? _value.description
+          : description // ignore: cast_nullable_to_non_nullable
               as String,
       language: null == language
           ? _value.language
@@ -165,9 +165,9 @@ class __$$MovieEntityImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$MovieEntityImpl implements _MovieEntity {
   const _$MovieEntityImpl(
-      {required this.movieId,
-      required this.movieName,
-      this.movieDescription = '',
+      {required this.id,
+      required this.name,
+      this.description = '',
       this.language = 'Unknown',
       this.voteCount = 0,
       this.averageVotes = 0.0});
@@ -176,12 +176,12 @@ class _$MovieEntityImpl implements _MovieEntity {
       _$$MovieEntityImplFromJson(json);
 
   @override
-  final int movieId;
+  final int id;
   @override
-  final String movieName;
+  final String name;
   @override
   @JsonKey()
-  final String movieDescription;
+  final String description;
   @override
   @JsonKey()
   final String language;
@@ -194,7 +194,7 @@ class _$MovieEntityImpl implements _MovieEntity {
 
   @override
   String toString() {
-    return 'MovieEntity(movieId: $movieId, movieName: $movieName, movieDescription: $movieDescription, language: $language, voteCount: $voteCount, averageVotes: $averageVotes)';
+    return 'MovieEntity(id: $id, name: $name, description: $description, language: $language, voteCount: $voteCount, averageVotes: $averageVotes)';
   }
 
   @override
@@ -202,11 +202,10 @@ class _$MovieEntityImpl implements _MovieEntity {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$MovieEntityImpl &&
-            (identical(other.movieId, movieId) || other.movieId == movieId) &&
-            (identical(other.movieName, movieName) ||
-                other.movieName == movieName) &&
-            (identical(other.movieDescription, movieDescription) ||
-                other.movieDescription == movieDescription) &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.description, description) ||
+                other.description == description) &&
             (identical(other.language, language) ||
                 other.language == language) &&
             (identical(other.voteCount, voteCount) ||
@@ -217,8 +216,8 @@ class _$MovieEntityImpl implements _MovieEntity {
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, movieId, movieName,
-      movieDescription, language, voteCount, averageVotes);
+  int get hashCode => Object.hash(
+      runtimeType, id, name, description, language, voteCount, averageVotes);
 
   @JsonKey(ignore: true)
   @override
@@ -236,9 +235,9 @@ class _$MovieEntityImpl implements _MovieEntity {
 
 abstract class _MovieEntity implements MovieEntity {
   const factory _MovieEntity(
-      {required final int movieId,
-      required final String movieName,
-      final String movieDescription,
+      {required final int id,
+      required final String name,
+      final String description,
       final String language,
       final int voteCount,
       final double averageVotes}) = _$MovieEntityImpl;
@@ -247,11 +246,11 @@ abstract class _MovieEntity implements MovieEntity {
       _$MovieEntityImpl.fromJson;
 
   @override
-  int get movieId;
+  int get id;
   @override
-  String get movieName;
+  String get name;
   @override
-  String get movieDescription;
+  String get description;
   @override
   String get language;
   @override

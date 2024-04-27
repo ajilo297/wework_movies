@@ -23,7 +23,7 @@ class TopRatedMovieCard extends MovieCard {
               ),
               vSpacer2,
               Text(
-                movie.movieName,
+                movie.name,
                 style: theme.textTheme.titleMedium?.copyWith(
                   fontWeight: FontWeight.bold,
                 ),
@@ -34,7 +34,7 @@ class TopRatedMovieCard extends MovieCard {
                   hSpacer,
                   Expanded(
                       child: Text(
-                    movie.movieDescription,
+                    movie.description,
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,
                   )),

@@ -28,7 +28,7 @@ sealed class MovieListState with _$MovieListState {
 
   List<MovieEntity> get movies => switch (this) {
         MovieListDataState data => data.data.where((movie) {
-            return movie.movieName.toLowerCase().contains(searchQuery.toLowerCase());
+            return movie.name.toLowerCase().contains(searchQuery.toLowerCase());
           }).toList(),
         _ => [],
       };

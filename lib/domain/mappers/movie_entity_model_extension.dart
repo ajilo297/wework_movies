@@ -2,11 +2,11 @@ import 'package:wework_movies/app_barrel.dart';
 
 extension MovieModelToEntityExtension on MovieModel {
   MovieEntity toEntity() => MovieEntity(
-        movieId: id,
-        movieName: title,
+        id: id,
+        name: title,
         averageVotes: voteAverage ?? 0.0,
         language: originalLanguage,
-        movieDescription: overview,
+        description: overview,
         voteCount: voteCount ?? 0,
       );
 }

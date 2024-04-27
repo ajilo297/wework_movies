@@ -6,9 +6,9 @@ part 'movie_entity.g.dart';
 @freezed
 class MovieEntity with _$MovieEntity {
   const factory MovieEntity({
-    required int movieId,
-    required String movieName,
-    @Default('') String movieDescription,
+    required int id,
+    required String name,
+    @Default('') String description,
     @Default('Unknown') String language,
     @Default(0) int voteCount,
     @Default(0.0) double averageVotes,

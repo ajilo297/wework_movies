@@ -13,4 +13,12 @@ abstract base class MovieUseCase {
         MovieType.nowPlaying => repository.getNowPlayingMovies(page: page),
         MovieType.topRated => repository.getTopRatedMovies(page: page),
       };
+
+  Future<List<MovieEntity>> searchMovies({
+    required String query,
+    required List<MovieEntity> movies,
+  }) async =>
+      movies.where((e) {
+        return e.movieName.toLowerCase().contains(query.toLowerCase());
+      }).toList();
 }

@@ -1,6 +1,8 @@
 import 'package:retrofit/retrofit.dart';
 import 'package:wework_movies/app_barrel.dart';
 
+export 'tmdb_api_interceptors.dart';
+
 part 'tmdb_api_client.g.dart';
 
 @RestApi(baseUrl: apiBaseUrl)

@@ -20,8 +20,8 @@ class MovieListBuilder<T extends MovieListBloc> extends StatelessWidget {
                 ),
               false => SliverList(
                   delegate: SliverChildBuilderDelegate(
-                    (context, index) => builder(context, dataState.data[index]),
-                    childCount: dataState.data.length,
+                    (context, index) => builder(context, dataState.movies[index]),
+                    childCount: dataState.movies.length,
                   ),
                 ),
             },

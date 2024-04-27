@@ -1,5 +1,4 @@
 import 'package:wework_movies/app_barrel.dart';
-import 'package:wework_movies/data/tmdb_api_client/tmdb_api_interceptors.dart';
 
 @RoutePage()
 class HomePage extends StatelessWidget implements AutoRouteWrapper {
@@ -35,19 +34,7 @@ class HomePage extends StatelessWidget implements AutoRouteWrapper {
   }
 
   @override
-  Widget wrappedRoute(BuildContext context) => RepositoryProvider(
-        create: (context) => RemoteMovieRepository(
-          apiClient: TmdbApiClient(
-            Dio()
-              ..interceptors.addAll(
-                const [
-                  TmdbAuthTokenInterceptor(),
-                  TmdbLanguageInterceptor(),
-                  TmdbLoggerInterceptor(),
-                ],
-              ),
-          ),
-        ),
+  Widget wrappedRoute(BuildContext context) => RemoteMovieRepositoryProvider(
         child: MultiBlocProvider(
           providers: [
             BlocProvider(

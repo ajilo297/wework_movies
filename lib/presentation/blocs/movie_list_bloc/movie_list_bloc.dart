@@ -12,6 +12,7 @@ typedef _MovieListEmitter = Emitter<MovieListState>;
 abstract base class MovieListBloc extends Bloc<MovieListEvent, MovieListState> {
   MovieListBloc({required this.useCase}) : super(const MovieListEmptyState()) {
     on<LoadMovieListEvent>(_loadMovies);
+    on<SearchMovieListEvent>(_searchMovies);
   }
 
   final MovieUseCase useCase;
@@ -26,5 +27,9 @@ abstract base class MovieListBloc extends Bloc<MovieListEvent, MovieListState> {
         message: 'Something went wrong. Please try again later.',
       ));
     }
+  }
+
+  void _searchMovies(SearchMovieListEvent event, _MovieListEmitter emit) async {
+    emit(state.copyWith(searchQuery: event.query));
   }
 }

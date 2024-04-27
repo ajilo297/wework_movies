@@ -1,14 +1,18 @@
 import 'package:wework_movies/app_barrel.dart';
 
-class MovieImage extends StatelessWidget {
+export 'top_rated_movie_image.dart';
+
+abstract class MovieImage extends StatelessWidget {
   const MovieImage({
     super.key,
     required this.resourceUrl,
     required this.imageType,
+    this.borderRadius,
   });
 
-  final String resourceUrl;
+  final String? resourceUrl;
   final ImageType imageType;
+  final BorderRadius? borderRadius;
 
   @override
   Widget build(BuildContext context) => BlocBuilder<ImageConfigurationCubit, ImageConfigurationState>(
@@ -25,9 +29,18 @@ class MovieImage extends StatelessWidget {
           };
           final imageUrl = '${imageConfiguration.baseUrl}$size$resourceUrl';
           log(imageUrl, name: 'MovieImage');
-          return CachedNetworkImage(
+
+          // TODO(ajilo297): Add a placeholder, error, and loading widget
+          final child = CachedNetworkImage(
             imageUrl: imageUrl,
             fit: BoxFit.cover,
+          );
+
+          if (borderRadius == null) return child;
+
+          return ClipRRect(
+            borderRadius: borderRadius!,
+            child: child,
           );
         },
       );

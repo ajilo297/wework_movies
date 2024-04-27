@@ -17,8 +17,7 @@ class TopRatedMovieCard extends MovieCard {
             children: [
               AspectRatio(
                 aspectRatio: 21 / 9,
-                child: MovieImage(
-                  // TODO(ajil): Handle null values
+                child: TopRatedMovieImage(
                   resourceUrl: movie.backdropPath ?? '',
                   imageType: ImageType.backdrop,
                 ),

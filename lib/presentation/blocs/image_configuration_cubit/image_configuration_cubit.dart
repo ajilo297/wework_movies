@@ -15,7 +15,7 @@ class ImageConfigurationCubit extends HydratedCubit<ImageConfigurationState> {
       final configuration = await useCase.loadConfiguration();
       emit(ImageConfigurationDataState(configuration));
     } on Exception catch (e) {
-      // TODO(ajil): Handle error
+      // TODO(ajilo297): Handle error
       emit(ImageConfigurationErrorState(e.toString()));
     }
   }

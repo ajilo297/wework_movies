@@ -24,7 +24,7 @@ abstract base class MovieListBloc extends HydratedBloc<MovieListEvent, MovieList
       final movies = await useCase.getMovies(page: event.page);
       emit(MovieListDataState(movies));
     } catch (e) {
-      // TODO(ajil): Handle error
+      // TODO(ajilo297): Handle error
       emit(const MovieListErrorState(
         message: 'Something went wrong. Please try again later.',
       ));

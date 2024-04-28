@@ -1,3 +1,4 @@
+export 'home_scaffold.dart';
 export 'labelled_divider.dart';
 export 'movie_card/movie_card.dart';
 export 'movie_image/movie_image.dart';

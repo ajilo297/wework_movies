@@ -6,7 +6,7 @@ class HomePage extends StatelessWidget implements AutoRouteWrapper {
   const HomePage({super.key});
 
   @override
-  Widget build(BuildContext context) => Scaffold(
+  Widget build(BuildContext context) => HomeScaffold(
         body: CustomScrollView(
           slivers: [
             const SliverToBoxAdapter(child: NowPlayingMovieCountCard()),

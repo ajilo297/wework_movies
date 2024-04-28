@@ -1,18 +1,14 @@
 import 'package:wework_movies/app_barrel.dart';
 
-export 'top_rated_movie_image.dart';
-
-abstract class MovieImage extends StatelessWidget {
+class MovieImage extends StatelessWidget {
   const MovieImage({
     super.key,
-    required this.resourceUrl,
-    required this.imageType,
-    this.borderRadius,
+    required this.backdropUrl,
+    this.borderRadius = cardBorderRadius,
   });
 
-  final String? resourceUrl;
-  final ImageType imageType;
-  final BorderRadius? borderRadius;
+  final String? backdropUrl;
+  final BorderRadius borderRadius;
 
   @override
   Widget build(BuildContext context) => BlocBuilder<ImageConfigurationCubit, ImageConfigurationState>(
@@ -23,30 +19,20 @@ abstract class MovieImage extends StatelessWidget {
           }
 
           final imageConfiguration = state.data;
-          final size = switch (imageType) {
-            ImageType.poster => imageConfiguration.mobilePosterSize,
-            ImageType.backdrop => imageConfiguration.mobileBackdropSize,
-          };
-          final imageUrl = '${imageConfiguration.baseUrl}$size$resourceUrl';
-          log(imageUrl, name: 'MovieImage');
+          final baseUrl = imageConfiguration.baseUrl;
+          final size = imageConfiguration.mobileBackdropSize;
 
+          final imageUrl = '$baseUrl$size$backdropUrl';
           // TODO(ajilo297): Add a placeholder, error, and loading widget
           final child = CachedNetworkImage(
             imageUrl: imageUrl,
             fit: BoxFit.cover,
           );
 
-          if (borderRadius == null) return child;
-
           return ClipRRect(
-            borderRadius: borderRadius!,
+            borderRadius: borderRadius,
             child: child,
           );
         },
       );
-}
-
-enum ImageType {
-  poster,
-  backdrop,
 }

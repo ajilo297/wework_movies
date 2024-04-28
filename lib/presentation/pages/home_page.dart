@@ -6,14 +6,12 @@ class HomePage extends StatelessWidget implements AutoRouteWrapper {
 
   @override
   Widget build(BuildContext context) => Scaffold(
-        appBar: AppBar(
-          title: const Text('WeWork Movies'),
-        ),
         body: CustomScrollView(
           slivers: [
+            const SliverToBoxAdapter(child: Placeholder(fallbackHeight: 200)),
             SliverToBoxAdapter(
               child: SizedBox(
-                height: 310,
+                height: 400,
                 child: CustomScrollView(
                   scrollDirection: Axis.horizontal,
                   slivers: [

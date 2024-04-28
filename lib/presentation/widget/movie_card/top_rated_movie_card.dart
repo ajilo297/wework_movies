@@ -12,9 +12,8 @@ class TopRatedMovieCard extends MovieCard {
       padding: edgeInsets / 2,
       decoration: ShapeDecoration(
         color: theme.colorScheme.surface,
-        shape: RoundedRectangleBorder(
-          // TODO(ajilo297): Move to constants
-          borderRadius: BorderRadius.circular(22),
+        shape: const RoundedRectangleBorder(
+          borderRadius: cardBorderRadius,
         ),
         shadows: [
           BoxShadow(
@@ -29,9 +28,8 @@ class TopRatedMovieCard extends MovieCard {
         children: [
           AspectRatio(
             aspectRatio: 21 / 9,
-            child: TopRatedMovieImage(
-              resourceUrl: movie.backdropPath ?? '',
-              imageType: ImageType.backdrop,
+            child: MovieImage(
+              backdropUrl: movie.backdropPath ?? '',
               key: ValueKey(movie.backdropPath),
             ),
           ),

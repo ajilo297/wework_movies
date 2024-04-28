@@ -1,4 +1,5 @@
 import 'package:wework_movies/app_barrel.dart';
+import 'package:wework_movies/presentation/widget/now_playing_movie_count_card.dart';
 
 @RoutePage()
 class HomePage extends StatelessWidget implements AutoRouteWrapper {
@@ -8,7 +9,8 @@ class HomePage extends StatelessWidget implements AutoRouteWrapper {
   Widget build(BuildContext context) => Scaffold(
         body: CustomScrollView(
           slivers: [
-            const SliverToBoxAdapter(child: Placeholder(fallbackHeight: 200)),
+            const SliverToBoxAdapter(child: NowPlayingMovieCountCard()),
+            const LabelledDivider(label: 'Now Playing'),
             SliverToBoxAdapter(
               child: SizedBox(
                 height: 400,
@@ -22,6 +24,7 @@ class HomePage extends StatelessWidget implements AutoRouteWrapper {
                 ),
               ),
             ),
+            const LabelledDivider(label: 'Top Rated'),
             TopRatedMovieListBuilder(
               builder: (context, movie) => TopRatedMovieCard(movie: movie),
             ),

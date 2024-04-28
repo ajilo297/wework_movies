@@ -8,6 +8,7 @@ class MovieApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => MaterialApp.router(
+        theme: AppTheme().lightTheme,
         routerDelegate: AutoRouterDelegate(router),
         routeInformationParser: router.defaultRouteParser(),
       );

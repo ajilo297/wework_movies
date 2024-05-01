@@ -1,6 +1,6 @@
 import 'package:wework_movies/app_barrel.dart';
 
-class MovieRepositoryException implements Exception {
+abstract class MovieRepositoryException implements Exception {
   const MovieRepositoryException();
 }
 

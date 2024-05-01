@@ -5,6 +5,68 @@ class HomeAppBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return SafeArea(
+      bottom: false,
+      child: Padding(
+        padding: edgeInsets2,
+        child: BlocBuilder<AddressCubit, AddressState>(
+          builder: (context, state) {
+            return Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Expanded(
+                  child: switch (state) {
+                    InitialAddressState() => const SizedBox.shrink(),
+                    FullAddressState state => _Address(state: state),
+                  },
+                ),
+                CircleAvatar(
+                  child: const Logo.small(),
+                ),
+              ],
+            );
+          },
+        ),
+      ),
+    );
+  }
+}
+
+class _Address extends StatelessWidget {
+  const _Address({required this.state});
+
+  final FullAddressState state;
+
+  @override
+  Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Row(
+          children: [
+            const Icon(
+              Icons.location_on_outlined,
+              size: 18,
+            ),
+            Text(
+              state.addressLine1,
+              style: theme.textTheme.labelMedium?.copyWith(
+                fontWeight: FontWeight.bold,
+              ),
+              maxLines: 1,
+              overflow: TextOverflow.ellipsis,
+            ),
+          ],
+        ),
+        Text(
+          state.addressLine2,
+          style: theme.textTheme.labelSmall,
+          maxLines: 1,
+          overflow: TextOverflow.ellipsis,
+        ),
+      ],
+    );
   }
 }

@@ -11,5 +11,16 @@ class MovieApp extends StatelessWidget {
         theme: AppTheme().lightTheme,
         routerDelegate: AutoRouterDelegate(router),
         routeInformationParser: router.defaultRouteParser(),
+        builder: (context, child) => RepositoryProvider<DeviceLocationRepository>(
+          create: (context) => const DeviceLocationRepository(),
+          child: BlocProvider<AddressCubit>(
+            create: (ctx) => AddressCubit(
+              useCase: LocationUseCase(
+                ctx.read<DeviceLocationRepository>(),
+              ),
+            )..loadCurrentAddress(),
+            child: child,
+          ),
+        ),
       );
 }

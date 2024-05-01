@@ -9,6 +9,8 @@ export 'package:flutter/cupertino.dart' show CupertinoIcons;
 export 'package:flutter/material.dart' hide ImageConfiguration;
 export 'package:flutter_bloc/flutter_bloc.dart';
 export 'package:freezed_annotation/freezed_annotation.dart';
+export 'package:geocoding/geocoding.dart';
+export 'package:geolocator/geolocator.dart' show Geolocator, LocationPermission;
 export 'package:hydrated_bloc/hydrated_bloc.dart';
 export 'package:intl/intl.dart' show DateFormat;
 export 'package:path_provider/path_provider.dart';

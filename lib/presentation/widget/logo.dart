@@ -8,7 +8,7 @@ class Logo extends StatelessWidget {
 
   const Logo.small({super.key})
       : text = 'we',
-        size = 30.0;
+        size = 20.0;
 
   final String text;
   final double size;

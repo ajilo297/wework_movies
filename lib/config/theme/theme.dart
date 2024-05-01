@@ -7,5 +7,14 @@ class AppTheme {
         dividerTheme: DividerThemeData(
           color: dividerColor,
         ),
+        inputDecorationTheme: InputDecorationTheme(
+          isDense: true,
+          border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(30),
+            borderSide: BorderSide.none,
+          ),
+          filled: true,
+          contentPadding: EdgeInsets.zero,
+        ),
       );
 }

@@ -8,7 +8,5 @@ sealed class ImageConfigurationState with _$ImageConfigurationState {
 
   const factory ImageConfigurationState.data(ImageConfigurationEntity data) = ImageConfigurationDataState;
 
-  const factory ImageConfigurationState.error(String message) = ImageConfigurationErrorState;
-
   factory ImageConfigurationState.fromJson(Map<String, dynamic> json) => _$ImageConfigurationStateFromJson(json);
 }

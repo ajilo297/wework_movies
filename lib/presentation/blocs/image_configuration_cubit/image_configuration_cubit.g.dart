@@ -43,17 +43,3 @@ Map<String, dynamic> _$$ImageConfigurationDataStateImplToJson(
       'data': instance.data.toJson(),
       'runtimeType': instance.$type,
     };
-
-_$ImageConfigurationErrorStateImpl _$$ImageConfigurationErrorStateImplFromJson(
-        Map<String, dynamic> json) =>
-    _$ImageConfigurationErrorStateImpl(
-      json['message'] as String,
-      $type: json['runtimeType'] as String?,
-    );
-
-Map<String, dynamic> _$$ImageConfigurationErrorStateImplToJson(
-        _$ImageConfigurationErrorStateImpl instance) =>
-    <String, dynamic>{
-      'message': instance.message,
-      'runtimeType': instance.$type,
-    };

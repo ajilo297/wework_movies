@@ -9,6 +9,7 @@ class HomePage extends StatelessWidget implements AutoRouteWrapper {
   Widget build(BuildContext context) => HomeScaffold(
         body: CustomScrollView(
           slivers: [
+            const SliverToBoxAdapter(child: MovieSearchField()),
             const SliverToBoxAdapter(child: NowPlayingMovieCountCard()),
             const LabelledDivider(label: 'Now Playing'),
             SliverToBoxAdapter(
@@ -67,13 +68,21 @@ class HomePage extends StatelessWidget implements AutoRouteWrapper {
               builder: (context, state) {
                 return switch (state) {
                   ImageConfigurationDataState() => this,
-                  ImageConfigurationLoadingState() => const Center(child: CircularProgressIndicator()),
-                  ImageConfigurationErrorState error => Center(child: Text(error.message)),
-                  _ => const Center(child: Text('Could not load image configuration')),
+                  ImageConfigurationLoadingState() => const _AppScaffold(child: CircularProgressIndicator()),
+                  ImageConfigurationEmptyState() => const _AppScaffold(child: Text('No configuration found')),
                 };
               },
             ),
           ),
         ),
       );
+}
+
+class _AppScaffold extends StatelessWidget {
+  const _AppScaffold({required this.child});
+
+  final Widget child;
+
+  @override
+  Widget build(BuildContext context) => HomeScaffold(body: Center(child: child));
 }

@@ -18,3 +18,14 @@ extension IntToStringExtension on num {
     1000: 'K',
   };
 }
+
+extension IntToOrdinalExtension on int {
+  String toOrdinal() {
+    final suffix = ['th', 'st', 'nd', 'rd'];
+    final lastDigit = this % 10;
+    final lastTwoDigits = this % 100;
+
+    return toString() +
+        (lastTwoDigits >= 11 && lastTwoDigits <= 13 ? suffix[0] : suffix[lastDigit <= 3 ? lastDigit : 0]);
+  }
+}

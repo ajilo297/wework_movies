@@ -18,7 +18,18 @@ class NowPlayingMovieCountCard extends StatelessWidget {
                   top: padding2,
                   left: padding2,
                   child: Text(
-                    '24th April 2024'.toUpperCase(),
+                    DateFormat('dd MMM yyyy')
+                        .format(DateTime.now())
+                        .split(' ')
+                        .mapIndexed((index, element) {
+                          if (index == 0) {
+                            final date = int.tryParse(element);
+                            if (date != null) return date.toOrdinal();
+                          }
+                          return element;
+                        })
+                        .join(' ')
+                        .toUpperCase(),
                     style: theme.textTheme.labelMedium?.copyWith(
                       fontWeight: FontWeight.bold,
                     ),
@@ -52,7 +63,7 @@ class NowPlayingMovieCountCard extends StatelessWidget {
                           ),
                         ),
                         Text(
-                          '${state.movies.length} movies are loaded in now playing',
+                          '${state.data.length} movies are loaded in now playing',
                           style: theme.textTheme.bodyMedium,
                         ),
                       ],

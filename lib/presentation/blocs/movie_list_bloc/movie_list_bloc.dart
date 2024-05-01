@@ -13,21 +13,20 @@ typedef _MovieListEmitter = Emitter<MovieListState>;
 abstract base class MovieListBloc extends HydratedBloc<MovieListEvent, MovieListState> {
   MovieListBloc({required this.useCase}) : super(const MovieListEmptyState()) {
     on<LoadMovieListEvent>(_loadMovies);
-    on<SearchMovieListEvent>(_searchMovies);
+    on<SearchMovieListEvent>(_searchMovies, transformer: restartable());
   }
 
   final MovieUseCase useCase;
 
   void _loadMovies(LoadMovieListEvent event, _MovieListEmitter emit) async {
+    final initialState = state;
     emit(state.copyWith(isLoading: true));
     try {
       final movies = await useCase.getMovies(page: event.page);
       emit(MovieListDataState(movies));
     } catch (e) {
-      // TODO(ajilo297): Handle error
-      emit(const MovieListErrorState(
-        message: 'Something went wrong. Please try again later.',
-      ));
+      emit(initialState);
+      rethrow;
     }
   }
 

@@ -717,8 +717,6 @@ MovieListState _$MovieListStateFromJson(Map<String, dynamic> json) {
       return MovieListEmptyState.fromJson(json);
     case 'data':
       return MovieListDataState.fromJson(json);
-    case 'error':
-      return MovieListErrorState.fromJson(json);
 
     default:
       throw CheckedFromJsonException(json, 'runtimeType', 'MovieListState',
@@ -738,9 +736,6 @@ mixin _$MovieListState {
     required TResult Function(List<MovieEntity> data, bool isLoading, int page,
             String searchQuery)
         data,
-    required TResult Function(
-            bool isLoading, String message, int page, String searchQuery)
-        error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -749,9 +744,6 @@ mixin _$MovieListState {
     TResult? Function(List<MovieEntity> data, bool isLoading, int page,
             String searchQuery)?
         data,
-    TResult? Function(
-            bool isLoading, String message, int page, String searchQuery)?
-        error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -760,9 +752,6 @@ mixin _$MovieListState {
     TResult Function(List<MovieEntity> data, bool isLoading, int page,
             String searchQuery)?
         data,
-    TResult Function(
-            bool isLoading, String message, int page, String searchQuery)?
-        error,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -770,21 +759,18 @@ mixin _$MovieListState {
   TResult map<TResult extends Object?>({
     required TResult Function(MovieListEmptyState value) empty,
     required TResult Function(MovieListDataState value) data,
-    required TResult Function(MovieListErrorState value) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(MovieListEmptyState value)? empty,
     TResult? Function(MovieListDataState value)? data,
-    TResult? Function(MovieListErrorState value)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(MovieListEmptyState value)? empty,
     TResult Function(MovieListDataState value)? data,
-    TResult Function(MovieListErrorState value)? error,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -943,9 +929,6 @@ class _$MovieListEmptyStateImpl extends MovieListEmptyState {
     required TResult Function(List<MovieEntity> data, bool isLoading, int page,
             String searchQuery)
         data,
-    required TResult Function(
-            bool isLoading, String message, int page, String searchQuery)
-        error,
   }) {
     return empty(isLoading, page, searchQuery);
   }
@@ -957,9 +940,6 @@ class _$MovieListEmptyStateImpl extends MovieListEmptyState {
     TResult? Function(List<MovieEntity> data, bool isLoading, int page,
             String searchQuery)?
         data,
-    TResult? Function(
-            bool isLoading, String message, int page, String searchQuery)?
-        error,
   }) {
     return empty?.call(isLoading, page, searchQuery);
   }
@@ -971,9 +951,6 @@ class _$MovieListEmptyStateImpl extends MovieListEmptyState {
     TResult Function(List<MovieEntity> data, bool isLoading, int page,
             String searchQuery)?
         data,
-    TResult Function(
-            bool isLoading, String message, int page, String searchQuery)?
-        error,
     required TResult orElse(),
   }) {
     if (empty != null) {
@@ -987,7 +964,6 @@ class _$MovieListEmptyStateImpl extends MovieListEmptyState {
   TResult map<TResult extends Object?>({
     required TResult Function(MovieListEmptyState value) empty,
     required TResult Function(MovieListDataState value) data,
-    required TResult Function(MovieListErrorState value) error,
   }) {
     return empty(this);
   }
@@ -997,7 +973,6 @@ class _$MovieListEmptyStateImpl extends MovieListEmptyState {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(MovieListEmptyState value)? empty,
     TResult? Function(MovieListDataState value)? data,
-    TResult? Function(MovieListErrorState value)? error,
   }) {
     return empty?.call(this);
   }
@@ -1007,7 +982,6 @@ class _$MovieListEmptyStateImpl extends MovieListEmptyState {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(MovieListEmptyState value)? empty,
     TResult Function(MovieListDataState value)? data,
-    TResult Function(MovieListErrorState value)? error,
     required TResult orElse(),
   }) {
     if (empty != null) {
@@ -1169,9 +1143,6 @@ class _$MovieListDataStateImpl extends MovieListDataState {
     required TResult Function(List<MovieEntity> data, bool isLoading, int page,
             String searchQuery)
         data,
-    required TResult Function(
-            bool isLoading, String message, int page, String searchQuery)
-        error,
   }) {
     return data(this.data, isLoading, page, searchQuery);
   }
@@ -1183,9 +1154,6 @@ class _$MovieListDataStateImpl extends MovieListDataState {
     TResult? Function(List<MovieEntity> data, bool isLoading, int page,
             String searchQuery)?
         data,
-    TResult? Function(
-            bool isLoading, String message, int page, String searchQuery)?
-        error,
   }) {
     return data?.call(this.data, isLoading, page, searchQuery);
   }
@@ -1197,9 +1165,6 @@ class _$MovieListDataStateImpl extends MovieListDataState {
     TResult Function(List<MovieEntity> data, bool isLoading, int page,
             String searchQuery)?
         data,
-    TResult Function(
-            bool isLoading, String message, int page, String searchQuery)?
-        error,
     required TResult orElse(),
   }) {
     if (data != null) {
@@ -1213,7 +1178,6 @@ class _$MovieListDataStateImpl extends MovieListDataState {
   TResult map<TResult extends Object?>({
     required TResult Function(MovieListEmptyState value) empty,
     required TResult Function(MovieListDataState value) data,
-    required TResult Function(MovieListErrorState value) error,
   }) {
     return data(this);
   }
@@ -1223,7 +1187,6 @@ class _$MovieListDataStateImpl extends MovieListDataState {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(MovieListEmptyState value)? empty,
     TResult? Function(MovieListDataState value)? data,
-    TResult? Function(MovieListErrorState value)? error,
   }) {
     return data?.call(this);
   }
@@ -1233,7 +1196,6 @@ class _$MovieListDataStateImpl extends MovieListDataState {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(MovieListEmptyState value)? empty,
     TResult Function(MovieListDataState value)? data,
-    TResult Function(MovieListErrorState value)? error,
     required TResult orElse(),
   }) {
     if (data != null) {
@@ -1270,226 +1232,5 @@ abstract class MovieListDataState extends MovieListState {
   @override
   @JsonKey(ignore: true)
   _$$MovieListDataStateImplCopyWith<_$MovieListDataStateImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$MovieListErrorStateImplCopyWith<$Res>
-    implements $MovieListStateCopyWith<$Res> {
-  factory _$$MovieListErrorStateImplCopyWith(_$MovieListErrorStateImpl value,
-          $Res Function(_$MovieListErrorStateImpl) then) =
-      __$$MovieListErrorStateImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({bool isLoading, String message, int page, String searchQuery});
-}
-
-/// @nodoc
-class __$$MovieListErrorStateImplCopyWithImpl<$Res>
-    extends _$MovieListStateCopyWithImpl<$Res, _$MovieListErrorStateImpl>
-    implements _$$MovieListErrorStateImplCopyWith<$Res> {
-  __$$MovieListErrorStateImplCopyWithImpl(_$MovieListErrorStateImpl _value,
-      $Res Function(_$MovieListErrorStateImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? isLoading = null,
-    Object? message = null,
-    Object? page = null,
-    Object? searchQuery = null,
-  }) {
-    return _then(_$MovieListErrorStateImpl(
-      isLoading: null == isLoading
-          ? _value.isLoading
-          : isLoading // ignore: cast_nullable_to_non_nullable
-              as bool,
-      message: null == message
-          ? _value.message
-          : message // ignore: cast_nullable_to_non_nullable
-              as String,
-      page: null == page
-          ? _value.page
-          : page // ignore: cast_nullable_to_non_nullable
-              as int,
-      searchQuery: null == searchQuery
-          ? _value.searchQuery
-          : searchQuery // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$MovieListErrorStateImpl extends MovieListErrorState {
-  const _$MovieListErrorStateImpl(
-      {this.isLoading = false,
-      required this.message,
-      this.page = 1,
-      this.searchQuery = '',
-      final String? $type})
-      : $type = $type ?? 'error',
-        super._();
-
-  factory _$MovieListErrorStateImpl.fromJson(Map<String, dynamic> json) =>
-      _$$MovieListErrorStateImplFromJson(json);
-
-  @override
-  @JsonKey()
-  final bool isLoading;
-  @override
-  final String message;
-  @override
-  @JsonKey()
-  final int page;
-  @override
-  @JsonKey()
-  final String searchQuery;
-
-  @JsonKey(name: 'runtimeType')
-  final String $type;
-
-  @override
-  String toString() {
-    return 'MovieListState.error(isLoading: $isLoading, message: $message, page: $page, searchQuery: $searchQuery)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$MovieListErrorStateImpl &&
-            (identical(other.isLoading, isLoading) ||
-                other.isLoading == isLoading) &&
-            (identical(other.message, message) || other.message == message) &&
-            (identical(other.page, page) || other.page == page) &&
-            (identical(other.searchQuery, searchQuery) ||
-                other.searchQuery == searchQuery));
-  }
-
-  @JsonKey(ignore: true)
-  @override
-  int get hashCode =>
-      Object.hash(runtimeType, isLoading, message, page, searchQuery);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$MovieListErrorStateImplCopyWith<_$MovieListErrorStateImpl> get copyWith =>
-      __$$MovieListErrorStateImplCopyWithImpl<_$MovieListErrorStateImpl>(
-          this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(bool isLoading, int page, String searchQuery)
-        empty,
-    required TResult Function(List<MovieEntity> data, bool isLoading, int page,
-            String searchQuery)
-        data,
-    required TResult Function(
-            bool isLoading, String message, int page, String searchQuery)
-        error,
-  }) {
-    return error(isLoading, message, page, searchQuery);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(bool isLoading, int page, String searchQuery)? empty,
-    TResult? Function(List<MovieEntity> data, bool isLoading, int page,
-            String searchQuery)?
-        data,
-    TResult? Function(
-            bool isLoading, String message, int page, String searchQuery)?
-        error,
-  }) {
-    return error?.call(isLoading, message, page, searchQuery);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(bool isLoading, int page, String searchQuery)? empty,
-    TResult Function(List<MovieEntity> data, bool isLoading, int page,
-            String searchQuery)?
-        data,
-    TResult Function(
-            bool isLoading, String message, int page, String searchQuery)?
-        error,
-    required TResult orElse(),
-  }) {
-    if (error != null) {
-      return error(isLoading, message, page, searchQuery);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(MovieListEmptyState value) empty,
-    required TResult Function(MovieListDataState value) data,
-    required TResult Function(MovieListErrorState value) error,
-  }) {
-    return error(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(MovieListEmptyState value)? empty,
-    TResult? Function(MovieListDataState value)? data,
-    TResult? Function(MovieListErrorState value)? error,
-  }) {
-    return error?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(MovieListEmptyState value)? empty,
-    TResult Function(MovieListDataState value)? data,
-    TResult Function(MovieListErrorState value)? error,
-    required TResult orElse(),
-  }) {
-    if (error != null) {
-      return error(this);
-    }
-    return orElse();
-  }
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$MovieListErrorStateImplToJson(
-      this,
-    );
-  }
-}
-
-abstract class MovieListErrorState extends MovieListState {
-  const factory MovieListErrorState(
-      {final bool isLoading,
-      required final String message,
-      final int page,
-      final String searchQuery}) = _$MovieListErrorStateImpl;
-  const MovieListErrorState._() : super._();
-
-  factory MovieListErrorState.fromJson(Map<String, dynamic> json) =
-      _$MovieListErrorStateImpl.fromJson;
-
-  @override
-  bool get isLoading;
-  String get message;
-  @override
-  int get page;
-  @override
-  String get searchQuery;
-  @override
-  @JsonKey(ignore: true)
-  _$$MovieListErrorStateImplCopyWith<_$MovieListErrorStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

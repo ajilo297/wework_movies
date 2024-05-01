@@ -97,23 +97,3 @@ Map<String, dynamic> _$$MovieListDataStateImplToJson(
       'search_query': instance.searchQuery,
       'runtimeType': instance.$type,
     };
-
-_$MovieListErrorStateImpl _$$MovieListErrorStateImplFromJson(
-        Map<String, dynamic> json) =>
-    _$MovieListErrorStateImpl(
-      isLoading: json['is_loading'] as bool? ?? false,
-      message: json['message'] as String,
-      page: (json['page'] as num?)?.toInt() ?? 1,
-      searchQuery: json['search_query'] as String? ?? '',
-      $type: json['runtimeType'] as String?,
-    );
-
-Map<String, dynamic> _$$MovieListErrorStateImplToJson(
-        _$MovieListErrorStateImpl instance) =>
-    <String, dynamic>{
-      'is_loading': instance.isLoading,
-      'message': instance.message,
-      'page': instance.page,
-      'search_query': instance.searchQuery,
-      'runtimeType': instance.$type,
-    };

@@ -23,8 +23,6 @@ ImageConfigurationState _$ImageConfigurationStateFromJson(
       return ImageConfigurationLoadingState.fromJson(json);
     case 'data':
       return ImageConfigurationDataState.fromJson(json);
-    case 'error':
-      return ImageConfigurationErrorState.fromJson(json);
 
     default:
       throw CheckedFromJsonException(
@@ -42,7 +40,6 @@ mixin _$ImageConfigurationState {
     required TResult Function() empty,
     required TResult Function() loading,
     required TResult Function(ImageConfigurationEntity data) data,
-    required TResult Function(String message) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -50,7 +47,6 @@ mixin _$ImageConfigurationState {
     TResult? Function()? empty,
     TResult? Function()? loading,
     TResult? Function(ImageConfigurationEntity data)? data,
-    TResult? Function(String message)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -58,7 +54,6 @@ mixin _$ImageConfigurationState {
     TResult Function()? empty,
     TResult Function()? loading,
     TResult Function(ImageConfigurationEntity data)? data,
-    TResult Function(String message)? error,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -67,7 +62,6 @@ mixin _$ImageConfigurationState {
     required TResult Function(ImageConfigurationEmptyState value) empty,
     required TResult Function(ImageConfigurationLoadingState value) loading,
     required TResult Function(ImageConfigurationDataState value) data,
-    required TResult Function(ImageConfigurationErrorState value) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -75,7 +69,6 @@ mixin _$ImageConfigurationState {
     TResult? Function(ImageConfigurationEmptyState value)? empty,
     TResult? Function(ImageConfigurationLoadingState value)? loading,
     TResult? Function(ImageConfigurationDataState value)? data,
-    TResult? Function(ImageConfigurationErrorState value)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -83,7 +76,6 @@ mixin _$ImageConfigurationState {
     TResult Function(ImageConfigurationEmptyState value)? empty,
     TResult Function(ImageConfigurationLoadingState value)? loading,
     TResult Function(ImageConfigurationDataState value)? data,
-    TResult Function(ImageConfigurationErrorState value)? error,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -164,7 +156,6 @@ class _$ImageConfigurationEmptyStateImpl
     required TResult Function() empty,
     required TResult Function() loading,
     required TResult Function(ImageConfigurationEntity data) data,
-    required TResult Function(String message) error,
   }) {
     return empty();
   }
@@ -175,7 +166,6 @@ class _$ImageConfigurationEmptyStateImpl
     TResult? Function()? empty,
     TResult? Function()? loading,
     TResult? Function(ImageConfigurationEntity data)? data,
-    TResult? Function(String message)? error,
   }) {
     return empty?.call();
   }
@@ -186,7 +176,6 @@ class _$ImageConfigurationEmptyStateImpl
     TResult Function()? empty,
     TResult Function()? loading,
     TResult Function(ImageConfigurationEntity data)? data,
-    TResult Function(String message)? error,
     required TResult orElse(),
   }) {
     if (empty != null) {
@@ -201,7 +190,6 @@ class _$ImageConfigurationEmptyStateImpl
     required TResult Function(ImageConfigurationEmptyState value) empty,
     required TResult Function(ImageConfigurationLoadingState value) loading,
     required TResult Function(ImageConfigurationDataState value) data,
-    required TResult Function(ImageConfigurationErrorState value) error,
   }) {
     return empty(this);
   }
@@ -212,7 +200,6 @@ class _$ImageConfigurationEmptyStateImpl
     TResult? Function(ImageConfigurationEmptyState value)? empty,
     TResult? Function(ImageConfigurationLoadingState value)? loading,
     TResult? Function(ImageConfigurationDataState value)? data,
-    TResult? Function(ImageConfigurationErrorState value)? error,
   }) {
     return empty?.call(this);
   }
@@ -223,7 +210,6 @@ class _$ImageConfigurationEmptyStateImpl
     TResult Function(ImageConfigurationEmptyState value)? empty,
     TResult Function(ImageConfigurationLoadingState value)? loading,
     TResult Function(ImageConfigurationDataState value)? data,
-    TResult Function(ImageConfigurationErrorState value)? error,
     required TResult orElse(),
   }) {
     if (empty != null) {
@@ -303,7 +289,6 @@ class _$ImageConfigurationLoadingStateImpl
     required TResult Function() empty,
     required TResult Function() loading,
     required TResult Function(ImageConfigurationEntity data) data,
-    required TResult Function(String message) error,
   }) {
     return loading();
   }
@@ -314,7 +299,6 @@ class _$ImageConfigurationLoadingStateImpl
     TResult? Function()? empty,
     TResult? Function()? loading,
     TResult? Function(ImageConfigurationEntity data)? data,
-    TResult? Function(String message)? error,
   }) {
     return loading?.call();
   }
@@ -325,7 +309,6 @@ class _$ImageConfigurationLoadingStateImpl
     TResult Function()? empty,
     TResult Function()? loading,
     TResult Function(ImageConfigurationEntity data)? data,
-    TResult Function(String message)? error,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -340,7 +323,6 @@ class _$ImageConfigurationLoadingStateImpl
     required TResult Function(ImageConfigurationEmptyState value) empty,
     required TResult Function(ImageConfigurationLoadingState value) loading,
     required TResult Function(ImageConfigurationDataState value) data,
-    required TResult Function(ImageConfigurationErrorState value) error,
   }) {
     return loading(this);
   }
@@ -351,7 +333,6 @@ class _$ImageConfigurationLoadingStateImpl
     TResult? Function(ImageConfigurationEmptyState value)? empty,
     TResult? Function(ImageConfigurationLoadingState value)? loading,
     TResult? Function(ImageConfigurationDataState value)? data,
-    TResult? Function(ImageConfigurationErrorState value)? error,
   }) {
     return loading?.call(this);
   }
@@ -362,7 +343,6 @@ class _$ImageConfigurationLoadingStateImpl
     TResult Function(ImageConfigurationEmptyState value)? empty,
     TResult Function(ImageConfigurationLoadingState value)? loading,
     TResult Function(ImageConfigurationDataState value)? data,
-    TResult Function(ImageConfigurationErrorState value)? error,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -478,7 +458,6 @@ class _$ImageConfigurationDataStateImpl implements ImageConfigurationDataState {
     required TResult Function() empty,
     required TResult Function() loading,
     required TResult Function(ImageConfigurationEntity data) data,
-    required TResult Function(String message) error,
   }) {
     return data(this.data);
   }
@@ -489,7 +468,6 @@ class _$ImageConfigurationDataStateImpl implements ImageConfigurationDataState {
     TResult? Function()? empty,
     TResult? Function()? loading,
     TResult? Function(ImageConfigurationEntity data)? data,
-    TResult? Function(String message)? error,
   }) {
     return data?.call(this.data);
   }
@@ -500,7 +478,6 @@ class _$ImageConfigurationDataStateImpl implements ImageConfigurationDataState {
     TResult Function()? empty,
     TResult Function()? loading,
     TResult Function(ImageConfigurationEntity data)? data,
-    TResult Function(String message)? error,
     required TResult orElse(),
   }) {
     if (data != null) {
@@ -515,7 +492,6 @@ class _$ImageConfigurationDataStateImpl implements ImageConfigurationDataState {
     required TResult Function(ImageConfigurationEmptyState value) empty,
     required TResult Function(ImageConfigurationLoadingState value) loading,
     required TResult Function(ImageConfigurationDataState value) data,
-    required TResult Function(ImageConfigurationErrorState value) error,
   }) {
     return data(this);
   }
@@ -526,7 +502,6 @@ class _$ImageConfigurationDataStateImpl implements ImageConfigurationDataState {
     TResult? Function(ImageConfigurationEmptyState value)? empty,
     TResult? Function(ImageConfigurationLoadingState value)? loading,
     TResult? Function(ImageConfigurationDataState value)? data,
-    TResult? Function(ImageConfigurationErrorState value)? error,
   }) {
     return data?.call(this);
   }
@@ -537,7 +512,6 @@ class _$ImageConfigurationDataStateImpl implements ImageConfigurationDataState {
     TResult Function(ImageConfigurationEmptyState value)? empty,
     TResult Function(ImageConfigurationLoadingState value)? loading,
     TResult Function(ImageConfigurationDataState value)? data,
-    TResult Function(ImageConfigurationErrorState value)? error,
     required TResult orElse(),
   }) {
     if (data != null) {
@@ -564,177 +538,5 @@ abstract class ImageConfigurationDataState implements ImageConfigurationState {
   ImageConfigurationEntity get data;
   @JsonKey(ignore: true)
   _$$ImageConfigurationDataStateImplCopyWith<_$ImageConfigurationDataStateImpl>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$ImageConfigurationErrorStateImplCopyWith<$Res> {
-  factory _$$ImageConfigurationErrorStateImplCopyWith(
-          _$ImageConfigurationErrorStateImpl value,
-          $Res Function(_$ImageConfigurationErrorStateImpl) then) =
-      __$$ImageConfigurationErrorStateImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({String message});
-}
-
-/// @nodoc
-class __$$ImageConfigurationErrorStateImplCopyWithImpl<$Res>
-    extends _$ImageConfigurationStateCopyWithImpl<$Res,
-        _$ImageConfigurationErrorStateImpl>
-    implements _$$ImageConfigurationErrorStateImplCopyWith<$Res> {
-  __$$ImageConfigurationErrorStateImplCopyWithImpl(
-      _$ImageConfigurationErrorStateImpl _value,
-      $Res Function(_$ImageConfigurationErrorStateImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? message = null,
-  }) {
-    return _then(_$ImageConfigurationErrorStateImpl(
-      null == message
-          ? _value.message
-          : message // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$ImageConfigurationErrorStateImpl
-    implements ImageConfigurationErrorState {
-  const _$ImageConfigurationErrorStateImpl(this.message, {final String? $type})
-      : $type = $type ?? 'error';
-
-  factory _$ImageConfigurationErrorStateImpl.fromJson(
-          Map<String, dynamic> json) =>
-      _$$ImageConfigurationErrorStateImplFromJson(json);
-
-  @override
-  final String message;
-
-  @JsonKey(name: 'runtimeType')
-  final String $type;
-
-  @override
-  String toString() {
-    return 'ImageConfigurationState.error(message: $message)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$ImageConfigurationErrorStateImpl &&
-            (identical(other.message, message) || other.message == message));
-  }
-
-  @JsonKey(ignore: true)
-  @override
-  int get hashCode => Object.hash(runtimeType, message);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$ImageConfigurationErrorStateImplCopyWith<
-          _$ImageConfigurationErrorStateImpl>
-      get copyWith => __$$ImageConfigurationErrorStateImplCopyWithImpl<
-          _$ImageConfigurationErrorStateImpl>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() empty,
-    required TResult Function() loading,
-    required TResult Function(ImageConfigurationEntity data) data,
-    required TResult Function(String message) error,
-  }) {
-    return error(message);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? empty,
-    TResult? Function()? loading,
-    TResult? Function(ImageConfigurationEntity data)? data,
-    TResult? Function(String message)? error,
-  }) {
-    return error?.call(message);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? empty,
-    TResult Function()? loading,
-    TResult Function(ImageConfigurationEntity data)? data,
-    TResult Function(String message)? error,
-    required TResult orElse(),
-  }) {
-    if (error != null) {
-      return error(message);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(ImageConfigurationEmptyState value) empty,
-    required TResult Function(ImageConfigurationLoadingState value) loading,
-    required TResult Function(ImageConfigurationDataState value) data,
-    required TResult Function(ImageConfigurationErrorState value) error,
-  }) {
-    return error(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(ImageConfigurationEmptyState value)? empty,
-    TResult? Function(ImageConfigurationLoadingState value)? loading,
-    TResult? Function(ImageConfigurationDataState value)? data,
-    TResult? Function(ImageConfigurationErrorState value)? error,
-  }) {
-    return error?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(ImageConfigurationEmptyState value)? empty,
-    TResult Function(ImageConfigurationLoadingState value)? loading,
-    TResult Function(ImageConfigurationDataState value)? data,
-    TResult Function(ImageConfigurationErrorState value)? error,
-    required TResult orElse(),
-  }) {
-    if (error != null) {
-      return error(this);
-    }
-    return orElse();
-  }
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$ImageConfigurationErrorStateImplToJson(
-      this,
-    );
-  }
-}
-
-abstract class ImageConfigurationErrorState implements ImageConfigurationState {
-  const factory ImageConfigurationErrorState(final String message) =
-      _$ImageConfigurationErrorStateImpl;
-
-  factory ImageConfigurationErrorState.fromJson(Map<String, dynamic> json) =
-      _$ImageConfigurationErrorStateImpl.fromJson;
-
-  String get message;
-  @JsonKey(ignore: true)
-  _$$ImageConfigurationErrorStateImplCopyWith<
-          _$ImageConfigurationErrorStateImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

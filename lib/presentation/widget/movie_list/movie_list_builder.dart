@@ -12,11 +12,11 @@ class MovieListBuilder<T extends MovieListBloc> extends StatelessWidget {
   Widget build(BuildContext context) => BlocBuilder<T, MovieListState>(
         builder: (context, state) => switch (state) {
           MovieListEmptyState() => const SliverToBoxAdapter(
-              child: Placeholder(child: Text('Empty View')),
+              child: Center(child: Text('Empty View')),
             ),
           MovieListDataState dataState => switch (dataState.isLoading) {
               true => const SliverToBoxAdapter(
-                  child: Placeholder(child: Text('Loading View')),
+                  child: Center(child: Text('Loading View')),
                 ),
               false => SliverList(
                   delegate: SliverChildBuilderDelegate(
@@ -25,9 +25,6 @@ class MovieListBuilder<T extends MovieListBloc> extends StatelessWidget {
                   ),
                 ),
             },
-          MovieListErrorState() => const SliverToBoxAdapter(
-              child: Placeholder(child: Text('Error View')),
-            ),
         },
       );
 }

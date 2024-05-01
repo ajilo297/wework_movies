@@ -10,13 +10,14 @@ class ImageConfigurationCubit extends HydratedCubit<ImageConfigurationState> {
   final ImageConfigurationUseCase useCase;
 
   void loadConfiguration() async {
+    final initialState = state;
     emit(const ImageConfigurationLoadingState());
     try {
       final configuration = await useCase.loadConfiguration();
       emit(ImageConfigurationDataState(configuration));
-    } on Exception catch (e) {
-      // TODO(ajilo297): Handle error
-      emit(ImageConfigurationErrorState(e.toString()));
+    } catch (e) {
+      emit(initialState);
+      rethrow;
     }
   }
 

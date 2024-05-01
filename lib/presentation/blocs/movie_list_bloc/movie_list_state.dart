@@ -17,13 +17,6 @@ sealed class MovieListState with _$MovieListState {
     @Default('') String searchQuery,
   }) = MovieListDataState;
 
-  const factory MovieListState.error({
-    @Default(false) bool isLoading,
-    required String message,
-    @Default(1) int page,
-    @Default('') String searchQuery,
-  }) = MovieListErrorState;
-
   factory MovieListState.fromJson(Map<String, dynamic> json) => _$MovieListStateFromJson(json);
 
   List<MovieEntity> get movies => switch (this) {

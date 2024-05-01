@@ -1,5 +1,4 @@
 import 'package:wework_movies/app_barrel.dart';
-import 'package:wework_movies/presentation/widget/shape_clip_path.dart';
 
 class NowPlayingMovieCard extends MovieCard {
   const NowPlayingMovieCard({super.key, required super.movie});

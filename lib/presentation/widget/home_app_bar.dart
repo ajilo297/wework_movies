@@ -20,8 +20,8 @@ class HomeAppBar extends StatelessWidget {
                     FullAddressState state => _Address(state: state),
                   },
                 ),
-                CircleAvatar(
-                  child: const Logo.small(),
+                const CircleAvatar(
+                  child: Logo.small(),
                 ),
               ],
             );

@@ -7,7 +7,7 @@ part 'tmdb_api_client.g.dart';
 
 @RestApi(baseUrl: apiBaseUrl)
 abstract class TmdbApiClient {
-  factory TmdbApiClient(Dio dio) = _TmdbApiClient;
+  factory TmdbApiClient(Dio dio, {String? baseUrl}) = _TmdbApiClient;
 
   @GET('/configuration')
   Future<ConfigurationModel> loadConfiguration();

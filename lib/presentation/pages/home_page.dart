@@ -16,7 +16,7 @@ class HomePage extends StatelessWidget implements AutoRouteWrapper {
               const LabelledDivider(label: 'Now Playing'),
               SliverToBoxAdapter(
                 child: SizedBox(
-                  height: 400,
+                  height: context.watch<NowPlayingMovieListBloc>().state.movies.isNotEmpty ? 400 : 200,
                   child: CustomScrollView(
                     scrollDirection: Axis.horizontal,
                     slivers: [

@@ -23,7 +23,7 @@ abstract base class MovieListBloc extends HydratedBloc<MovieListEvent, MovieList
     emit(state.copyWith(isLoading: true));
     try {
       final movies = await useCase.getMovies(page: event.page);
-      emit(MovieListDataState(movies));
+      emit(movies.isEmpty ? const MovieListEmptyState() : MovieListDataState(movies));
     } catch (e) {
       emit(initialState);
       rethrow;

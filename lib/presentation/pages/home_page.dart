@@ -69,7 +69,7 @@ class HomePage extends StatelessWidget implements AutoRouteWrapper {
                 return switch (state) {
                   ImageConfigurationDataState() => this,
                   ImageConfigurationLoadingState() => const _AppScaffold(child: CircularProgressIndicator()),
-                  ImageConfigurationEmptyState() => const _AppScaffold(child: Text('No configuration found')),
+                  ImageConfigurationEmptyState() => const _AppScaffold(child: _NoImageConfigurationFound()),
                 };
               },
             ),
@@ -85,4 +85,28 @@ class _AppScaffold extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => HomeScaffold(body: Center(child: child));
+}
+
+class _NoImageConfigurationFound extends StatelessWidget {
+  const _NoImageConfigurationFound();
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Padding(
+        padding: edgeInsets2,
+        child: ListTile(
+          leading: const Icon(Icons.error),
+          title: const Text('No image configuration found'),
+          subtitle: const Text('Please check your internet connection and try again'),
+          trailing: IconButton(
+            onPressed: () {
+              context.read<ImageConfigurationCubit>().loadConfiguration();
+            },
+            icon: const Icon(Icons.refresh),
+          ),
+        ),
+      ),
+    );
+  }
 }

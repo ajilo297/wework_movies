@@ -23,10 +23,10 @@ class MovieImage extends StatelessWidget {
           final size = imageConfiguration.mobileBackdropSize;
 
           final imageUrl = '$baseUrl$size$backdropUrl';
-          // TODO(ajilo297): Add a placeholder, error, and loading widget
           final child = CachedNetworkImage(
             imageUrl: imageUrl,
             fit: BoxFit.cover,
+            errorWidget: (context, url, error) => const _ImageNotFound(),
           );
 
           return ClipRRect(
@@ -35,4 +35,35 @@ class MovieImage extends StatelessWidget {
           );
         },
       );
+}
+
+class _ImageNotFound extends StatelessWidget {
+  const _ImageNotFound();
+
+  @override
+  Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+
+    return Container(
+      color: theme.disabledColor.withOpacity(0.1),
+      child: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Icon(
+              Icons.image_not_supported,
+              size: 48,
+              color: theme.disabledColor.withOpacity(0.2),
+            ),
+            Text(
+              'Image not found',
+              style: theme.textTheme.labelMedium?.copyWith(
+                color: theme.disabledColor.withOpacity(0.4),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
 }

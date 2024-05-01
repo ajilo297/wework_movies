@@ -7,29 +7,32 @@ class HomePage extends StatelessWidget implements AutoRouteWrapper {
 
   @override
   Widget build(BuildContext context) => HomeScaffold(
-        body: CustomScrollView(
-          slivers: [
-            const SliverToBoxAdapter(child: MovieSearchField()),
-            const SliverToBoxAdapter(child: NowPlayingMovieCountCard()),
-            const LabelledDivider(label: 'Now Playing'),
-            SliverToBoxAdapter(
-              child: SizedBox(
-                height: 400,
-                child: CustomScrollView(
-                  scrollDirection: Axis.horizontal,
-                  slivers: [
-                    NowPlayingMovieListBuilder(
-                      builder: (context, movie) => NowPlayingMovieCard(movie: movie),
-                    ),
-                  ],
+        body: RefreshIndicator(
+          onRefresh: context.read<ImageConfigurationCubit>().loadConfiguration,
+          child: CustomScrollView(
+            slivers: [
+              const SliverToBoxAdapter(child: MovieSearchField()),
+              const SliverToBoxAdapter(child: NowPlayingMovieCountCard()),
+              const LabelledDivider(label: 'Now Playing'),
+              SliverToBoxAdapter(
+                child: SizedBox(
+                  height: 400,
+                  child: CustomScrollView(
+                    scrollDirection: Axis.horizontal,
+                    slivers: [
+                      NowPlayingMovieListBuilder(
+                        builder: (context, movie) => NowPlayingMovieCard(movie: movie),
+                      ),
+                    ],
+                  ),
                 ),
               ),
-            ),
-            const LabelledDivider(label: 'Top Rated'),
-            TopRatedMovieListBuilder(
-              builder: (context, movie) => TopRatedMovieCard(movie: movie),
-            ),
-          ],
+              const LabelledDivider(label: 'Top Rated'),
+              TopRatedMovieListBuilder(
+                builder: (context, movie) => TopRatedMovieCard(movie: movie),
+              ),
+            ],
+          ),
         ),
       );
 

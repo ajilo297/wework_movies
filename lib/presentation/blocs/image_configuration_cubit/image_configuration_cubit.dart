@@ -9,7 +9,7 @@ class ImageConfigurationCubit extends HydratedCubit<ImageConfigurationState> {
 
   final ImageConfigurationUseCase useCase;
 
-  void loadConfiguration() async {
+  Future<void> loadConfiguration() async {
     final initialState = state;
     emit(const ImageConfigurationLoadingState());
     try {

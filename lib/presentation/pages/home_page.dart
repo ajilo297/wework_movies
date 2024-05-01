@@ -11,6 +11,7 @@ class HomePage extends StatelessWidget implements AutoRouteWrapper {
           onRefresh: context.read<ImageConfigurationCubit>().loadConfiguration,
           child: CustomScrollView(
             slivers: [
+              const SliverToBoxAdapter(child: HomeAppBar()),
               const SliverToBoxAdapter(child: MovieSearchField()),
               const SliverToBoxAdapter(child: NowPlayingMovieCountCard()),
               const LabelledDivider(label: 'Now Playing'),

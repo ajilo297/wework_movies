@@ -1,6 +1,6 @@
 // Copyright (c) 2024 Ajil Oommen. All Rights Reserved.
 //
-// Last modified 02/05/24, 9:28 am
+// Last modified 02/05/24, 2:40 pm
 
 import 'package:wework_movies/app_barrel.dart';
 
@@ -15,10 +15,10 @@ class AddressCubit extends HydratedCubit<AddressState> {
 
   Future<void> loadCurrentAddress() async {
     final initialState = state;
-    await Future.delayed(const Duration(seconds: 4));
     emit(state.copyWith(loading: true));
     try {
       final address = await useCase.loadLocation();
+      await Future.delayed(const Duration(seconds: 2));
       emit(
         FullAddressState(
           addressLine1: address.addressLine1,

@@ -1,6 +1,6 @@
 // Copyright (c) 2024 Ajil Oommen. All Rights Reserved.
 //
-// Last modified 02/05/24, 9:28 am
+// Last modified 02/05/24, 2:37 pm
 
 import 'package:wework_movies/app_barrel.dart';
 
@@ -12,6 +12,7 @@ class MovieApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => MaterialApp.router(
+        scaffoldMessengerKey: scaffoldKey,
         theme: AppTheme().lightTheme,
         routerDelegate: AutoRouterDelegate(router),
         routeInformationParser: router.defaultRouteParser(),
@@ -23,7 +24,9 @@ class MovieApp extends StatelessWidget {
                 ctx.read<DeviceLocationRepository>(),
               ),
             )..loadCurrentAddress(),
-            child: child,
+            child: Scaffold(
+              body: child,
+            ),
           ),
         ),
       );

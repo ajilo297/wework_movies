@@ -1,8 +1,10 @@
 // Copyright (c) 2024 Ajil Oommen. All Rights Reserved.
 //
-// Last modified 02/05/24, 9:28 am
+// Last modified 02/05/24, 2:41 pm
 
-abstract class LocationRepositoryException implements Exception {
+import 'package:wework_movies/app_barrel.dart';
+
+abstract class LocationRepositoryException implements AppException {
   const LocationRepositoryException();
 }
 
@@ -24,7 +26,8 @@ class LocationPermissionDeniedForeverException implements LocationRepositoryExce
   const LocationPermissionDeniedForeverException();
 
   @override
-  String toString() => 'Location permissions are denied';
+  String toString() =>
+      'Location permissions are denied. You will have to grant permissions from settings to continue using the app';
 }
 
 class LocationNotFoundException implements LocationRepositoryException {

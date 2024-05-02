@@ -18,6 +18,7 @@ export 'package:geolocator/geolocator.dart' show Geolocator, LocationPermission;
 export 'package:hydrated_bloc/hydrated_bloc.dart';
 export 'package:intl/intl.dart' show DateFormat;
 export 'package:path_provider/path_provider.dart';
+export 'package:shimmer/shimmer.dart';
 
 export 'config/config.dart';
 export 'data/data.dart';

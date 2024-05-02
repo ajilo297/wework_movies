@@ -1,6 +1,6 @@
 // Copyright (c) 2024 Ajil Oommen. All Rights Reserved.
 //
-// Last modified 02/05/24, 9:28 am
+// Last modified 02/05/24, 10:48 am
 
 import 'package:wework_movies/app_barrel.dart';
 
@@ -8,43 +8,61 @@ export 'now_playing_movie_list_builder.dart';
 export 'top_rated_movie_list_builder.dart';
 
 class MovieListBuilder<T extends MovieListBloc> extends StatelessWidget {
-  const MovieListBuilder({super.key, required this.builder});
+  const MovieListBuilder({
+    super.key,
+    required this.builder,
+    required this.cardMovieType,
+  });
 
   final MovieCard Function(BuildContext context, MovieEntity movie) builder;
+  final MovieType cardMovieType;
 
   @override
   Widget build(BuildContext context) => BlocBuilder<T, MovieListState>(
         builder: (context, state) {
-          return switch (state) {
-            MovieListEmptyState() => const SliverToBoxAdapter(
-                child: _Placeholder(
-                  child: _NoMovieContainer(message: 'Nothing to see here!'),
-                ),
+          final shimmer = cardMovieType == MovieType.nowPlaying
+              ? const NowPlayingMovieCardShimmer()
+              : const TopRatedMovieCardShimmer();
+
+          if (state.isLoading && state.movies.isEmpty) {
+            return SliverToBoxAdapter(
+              child: _EmptyPlaceholder(child: shimmer),
+            );
+          }
+
+          if (state is MovieListEmptyState) {
+            return const SliverToBoxAdapter(
+              child: _EmptyPlaceholder(
+                child: _NoMovieContainer(message: 'Nothing to see here!'),
               ),
-            MovieListDataState dataState => switch (dataState.isLoading) {
-                true => const SliverToBoxAdapter(
-                    child: _Placeholder(child: CircularProgressIndicator()),
-                  ),
-                false => dataState.movies.isEmpty
-                    ? const SliverToBoxAdapter(
-                        child: _Placeholder(
-                          child: _NoMovieContainer(message: 'No movies found!'),
-                        ),
-                      )
-                    : SliverList(
-                        delegate: SliverChildBuilderDelegate(
-                          (context, index) => builder(context, dataState.movies[index]),
-                          childCount: dataState.movies.length,
-                        ),
-                      ),
+            );
+          }
+
+          if (state.movies.isEmpty) {
+            return const SliverToBoxAdapter(
+              child: _EmptyPlaceholder(
+                child: _NoMovieContainer(message: 'No movies found!'),
+              ),
+            );
+          }
+
+          return SliverList(
+            delegate: SliverChildBuilderDelegate(
+              (context, index) {
+                if (index >= state.movies.length) {
+                  return shimmer;
+                }
+                return builder(context, state.movies[index]);
               },
-          };
+              childCount: state.movies.length + (state.isLoading ? 2 : 0),
+            ),
+          );
         },
       );
 }
 
-class _Placeholder extends StatelessWidget {
-  const _Placeholder({required this.child});
+class _EmptyPlaceholder extends StatelessWidget {
+  const _EmptyPlaceholder({required this.child});
 
   final Widget child;
 

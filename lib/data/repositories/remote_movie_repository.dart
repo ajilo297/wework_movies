@@ -1,6 +1,6 @@
 // Copyright (c) 2024 Ajil Oommen. All Rights Reserved.
 //
-// Last modified 02/05/24, 9:28 am
+// Last modified 02/05/24, 10:48 am
 
 import 'package:wework_movies/app_barrel.dart';
 
@@ -12,6 +12,8 @@ final class RemoteMovieRepository extends MovieRepository {
   @override
   Future<List<MovieEntity>> getNowPlayingMovies({int page = 1}) async {
     try {
+      await Future.delayed(const Duration(seconds: 3));
+
       final response = await apiClient.loadNowPlayingMovies(page);
       return response.results.map((e) => e.toEntity()).toList();
     } catch (exception) {
@@ -23,6 +25,8 @@ final class RemoteMovieRepository extends MovieRepository {
   @override
   Future<List<MovieEntity>> getTopRatedMovies({int page = 1}) async {
     try {
+      await Future.delayed(const Duration(seconds: 3));
+
       final response = await apiClient.loadTopRatedMovies(page);
       return response.results.map((e) => e.toEntity()).toList();
     } catch (exception) {

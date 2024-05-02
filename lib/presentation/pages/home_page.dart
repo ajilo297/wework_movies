@@ -1,6 +1,6 @@
 // Copyright (c) 2024 Ajil Oommen. All Rights Reserved.
 //
-// Last modified 02/05/24, 9:28 am
+// Last modified 02/05/24, 10:51 am
 
 import 'package:wework_movies/app_barrel.dart';
 
@@ -22,19 +22,23 @@ class HomePage extends StatelessWidget implements AutoRouteWrapper {
               const SliverToBoxAdapter(child: NowPlayingMovieCountCard()),
               const LabelledDivider(label: 'Now Playing'),
               SliverToBoxAdapter(
-                child: SizedBox(
-                  height: context.watch<NowPlayingMovieListBloc>().state.movies.isNotEmpty ? 400 : 200,
-                  child: PaginatedScrollView(
-                    onEndReached: () {
-                      context.read<NowPlayingMovieListBloc>().add(const LoadMovieListEvent());
-                    },
-                    scrollDirection: Axis.horizontal,
-                    slivers: [
-                      NowPlayingMovieListBuilder(
-                        builder: (context, movie) => NowPlayingMovieCard(movie: movie),
+                child: BlocBuilder<NowPlayingMovieListBloc, MovieListState>(
+                  builder: (context, state) {
+                    return SizedBox(
+                      height: state.movies.isEmpty && !state.isLoading ? 200 : 400,
+                      child: PaginatedScrollView(
+                        onEndReached: () {
+                          context.read<NowPlayingMovieListBloc>().add(const LoadMoreMovieListEvent());
+                        },
+                        scrollDirection: Axis.horizontal,
+                        slivers: [
+                          NowPlayingMovieListBuilder(
+                            builder: (context, movie) => NowPlayingMovieCard(movie: movie),
+                          ),
+                        ],
                       ),
-                    ],
-                  ),
+                    );
+                  },
                 ),
               ),
               const LabelledDivider(label: 'Top Rated'),

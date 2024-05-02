@@ -14,10 +14,105 @@ class TopRatedMovieCardShimmer extends StatelessWidget {
     return Shimmer.fromColors(
       baseColor: theme.colorScheme.onSurface.withOpacity(0.2),
       highlightColor: theme.colorScheme.onSurface.withOpacity(0.3),
-      child: const TopRatedMovieCard(
-        movie: MovieEntity(
-          name: '',
-          id: 0,
+      child: Container(
+        height: 250,
+        width: double.maxFinite,
+        margin: const EdgeInsets.symmetric(horizontal: padding * 3, vertical: padding / 2),
+        decoration: ShapeDecoration(
+          color: Colors.black.withOpacity(0.4),
+          shape: const RoundedRectangleBorder(
+            borderRadius: cardBorderRadius,
+          ),
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Expanded(
+              child: Container(
+                margin: edgeInsets,
+                decoration: ShapeDecoration(
+                  color: Colors.black.withOpacity(0.4),
+                  shape: const RoundedRectangleBorder(
+                    borderRadius: cardBorderRadius,
+                  ),
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: padding2),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Container(
+                    height: 20,
+                    width: 100,
+                    decoration: ShapeDecoration(
+                      color: Colors.black.withOpacity(0.7),
+                      shape: const RoundedRectangleBorder(
+                        borderRadius: cardBorderRadius,
+                      ),
+                    ),
+                  ),
+                  vSpacer,
+                  Row(
+                    children: [
+                      Container(
+                        height: 20,
+                        width: 20,
+                        decoration: ShapeDecoration(
+                          color: Colors.black.withOpacity(0.7),
+                          shape: const RoundedRectangleBorder(
+                            borderRadius: BorderRadius.all(Radius.circular(radius / 4)),
+                          ),
+                        ),
+                      ),
+                      hSpacer,
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Container(
+                              height: 10,
+                              width: 190,
+                              decoration: ShapeDecoration(
+                                color: Colors.black.withOpacity(0.7),
+                                shape: const RoundedRectangleBorder(
+                                  borderRadius: cardBorderRadius,
+                                ),
+                              ),
+                            ),
+                            vSpacer,
+                            Container(
+                              height: 10,
+                              width: 150,
+                              decoration: ShapeDecoration(
+                                color: Colors.black.withOpacity(0.7),
+                                shape: const RoundedRectangleBorder(
+                                  borderRadius: cardBorderRadius,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                  vSpacer2,
+                  Container(
+                    height: 10,
+                    width: 100,
+                    decoration: ShapeDecoration(
+                      color: Colors.black.withOpacity(0.7),
+                      shape: const RoundedRectangleBorder(
+                        borderRadius: cardBorderRadius,
+                      ),
+                    ),
+                  ),
+                  vSpacer2,
+                ],
+              ),
+            ),
+          ],
         ),
       ),
     );

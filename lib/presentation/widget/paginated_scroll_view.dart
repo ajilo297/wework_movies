@@ -1,6 +1,6 @@
 // Copyright (c) 2024 Ajil Oommen. All Rights Reserved.
 //
-// Last modified 02/05/24, 9:28 am
+// Last modified 02/05/24, 11:58 am
 
 import 'package:wework_movies/app_barrel.dart';
 
@@ -23,13 +23,16 @@ class PaginatedScrollView extends StatefulWidget {
 class _PaginatedScrollViewState extends State<PaginatedScrollView> {
   final controller = ScrollController();
 
+  late VoidCallback _loadMoreListener;
+
   @override
   void initState() {
-    controller.addListener(() {
-      if (controller.position.pixels == controller.position.maxScrollExtent) {
+    _loadMoreListener = () {
+      if (controller.position.pixels > controller.position.maxScrollExtent - 400) {
         widget.onEndReached?.call();
       }
-    });
+    };
+    controller.addListener(_loadMoreListener);
     super.initState();
   }
 

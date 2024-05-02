@@ -1,6 +1,6 @@
 // Copyright (c) 2024 Ajil Oommen. All Rights Reserved.
 //
-// Last modified 02/05/24, 9:28 am
+// Last modified 02/05/24, 12:00 pm
 
 import 'package:wework_movies/app_barrel.dart';
 
@@ -18,7 +18,7 @@ abstract base class MovieListBloc extends HydratedBloc<MovieListEvent, MovieList
   MovieListBloc({required this.useCase}) : super(const MovieListEmptyState()) {
     on<LoadMovieListEvent>(_loadMovies);
     on<SearchMovieListEvent>(_searchMovies, transformer: restartable());
-    on<LoadMoreMovieListEvent>(_loadMore);
+    on<LoadMoreMovieListEvent>(_loadMore, transformer: droppable());
   }
 
   final MovieUseCase useCase;

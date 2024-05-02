@@ -1,11 +1,11 @@
 // Copyright (c) 2024 Ajil Oommen. All Rights Reserved.
 //
-// Last modified 02/05/24, 9:28 am
+// Last modified 02/05/24, 12:00 pm
 
 export 'dart:math' show pi, min, max;
 export 'dart:ui' show ImageFilter;
 
-export 'package:bloc_concurrency/bloc_concurrency.dart';
+export 'package:bloc_concurrency/bloc_concurrency.dart' show restartable, droppable;
 export 'package:cached_network_image/cached_network_image.dart' show CachedNetworkImage;
 export 'package:collection/collection.dart';
 export 'package:dio/dio.dart';

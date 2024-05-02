@@ -1,5 +1,8 @@
+/*
+ * Copyright (c) 2024 Ajil Oommen. All Rights Reserved.
+ */
+
 import 'package:wework_movies/app_barrel.dart';
-import 'package:wework_movies/presentation/widget/now_playing_movie_count_card.dart';
 
 @RoutePage()
 class HomePage extends StatelessWidget implements AutoRouteWrapper {
@@ -9,7 +12,10 @@ class HomePage extends StatelessWidget implements AutoRouteWrapper {
   Widget build(BuildContext context) => HomeScaffold(
         body: RefreshIndicator(
           onRefresh: context.read<ImageConfigurationCubit>().loadConfiguration,
-          child: CustomScrollView(
+          child: PaginatedScrollView(
+            onEndReached: () {
+              context.read<TopRatedMovieListBloc>().add(const LoadMoreMovieListEvent());
+            },
             slivers: [
               const SliverToBoxAdapter(child: HomeAppBar()),
               const SliverToBoxAdapter(child: MovieSearchField()),
@@ -18,7 +24,10 @@ class HomePage extends StatelessWidget implements AutoRouteWrapper {
               SliverToBoxAdapter(
                 child: SizedBox(
                   height: context.watch<NowPlayingMovieListBloc>().state.movies.isNotEmpty ? 400 : 200,
-                  child: CustomScrollView(
+                  child: PaginatedScrollView(
+                    onEndReached: () {
+                      context.read<NowPlayingMovieListBloc>().add(const LoadMovieListEvent());
+                    },
                     scrollDirection: Axis.horizontal,
                     slivers: [
                       NowPlayingMovieListBuilder(

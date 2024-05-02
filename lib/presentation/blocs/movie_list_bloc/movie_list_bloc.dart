@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2024 Ajil Oommen. All Rights Reserved.
+ */
+
 import 'package:wework_movies/app_barrel.dart';
 
 export 'now_playing_movie_list_bloc.dart';
@@ -14,6 +18,7 @@ abstract base class MovieListBloc extends HydratedBloc<MovieListEvent, MovieList
   MovieListBloc({required this.useCase}) : super(const MovieListEmptyState()) {
     on<LoadMovieListEvent>(_loadMovies);
     on<SearchMovieListEvent>(_searchMovies, transformer: restartable());
+    on<LoadMoreMovieListEvent>(_loadMore);
   }
 
   final MovieUseCase useCase;
@@ -23,7 +28,7 @@ abstract base class MovieListBloc extends HydratedBloc<MovieListEvent, MovieList
     emit(state.copyWith(isLoading: true));
     try {
       final movies = await useCase.getMovies(page: event.page);
-      emit(movies.isEmpty ? const MovieListEmptyState() : MovieListDataState(movies));
+      emit(movies.isEmpty ? const MovieListEmptyState() : MovieListDataState(movies, page: event.page));
     } catch (e) {
       emit(initialState);
       rethrow;
@@ -32,6 +37,19 @@ abstract base class MovieListBloc extends HydratedBloc<MovieListEvent, MovieList
 
   void _searchMovies(SearchMovieListEvent event, _MovieListEmitter emit) async {
     emit(state.copyWith(searchQuery: event.query));
+  }
+
+  void _loadMore(LoadMoreMovieListEvent event, _MovieListEmitter emit) async {
+    final initialState = state;
+    if (initialState is! MovieListDataState) return;
+    emit(state.copyWith(isLoading: true));
+    try {
+      final movies = await useCase.getMovies(page: initialState.page + 1);
+      emit(MovieListDataState([...initialState.data, ...movies], page: initialState.page + 1));
+    } catch (e) {
+      emit(initialState);
+      rethrow;
+    }
   }
 
   @override

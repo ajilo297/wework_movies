@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2024 Ajil Oommen. All Rights Reserved.
+ */
+
 import 'package:wework_movies/app_barrel.dart';
 
 export 'now_playing_movie_list_builder.dart';
@@ -10,29 +14,31 @@ class MovieListBuilder<T extends MovieListBloc> extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => BlocBuilder<T, MovieListState>(
-        builder: (context, state) => switch (state) {
-          MovieListEmptyState() => const SliverToBoxAdapter(
-              child: _Placeholder(
-                child: _NoMovieContainer(message: 'Nothing to see here!'),
-              ),
-            ),
-          MovieListDataState dataState => switch (dataState.isLoading) {
-              true => const SliverToBoxAdapter(
-                  child: _Placeholder(child: CircularProgressIndicator()),
+        builder: (context, state) {
+          return switch (state) {
+            MovieListEmptyState() => const SliverToBoxAdapter(
+                child: _Placeholder(
+                  child: _NoMovieContainer(message: 'Nothing to see here!'),
                 ),
-              false => dataState.movies.isEmpty
-                  ? const SliverToBoxAdapter(
-                      child: _Placeholder(
-                        child: _NoMovieContainer(message: 'No movies found!'),
+              ),
+            MovieListDataState dataState => switch (dataState.isLoading) {
+                true => const SliverToBoxAdapter(
+                    child: _Placeholder(child: CircularProgressIndicator()),
+                  ),
+                false => dataState.movies.isEmpty
+                    ? const SliverToBoxAdapter(
+                        child: _Placeholder(
+                          child: _NoMovieContainer(message: 'No movies found!'),
+                        ),
+                      )
+                    : SliverList(
+                        delegate: SliverChildBuilderDelegate(
+                          (context, index) => builder(context, dataState.movies[index]),
+                          childCount: dataState.movies.length,
+                        ),
                       ),
-                    )
-                  : SliverList(
-                      delegate: SliverChildBuilderDelegate(
-                        (context, index) => builder(context, dataState.movies[index]),
-                        childCount: dataState.movies.length,
-                      ),
-                    ),
-            },
+              },
+          };
         },
       );
 }

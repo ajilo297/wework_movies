@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2024 Ajil Oommen. All Rights Reserved.
+ */
+
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -22,12 +26,10 @@ MovieListEvent _$MovieListEventFromJson(Map<String, dynamic> json) {
       return SearchMovieListEvent.fromJson(json);
     case 'loadNextMoviePage':
       return LoadMoreMovieListEvent.fromJson(json);
-    case 'loadPreviousMoviePage':
-      return LoadPreviousMovieListEvent.fromJson(json);
 
     default:
-      throw CheckedFromJsonException(json, 'runtimeType', 'MovieListEvent',
-          'Invalid union type "${json['runtimeType']}"!');
+      throw CheckedFromJsonException(
+          json, 'runtimeType', 'MovieListEvent', 'Invalid union type "${json['runtimeType']}"!');
   }
 }
 
@@ -38,7 +40,6 @@ mixin _$MovieListEvent {
     required TResult Function(int page) loadMovies,
     required TResult Function(String query) searchMovies,
     required TResult Function() loadNextMoviePage,
-    required TResult Function() loadPreviousMoviePage,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -46,7 +47,6 @@ mixin _$MovieListEvent {
     TResult? Function(int page)? loadMovies,
     TResult? Function(String query)? searchMovies,
     TResult? Function()? loadNextMoviePage,
-    TResult? Function()? loadPreviousMoviePage,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -54,7 +54,6 @@ mixin _$MovieListEvent {
     TResult Function(int page)? loadMovies,
     TResult Function(String query)? searchMovies,
     TResult Function()? loadNextMoviePage,
-    TResult Function()? loadPreviousMoviePage,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -63,8 +62,6 @@ mixin _$MovieListEvent {
     required TResult Function(LoadMovieListEvent value) loadMovies,
     required TResult Function(SearchMovieListEvent value) searchMovies,
     required TResult Function(LoadMoreMovieListEvent value) loadNextMoviePage,
-    required TResult Function(LoadPreviousMovieListEvent value)
-        loadPreviousMoviePage,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -72,7 +69,6 @@ mixin _$MovieListEvent {
     TResult? Function(LoadMovieListEvent value)? loadMovies,
     TResult? Function(SearchMovieListEvent value)? searchMovies,
     TResult? Function(LoadMoreMovieListEvent value)? loadNextMoviePage,
-    TResult? Function(LoadPreviousMovieListEvent value)? loadPreviousMoviePage,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -80,7 +76,6 @@ mixin _$MovieListEvent {
     TResult Function(LoadMovieListEvent value)? loadMovies,
     TResult Function(SearchMovieListEvent value)? searchMovies,
     TResult Function(LoadMoreMovieListEvent value)? loadNextMoviePage,
-    TResult Function(LoadPreviousMovieListEvent value)? loadPreviousMoviePage,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -89,14 +84,12 @@ mixin _$MovieListEvent {
 
 /// @nodoc
 abstract class $MovieListEventCopyWith<$Res> {
-  factory $MovieListEventCopyWith(
-          MovieListEvent value, $Res Function(MovieListEvent) then) =
+  factory $MovieListEventCopyWith(MovieListEvent value, $Res Function(MovieListEvent) then) =
       _$MovieListEventCopyWithImpl<$Res, MovieListEvent>;
 }
 
 /// @nodoc
-class _$MovieListEventCopyWithImpl<$Res, $Val extends MovieListEvent>
-    implements $MovieListEventCopyWith<$Res> {
+class _$MovieListEventCopyWithImpl<$Res, $Val extends MovieListEvent> implements $MovieListEventCopyWith<$Res> {
   _$MovieListEventCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -107,19 +100,17 @@ class _$MovieListEventCopyWithImpl<$Res, $Val extends MovieListEvent>
 
 /// @nodoc
 abstract class _$$LoadMovieListEventImplCopyWith<$Res> {
-  factory _$$LoadMovieListEventImplCopyWith(_$LoadMovieListEventImpl value,
-          $Res Function(_$LoadMovieListEventImpl) then) =
+  factory _$$LoadMovieListEventImplCopyWith(
+          _$LoadMovieListEventImpl value, $Res Function(_$LoadMovieListEventImpl) then) =
       __$$LoadMovieListEventImplCopyWithImpl<$Res>;
   @useResult
   $Res call({int page});
 }
 
 /// @nodoc
-class __$$LoadMovieListEventImplCopyWithImpl<$Res>
-    extends _$MovieListEventCopyWithImpl<$Res, _$LoadMovieListEventImpl>
+class __$$LoadMovieListEventImplCopyWithImpl<$Res> extends _$MovieListEventCopyWithImpl<$Res, _$LoadMovieListEventImpl>
     implements _$$LoadMovieListEventImplCopyWith<$Res> {
-  __$$LoadMovieListEventImplCopyWithImpl(_$LoadMovieListEventImpl _value,
-      $Res Function(_$LoadMovieListEventImpl) _then)
+  __$$LoadMovieListEventImplCopyWithImpl(_$LoadMovieListEventImpl _value, $Res Function(_$LoadMovieListEventImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -139,11 +130,9 @@ class __$$LoadMovieListEventImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$LoadMovieListEventImpl implements LoadMovieListEvent {
-  const _$LoadMovieListEventImpl({this.page = 1, final String? $type})
-      : $type = $type ?? 'loadMovies';
+  const _$LoadMovieListEventImpl({this.page = 1, final String? $type}) : $type = $type ?? 'loadMovies';
 
-  factory _$LoadMovieListEventImpl.fromJson(Map<String, dynamic> json) =>
-      _$$LoadMovieListEventImplFromJson(json);
+  factory _$LoadMovieListEventImpl.fromJson(Map<String, dynamic> json) => _$$LoadMovieListEventImplFromJson(json);
 
   @override
   @JsonKey()
@@ -173,8 +162,7 @@ class _$LoadMovieListEventImpl implements LoadMovieListEvent {
   @override
   @pragma('vm:prefer-inline')
   _$$LoadMovieListEventImplCopyWith<_$LoadMovieListEventImpl> get copyWith =>
-      __$$LoadMovieListEventImplCopyWithImpl<_$LoadMovieListEventImpl>(
-          this, _$identity);
+      __$$LoadMovieListEventImplCopyWithImpl<_$LoadMovieListEventImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -182,7 +170,6 @@ class _$LoadMovieListEventImpl implements LoadMovieListEvent {
     required TResult Function(int page) loadMovies,
     required TResult Function(String query) searchMovies,
     required TResult Function() loadNextMoviePage,
-    required TResult Function() loadPreviousMoviePage,
   }) {
     return loadMovies(page);
   }
@@ -193,7 +180,6 @@ class _$LoadMovieListEventImpl implements LoadMovieListEvent {
     TResult? Function(int page)? loadMovies,
     TResult? Function(String query)? searchMovies,
     TResult? Function()? loadNextMoviePage,
-    TResult? Function()? loadPreviousMoviePage,
   }) {
     return loadMovies?.call(page);
   }
@@ -204,7 +190,6 @@ class _$LoadMovieListEventImpl implements LoadMovieListEvent {
     TResult Function(int page)? loadMovies,
     TResult Function(String query)? searchMovies,
     TResult Function()? loadNextMoviePage,
-    TResult Function()? loadPreviousMoviePage,
     required TResult orElse(),
   }) {
     if (loadMovies != null) {
@@ -219,8 +204,6 @@ class _$LoadMovieListEventImpl implements LoadMovieListEvent {
     required TResult Function(LoadMovieListEvent value) loadMovies,
     required TResult Function(SearchMovieListEvent value) searchMovies,
     required TResult Function(LoadMoreMovieListEvent value) loadNextMoviePage,
-    required TResult Function(LoadPreviousMovieListEvent value)
-        loadPreviousMoviePage,
   }) {
     return loadMovies(this);
   }
@@ -231,7 +214,6 @@ class _$LoadMovieListEventImpl implements LoadMovieListEvent {
     TResult? Function(LoadMovieListEvent value)? loadMovies,
     TResult? Function(SearchMovieListEvent value)? searchMovies,
     TResult? Function(LoadMoreMovieListEvent value)? loadNextMoviePage,
-    TResult? Function(LoadPreviousMovieListEvent value)? loadPreviousMoviePage,
   }) {
     return loadMovies?.call(this);
   }
@@ -242,7 +224,6 @@ class _$LoadMovieListEventImpl implements LoadMovieListEvent {
     TResult Function(LoadMovieListEvent value)? loadMovies,
     TResult Function(SearchMovieListEvent value)? searchMovies,
     TResult Function(LoadMoreMovieListEvent value)? loadNextMoviePage,
-    TResult Function(LoadPreviousMovieListEvent value)? loadPreviousMoviePage,
     required TResult orElse(),
   }) {
     if (loadMovies != null) {
@@ -262,19 +243,17 @@ class _$LoadMovieListEventImpl implements LoadMovieListEvent {
 abstract class LoadMovieListEvent implements MovieListEvent {
   const factory LoadMovieListEvent({final int page}) = _$LoadMovieListEventImpl;
 
-  factory LoadMovieListEvent.fromJson(Map<String, dynamic> json) =
-      _$LoadMovieListEventImpl.fromJson;
+  factory LoadMovieListEvent.fromJson(Map<String, dynamic> json) = _$LoadMovieListEventImpl.fromJson;
 
   int get page;
   @JsonKey(ignore: true)
-  _$$LoadMovieListEventImplCopyWith<_$LoadMovieListEventImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$LoadMovieListEventImplCopyWith<_$LoadMovieListEventImpl> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$SearchMovieListEventImplCopyWith<$Res> {
-  factory _$$SearchMovieListEventImplCopyWith(_$SearchMovieListEventImpl value,
-          $Res Function(_$SearchMovieListEventImpl) then) =
+  factory _$$SearchMovieListEventImplCopyWith(
+          _$SearchMovieListEventImpl value, $Res Function(_$SearchMovieListEventImpl) then) =
       __$$SearchMovieListEventImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String query});
@@ -284,8 +263,8 @@ abstract class _$$SearchMovieListEventImplCopyWith<$Res> {
 class __$$SearchMovieListEventImplCopyWithImpl<$Res>
     extends _$MovieListEventCopyWithImpl<$Res, _$SearchMovieListEventImpl>
     implements _$$SearchMovieListEventImplCopyWith<$Res> {
-  __$$SearchMovieListEventImplCopyWithImpl(_$SearchMovieListEventImpl _value,
-      $Res Function(_$SearchMovieListEventImpl) _then)
+  __$$SearchMovieListEventImplCopyWithImpl(
+      _$SearchMovieListEventImpl _value, $Res Function(_$SearchMovieListEventImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -305,11 +284,9 @@ class __$$SearchMovieListEventImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$SearchMovieListEventImpl implements SearchMovieListEvent {
-  const _$SearchMovieListEventImpl({required this.query, final String? $type})
-      : $type = $type ?? 'searchMovies';
+  const _$SearchMovieListEventImpl({required this.query, final String? $type}) : $type = $type ?? 'searchMovies';
 
-  factory _$SearchMovieListEventImpl.fromJson(Map<String, dynamic> json) =>
-      _$$SearchMovieListEventImplFromJson(json);
+  factory _$SearchMovieListEventImpl.fromJson(Map<String, dynamic> json) => _$$SearchMovieListEventImplFromJson(json);
 
   @override
   final String query;
@@ -337,10 +314,8 @@ class _$SearchMovieListEventImpl implements SearchMovieListEvent {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$SearchMovieListEventImplCopyWith<_$SearchMovieListEventImpl>
-      get copyWith =>
-          __$$SearchMovieListEventImplCopyWithImpl<_$SearchMovieListEventImpl>(
-              this, _$identity);
+  _$$SearchMovieListEventImplCopyWith<_$SearchMovieListEventImpl> get copyWith =>
+      __$$SearchMovieListEventImplCopyWithImpl<_$SearchMovieListEventImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -348,7 +323,6 @@ class _$SearchMovieListEventImpl implements SearchMovieListEvent {
     required TResult Function(int page) loadMovies,
     required TResult Function(String query) searchMovies,
     required TResult Function() loadNextMoviePage,
-    required TResult Function() loadPreviousMoviePage,
   }) {
     return searchMovies(query);
   }
@@ -359,7 +333,6 @@ class _$SearchMovieListEventImpl implements SearchMovieListEvent {
     TResult? Function(int page)? loadMovies,
     TResult? Function(String query)? searchMovies,
     TResult? Function()? loadNextMoviePage,
-    TResult? Function()? loadPreviousMoviePage,
   }) {
     return searchMovies?.call(query);
   }
@@ -370,7 +343,6 @@ class _$SearchMovieListEventImpl implements SearchMovieListEvent {
     TResult Function(int page)? loadMovies,
     TResult Function(String query)? searchMovies,
     TResult Function()? loadNextMoviePage,
-    TResult Function()? loadPreviousMoviePage,
     required TResult orElse(),
   }) {
     if (searchMovies != null) {
@@ -385,8 +357,6 @@ class _$SearchMovieListEventImpl implements SearchMovieListEvent {
     required TResult Function(LoadMovieListEvent value) loadMovies,
     required TResult Function(SearchMovieListEvent value) searchMovies,
     required TResult Function(LoadMoreMovieListEvent value) loadNextMoviePage,
-    required TResult Function(LoadPreviousMovieListEvent value)
-        loadPreviousMoviePage,
   }) {
     return searchMovies(this);
   }
@@ -397,7 +367,6 @@ class _$SearchMovieListEventImpl implements SearchMovieListEvent {
     TResult? Function(LoadMovieListEvent value)? loadMovies,
     TResult? Function(SearchMovieListEvent value)? searchMovies,
     TResult? Function(LoadMoreMovieListEvent value)? loadNextMoviePage,
-    TResult? Function(LoadPreviousMovieListEvent value)? loadPreviousMoviePage,
   }) {
     return searchMovies?.call(this);
   }
@@ -408,7 +377,6 @@ class _$SearchMovieListEventImpl implements SearchMovieListEvent {
     TResult Function(LoadMovieListEvent value)? loadMovies,
     TResult Function(SearchMovieListEvent value)? searchMovies,
     TResult Function(LoadMoreMovieListEvent value)? loadNextMoviePage,
-    TResult Function(LoadPreviousMovieListEvent value)? loadPreviousMoviePage,
     required TResult orElse(),
   }) {
     if (searchMovies != null) {
@@ -426,23 +394,19 @@ class _$SearchMovieListEventImpl implements SearchMovieListEvent {
 }
 
 abstract class SearchMovieListEvent implements MovieListEvent {
-  const factory SearchMovieListEvent({required final String query}) =
-      _$SearchMovieListEventImpl;
+  const factory SearchMovieListEvent({required final String query}) = _$SearchMovieListEventImpl;
 
-  factory SearchMovieListEvent.fromJson(Map<String, dynamic> json) =
-      _$SearchMovieListEventImpl.fromJson;
+  factory SearchMovieListEvent.fromJson(Map<String, dynamic> json) = _$SearchMovieListEventImpl.fromJson;
 
   String get query;
   @JsonKey(ignore: true)
-  _$$SearchMovieListEventImplCopyWith<_$SearchMovieListEventImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  _$$SearchMovieListEventImplCopyWith<_$SearchMovieListEventImpl> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$LoadMoreMovieListEventImplCopyWith<$Res> {
   factory _$$LoadMoreMovieListEventImplCopyWith(
-          _$LoadMoreMovieListEventImpl value,
-          $Res Function(_$LoadMoreMovieListEventImpl) then) =
+          _$LoadMoreMovieListEventImpl value, $Res Function(_$LoadMoreMovieListEventImpl) then) =
       __$$LoadMoreMovieListEventImplCopyWithImpl<$Res>;
 }
 
@@ -451,16 +415,14 @@ class __$$LoadMoreMovieListEventImplCopyWithImpl<$Res>
     extends _$MovieListEventCopyWithImpl<$Res, _$LoadMoreMovieListEventImpl>
     implements _$$LoadMoreMovieListEventImplCopyWith<$Res> {
   __$$LoadMoreMovieListEventImplCopyWithImpl(
-      _$LoadMoreMovieListEventImpl _value,
-      $Res Function(_$LoadMoreMovieListEventImpl) _then)
+      _$LoadMoreMovieListEventImpl _value, $Res Function(_$LoadMoreMovieListEventImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 @JsonSerializable()
 class _$LoadMoreMovieListEventImpl implements LoadMoreMovieListEvent {
-  const _$LoadMoreMovieListEventImpl({final String? $type})
-      : $type = $type ?? 'loadNextMoviePage';
+  const _$LoadMoreMovieListEventImpl({final String? $type}) : $type = $type ?? 'loadNextMoviePage';
 
   factory _$LoadMoreMovieListEventImpl.fromJson(Map<String, dynamic> json) =>
       _$$LoadMoreMovieListEventImplFromJson(json);
@@ -475,9 +437,7 @@ class _$LoadMoreMovieListEventImpl implements LoadMoreMovieListEvent {
 
   @override
   bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$LoadMoreMovieListEventImpl);
+    return identical(this, other) || (other.runtimeType == runtimeType && other is _$LoadMoreMovieListEventImpl);
   }
 
   @JsonKey(ignore: true)
@@ -490,7 +450,6 @@ class _$LoadMoreMovieListEventImpl implements LoadMoreMovieListEvent {
     required TResult Function(int page) loadMovies,
     required TResult Function(String query) searchMovies,
     required TResult Function() loadNextMoviePage,
-    required TResult Function() loadPreviousMoviePage,
   }) {
     return loadNextMoviePage();
   }
@@ -501,7 +460,6 @@ class _$LoadMoreMovieListEventImpl implements LoadMoreMovieListEvent {
     TResult? Function(int page)? loadMovies,
     TResult? Function(String query)? searchMovies,
     TResult? Function()? loadNextMoviePage,
-    TResult? Function()? loadPreviousMoviePage,
   }) {
     return loadNextMoviePage?.call();
   }
@@ -512,7 +470,6 @@ class _$LoadMoreMovieListEventImpl implements LoadMoreMovieListEvent {
     TResult Function(int page)? loadMovies,
     TResult Function(String query)? searchMovies,
     TResult Function()? loadNextMoviePage,
-    TResult Function()? loadPreviousMoviePage,
     required TResult orElse(),
   }) {
     if (loadNextMoviePage != null) {
@@ -527,8 +484,6 @@ class _$LoadMoreMovieListEventImpl implements LoadMoreMovieListEvent {
     required TResult Function(LoadMovieListEvent value) loadMovies,
     required TResult Function(SearchMovieListEvent value) searchMovies,
     required TResult Function(LoadMoreMovieListEvent value) loadNextMoviePage,
-    required TResult Function(LoadPreviousMovieListEvent value)
-        loadPreviousMoviePage,
   }) {
     return loadNextMoviePage(this);
   }
@@ -539,7 +494,6 @@ class _$LoadMoreMovieListEventImpl implements LoadMoreMovieListEvent {
     TResult? Function(LoadMovieListEvent value)? loadMovies,
     TResult? Function(SearchMovieListEvent value)? searchMovies,
     TResult? Function(LoadMoreMovieListEvent value)? loadNextMoviePage,
-    TResult? Function(LoadPreviousMovieListEvent value)? loadPreviousMoviePage,
   }) {
     return loadNextMoviePage?.call(this);
   }
@@ -550,7 +504,6 @@ class _$LoadMoreMovieListEventImpl implements LoadMoreMovieListEvent {
     TResult Function(LoadMovieListEvent value)? loadMovies,
     TResult Function(SearchMovieListEvent value)? searchMovies,
     TResult Function(LoadMoreMovieListEvent value)? loadNextMoviePage,
-    TResult Function(LoadPreviousMovieListEvent value)? loadPreviousMoviePage,
     required TResult orElse(),
   }) {
     if (loadNextMoviePage != null) {
@@ -570,145 +523,7 @@ class _$LoadMoreMovieListEventImpl implements LoadMoreMovieListEvent {
 abstract class LoadMoreMovieListEvent implements MovieListEvent {
   const factory LoadMoreMovieListEvent() = _$LoadMoreMovieListEventImpl;
 
-  factory LoadMoreMovieListEvent.fromJson(Map<String, dynamic> json) =
-      _$LoadMoreMovieListEventImpl.fromJson;
-}
-
-/// @nodoc
-abstract class _$$LoadPreviousMovieListEventImplCopyWith<$Res> {
-  factory _$$LoadPreviousMovieListEventImplCopyWith(
-          _$LoadPreviousMovieListEventImpl value,
-          $Res Function(_$LoadPreviousMovieListEventImpl) then) =
-      __$$LoadPreviousMovieListEventImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$LoadPreviousMovieListEventImplCopyWithImpl<$Res>
-    extends _$MovieListEventCopyWithImpl<$Res, _$LoadPreviousMovieListEventImpl>
-    implements _$$LoadPreviousMovieListEventImplCopyWith<$Res> {
-  __$$LoadPreviousMovieListEventImplCopyWithImpl(
-      _$LoadPreviousMovieListEventImpl _value,
-      $Res Function(_$LoadPreviousMovieListEventImpl) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$LoadPreviousMovieListEventImpl implements LoadPreviousMovieListEvent {
-  const _$LoadPreviousMovieListEventImpl({final String? $type})
-      : $type = $type ?? 'loadPreviousMoviePage';
-
-  factory _$LoadPreviousMovieListEventImpl.fromJson(
-          Map<String, dynamic> json) =>
-      _$$LoadPreviousMovieListEventImplFromJson(json);
-
-  @JsonKey(name: 'runtimeType')
-  final String $type;
-
-  @override
-  String toString() {
-    return 'MovieListEvent.loadPreviousMoviePage()';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$LoadPreviousMovieListEventImpl);
-  }
-
-  @JsonKey(ignore: true)
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(int page) loadMovies,
-    required TResult Function(String query) searchMovies,
-    required TResult Function() loadNextMoviePage,
-    required TResult Function() loadPreviousMoviePage,
-  }) {
-    return loadPreviousMoviePage();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(int page)? loadMovies,
-    TResult? Function(String query)? searchMovies,
-    TResult? Function()? loadNextMoviePage,
-    TResult? Function()? loadPreviousMoviePage,
-  }) {
-    return loadPreviousMoviePage?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(int page)? loadMovies,
-    TResult Function(String query)? searchMovies,
-    TResult Function()? loadNextMoviePage,
-    TResult Function()? loadPreviousMoviePage,
-    required TResult orElse(),
-  }) {
-    if (loadPreviousMoviePage != null) {
-      return loadPreviousMoviePage();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(LoadMovieListEvent value) loadMovies,
-    required TResult Function(SearchMovieListEvent value) searchMovies,
-    required TResult Function(LoadMoreMovieListEvent value) loadNextMoviePage,
-    required TResult Function(LoadPreviousMovieListEvent value)
-        loadPreviousMoviePage,
-  }) {
-    return loadPreviousMoviePage(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(LoadMovieListEvent value)? loadMovies,
-    TResult? Function(SearchMovieListEvent value)? searchMovies,
-    TResult? Function(LoadMoreMovieListEvent value)? loadNextMoviePage,
-    TResult? Function(LoadPreviousMovieListEvent value)? loadPreviousMoviePage,
-  }) {
-    return loadPreviousMoviePage?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(LoadMovieListEvent value)? loadMovies,
-    TResult Function(SearchMovieListEvent value)? searchMovies,
-    TResult Function(LoadMoreMovieListEvent value)? loadNextMoviePage,
-    TResult Function(LoadPreviousMovieListEvent value)? loadPreviousMoviePage,
-    required TResult orElse(),
-  }) {
-    if (loadPreviousMoviePage != null) {
-      return loadPreviousMoviePage(this);
-    }
-    return orElse();
-  }
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$LoadPreviousMovieListEventImplToJson(
-      this,
-    );
-  }
-}
-
-abstract class LoadPreviousMovieListEvent implements MovieListEvent {
-  const factory LoadPreviousMovieListEvent() = _$LoadPreviousMovieListEventImpl;
-
-  factory LoadPreviousMovieListEvent.fromJson(Map<String, dynamic> json) =
-      _$LoadPreviousMovieListEventImpl.fromJson;
+  factory LoadMoreMovieListEvent.fromJson(Map<String, dynamic> json) = _$LoadMoreMovieListEventImpl.fromJson;
 }
 
 MovieListState _$MovieListStateFromJson(Map<String, dynamic> json) {
@@ -719,8 +534,8 @@ MovieListState _$MovieListStateFromJson(Map<String, dynamic> json) {
       return MovieListDataState.fromJson(json);
 
     default:
-      throw CheckedFromJsonException(json, 'runtimeType', 'MovieListState',
-          'Invalid union type "${json['runtimeType']}"!');
+      throw CheckedFromJsonException(
+          json, 'runtimeType', 'MovieListState', 'Invalid union type "${json['runtimeType']}"!');
   }
 }
 
@@ -731,27 +546,20 @@ mixin _$MovieListState {
   String get searchQuery => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(bool isLoading, int page, String searchQuery)
-        empty,
-    required TResult Function(List<MovieEntity> data, bool isLoading, int page,
-            String searchQuery)
-        data,
+    required TResult Function(bool isLoading, int page, String searchQuery) empty,
+    required TResult Function(List<MovieEntity> data, bool isLoading, int page, String searchQuery) data,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(bool isLoading, int page, String searchQuery)? empty,
-    TResult? Function(List<MovieEntity> data, bool isLoading, int page,
-            String searchQuery)?
-        data,
+    TResult? Function(List<MovieEntity> data, bool isLoading, int page, String searchQuery)? data,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(bool isLoading, int page, String searchQuery)? empty,
-    TResult Function(List<MovieEntity> data, bool isLoading, int page,
-            String searchQuery)?
-        data,
+    TResult Function(List<MovieEntity> data, bool isLoading, int page, String searchQuery)? data,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -776,22 +584,19 @@ mixin _$MovieListState {
       throw _privateConstructorUsedError;
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $MovieListStateCopyWith<MovieListState> get copyWith =>
-      throw _privateConstructorUsedError;
+  $MovieListStateCopyWith<MovieListState> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $MovieListStateCopyWith<$Res> {
-  factory $MovieListStateCopyWith(
-          MovieListState value, $Res Function(MovieListState) then) =
+  factory $MovieListStateCopyWith(MovieListState value, $Res Function(MovieListState) then) =
       _$MovieListStateCopyWithImpl<$Res, MovieListState>;
   @useResult
   $Res call({bool isLoading, int page, String searchQuery});
 }
 
 /// @nodoc
-class _$MovieListStateCopyWithImpl<$Res, $Val extends MovieListState>
-    implements $MovieListStateCopyWith<$Res> {
+class _$MovieListStateCopyWithImpl<$Res, $Val extends MovieListState> implements $MovieListStateCopyWith<$Res> {
   _$MovieListStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -824,10 +629,9 @@ class _$MovieListStateCopyWithImpl<$Res, $Val extends MovieListState>
 }
 
 /// @nodoc
-abstract class _$$MovieListEmptyStateImplCopyWith<$Res>
-    implements $MovieListStateCopyWith<$Res> {
-  factory _$$MovieListEmptyStateImplCopyWith(_$MovieListEmptyStateImpl value,
-          $Res Function(_$MovieListEmptyStateImpl) then) =
+abstract class _$$MovieListEmptyStateImplCopyWith<$Res> implements $MovieListStateCopyWith<$Res> {
+  factory _$$MovieListEmptyStateImplCopyWith(
+          _$MovieListEmptyStateImpl value, $Res Function(_$MovieListEmptyStateImpl) then) =
       __$$MovieListEmptyStateImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -838,8 +642,8 @@ abstract class _$$MovieListEmptyStateImplCopyWith<$Res>
 class __$$MovieListEmptyStateImplCopyWithImpl<$Res>
     extends _$MovieListStateCopyWithImpl<$Res, _$MovieListEmptyStateImpl>
     implements _$$MovieListEmptyStateImplCopyWith<$Res> {
-  __$$MovieListEmptyStateImplCopyWithImpl(_$MovieListEmptyStateImpl _value,
-      $Res Function(_$MovieListEmptyStateImpl) _then)
+  __$$MovieListEmptyStateImplCopyWithImpl(
+      _$MovieListEmptyStateImpl _value, $Res Function(_$MovieListEmptyStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -869,16 +673,11 @@ class __$$MovieListEmptyStateImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$MovieListEmptyStateImpl extends MovieListEmptyState {
-  const _$MovieListEmptyStateImpl(
-      {this.isLoading = false,
-      this.page = 1,
-      this.searchQuery = '',
-      final String? $type})
+  const _$MovieListEmptyStateImpl({this.isLoading = false, this.page = 1, this.searchQuery = '', final String? $type})
       : $type = $type ?? 'empty',
         super._();
 
-  factory _$MovieListEmptyStateImpl.fromJson(Map<String, dynamic> json) =>
-      _$$MovieListEmptyStateImplFromJson(json);
+  factory _$MovieListEmptyStateImpl.fromJson(Map<String, dynamic> json) => _$$MovieListEmptyStateImplFromJson(json);
 
   @override
   @JsonKey()
@@ -903,11 +702,9 @@ class _$MovieListEmptyStateImpl extends MovieListEmptyState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$MovieListEmptyStateImpl &&
-            (identical(other.isLoading, isLoading) ||
-                other.isLoading == isLoading) &&
+            (identical(other.isLoading, isLoading) || other.isLoading == isLoading) &&
             (identical(other.page, page) || other.page == page) &&
-            (identical(other.searchQuery, searchQuery) ||
-                other.searchQuery == searchQuery));
+            (identical(other.searchQuery, searchQuery) || other.searchQuery == searchQuery));
   }
 
   @JsonKey(ignore: true)
@@ -918,17 +715,13 @@ class _$MovieListEmptyStateImpl extends MovieListEmptyState {
   @override
   @pragma('vm:prefer-inline')
   _$$MovieListEmptyStateImplCopyWith<_$MovieListEmptyStateImpl> get copyWith =>
-      __$$MovieListEmptyStateImplCopyWithImpl<_$MovieListEmptyStateImpl>(
-          this, _$identity);
+      __$$MovieListEmptyStateImplCopyWithImpl<_$MovieListEmptyStateImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(bool isLoading, int page, String searchQuery)
-        empty,
-    required TResult Function(List<MovieEntity> data, bool isLoading, int page,
-            String searchQuery)
-        data,
+    required TResult Function(bool isLoading, int page, String searchQuery) empty,
+    required TResult Function(List<MovieEntity> data, bool isLoading, int page, String searchQuery) data,
   }) {
     return empty(isLoading, page, searchQuery);
   }
@@ -937,9 +730,7 @@ class _$MovieListEmptyStateImpl extends MovieListEmptyState {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(bool isLoading, int page, String searchQuery)? empty,
-    TResult? Function(List<MovieEntity> data, bool isLoading, int page,
-            String searchQuery)?
-        data,
+    TResult? Function(List<MovieEntity> data, bool isLoading, int page, String searchQuery)? data,
   }) {
     return empty?.call(isLoading, page, searchQuery);
   }
@@ -948,9 +739,7 @@ class _$MovieListEmptyStateImpl extends MovieListEmptyState {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(bool isLoading, int page, String searchQuery)? empty,
-    TResult Function(List<MovieEntity> data, bool isLoading, int page,
-            String searchQuery)?
-        data,
+    TResult Function(List<MovieEntity> data, bool isLoading, int page, String searchQuery)? data,
     required TResult orElse(),
   }) {
     if (empty != null) {
@@ -999,14 +788,11 @@ class _$MovieListEmptyStateImpl extends MovieListEmptyState {
 }
 
 abstract class MovieListEmptyState extends MovieListState {
-  const factory MovieListEmptyState(
-      {final bool isLoading,
-      final int page,
-      final String searchQuery}) = _$MovieListEmptyStateImpl;
+  const factory MovieListEmptyState({final bool isLoading, final int page, final String searchQuery}) =
+      _$MovieListEmptyStateImpl;
   const MovieListEmptyState._() : super._();
 
-  factory MovieListEmptyState.fromJson(Map<String, dynamic> json) =
-      _$MovieListEmptyStateImpl.fromJson;
+  factory MovieListEmptyState.fromJson(Map<String, dynamic> json) = _$MovieListEmptyStateImpl.fromJson;
 
   @override
   bool get isLoading;
@@ -1016,28 +802,23 @@ abstract class MovieListEmptyState extends MovieListState {
   String get searchQuery;
   @override
   @JsonKey(ignore: true)
-  _$$MovieListEmptyStateImplCopyWith<_$MovieListEmptyStateImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$MovieListEmptyStateImplCopyWith<_$MovieListEmptyStateImpl> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$MovieListDataStateImplCopyWith<$Res>
-    implements $MovieListStateCopyWith<$Res> {
-  factory _$$MovieListDataStateImplCopyWith(_$MovieListDataStateImpl value,
-          $Res Function(_$MovieListDataStateImpl) then) =
+abstract class _$$MovieListDataStateImplCopyWith<$Res> implements $MovieListStateCopyWith<$Res> {
+  factory _$$MovieListDataStateImplCopyWith(
+          _$MovieListDataStateImpl value, $Res Function(_$MovieListDataStateImpl) then) =
       __$$MovieListDataStateImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {List<MovieEntity> data, bool isLoading, int page, String searchQuery});
+  $Res call({List<MovieEntity> data, bool isLoading, int page, String searchQuery});
 }
 
 /// @nodoc
-class __$$MovieListDataStateImplCopyWithImpl<$Res>
-    extends _$MovieListStateCopyWithImpl<$Res, _$MovieListDataStateImpl>
+class __$$MovieListDataStateImplCopyWithImpl<$Res> extends _$MovieListStateCopyWithImpl<$Res, _$MovieListDataStateImpl>
     implements _$$MovieListDataStateImplCopyWith<$Res> {
-  __$$MovieListDataStateImplCopyWithImpl(_$MovieListDataStateImpl _value,
-      $Res Function(_$MovieListDataStateImpl) _then)
+  __$$MovieListDataStateImplCopyWithImpl(_$MovieListDataStateImpl _value, $Res Function(_$MovieListDataStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -1073,16 +854,12 @@ class __$$MovieListDataStateImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$MovieListDataStateImpl extends MovieListDataState {
   const _$MovieListDataStateImpl(final List<MovieEntity> data,
-      {this.isLoading = false,
-      this.page = 1,
-      this.searchQuery = '',
-      final String? $type})
+      {this.isLoading = false, this.page = 1, this.searchQuery = '', final String? $type})
       : _data = data,
         $type = $type ?? 'data',
         super._();
 
-  factory _$MovieListDataStateImpl.fromJson(Map<String, dynamic> json) =>
-      _$$MovieListDataStateImplFromJson(json);
+  factory _$MovieListDataStateImpl.fromJson(Map<String, dynamic> json) => _$$MovieListDataStateImplFromJson(json);
 
   final List<MovieEntity> _data;
   @override
@@ -1116,33 +893,27 @@ class _$MovieListDataStateImpl extends MovieListDataState {
         (other.runtimeType == runtimeType &&
             other is _$MovieListDataStateImpl &&
             const DeepCollectionEquality().equals(other._data, _data) &&
-            (identical(other.isLoading, isLoading) ||
-                other.isLoading == isLoading) &&
+            (identical(other.isLoading, isLoading) || other.isLoading == isLoading) &&
             (identical(other.page, page) || other.page == page) &&
-            (identical(other.searchQuery, searchQuery) ||
-                other.searchQuery == searchQuery));
+            (identical(other.searchQuery, searchQuery) || other.searchQuery == searchQuery));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType,
-      const DeepCollectionEquality().hash(_data), isLoading, page, searchQuery);
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_data), isLoading, page, searchQuery);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$MovieListDataStateImplCopyWith<_$MovieListDataStateImpl> get copyWith =>
-      __$$MovieListDataStateImplCopyWithImpl<_$MovieListDataStateImpl>(
-          this, _$identity);
+      __$$MovieListDataStateImplCopyWithImpl<_$MovieListDataStateImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(bool isLoading, int page, String searchQuery)
-        empty,
-    required TResult Function(List<MovieEntity> data, bool isLoading, int page,
-            String searchQuery)
-        data,
+    required TResult Function(bool isLoading, int page, String searchQuery) empty,
+    required TResult Function(List<MovieEntity> data, bool isLoading, int page, String searchQuery) data,
   }) {
     return data(this.data, isLoading, page, searchQuery);
   }
@@ -1151,9 +922,7 @@ class _$MovieListDataStateImpl extends MovieListDataState {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(bool isLoading, int page, String searchQuery)? empty,
-    TResult? Function(List<MovieEntity> data, bool isLoading, int page,
-            String searchQuery)?
-        data,
+    TResult? Function(List<MovieEntity> data, bool isLoading, int page, String searchQuery)? data,
   }) {
     return data?.call(this.data, isLoading, page, searchQuery);
   }
@@ -1162,9 +931,7 @@ class _$MovieListDataStateImpl extends MovieListDataState {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(bool isLoading, int page, String searchQuery)? empty,
-    TResult Function(List<MovieEntity> data, bool isLoading, int page,
-            String searchQuery)?
-        data,
+    TResult Function(List<MovieEntity> data, bool isLoading, int page, String searchQuery)? data,
     required TResult orElse(),
   }) {
     if (data != null) {
@@ -1214,13 +981,10 @@ class _$MovieListDataStateImpl extends MovieListDataState {
 
 abstract class MovieListDataState extends MovieListState {
   const factory MovieListDataState(final List<MovieEntity> data,
-      {final bool isLoading,
-      final int page,
-      final String searchQuery}) = _$MovieListDataStateImpl;
+      {final bool isLoading, final int page, final String searchQuery}) = _$MovieListDataStateImpl;
   const MovieListDataState._() : super._();
 
-  factory MovieListDataState.fromJson(Map<String, dynamic> json) =
-      _$MovieListDataStateImpl.fromJson;
+  factory MovieListDataState.fromJson(Map<String, dynamic> json) = _$MovieListDataStateImpl.fromJson;
 
   List<MovieEntity> get data;
   @override
@@ -1231,6 +995,5 @@ abstract class MovieListDataState extends MovieListState {
   String get searchQuery;
   @override
   @JsonKey(ignore: true)
-  _$$MovieListDataStateImplCopyWith<_$MovieListDataStateImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$MovieListDataStateImplCopyWith<_$MovieListDataStateImpl> get copyWith => throw _privateConstructorUsedError;
 }

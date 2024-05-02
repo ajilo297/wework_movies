@@ -1,0 +1,157 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+package Movie {
+    package "Presentation (Movie)" <<Rectangle>> {
+        abstract class MovieListBloc<T extends MovieUseCase> {
+            # {abstract} T useCase
+            __
+            + void loadMovies()
+            + void search(String query)
+            + void loadMore()
+        }
+
+        class NowPlayingMoviesBloc<NowPlayingMoviesUseCase> extends MovieListBloc {
+            # NowPlayingMoviesUseCase useCase
+        }
+
+        class TopRatedMoviesBloc<TopRatedMoviesUseCase> extends MovieListBloc {
+            # TopRatedMoviesUseCase useCase
+        }
+    }
+
+    package "Presentation (ImageConfig)" <<Rectangle>> {
+        class ImageConfigurationCubit {
+            - ImageConfigurationUseCase useCase
+            --
+            + void getImageConfiguration()
+        }
+    }
+
+    package "Domain" <<Rectangle>> {
+
+        package "Domain (Movie)" <<Rectangle>> {
+            abstract class MovieUseCase<MovieRepository> {
+                # {abstract} MovieRepository repository
+                # {abstract} MovieType type
+                __
+                + MovieEntity[] getMovies()
+            }
+
+            class NowPlayingMoviesUseCase {
+                # MovieRepository repository
+                __
+                + MovieEntity[] getMovies()
+            }
+
+            class TopRatedMoviesUseCase {
+                # MovieRepository repository
+                __
+                + MovieEntity[] getMovies()
+            }
+        }
+
+        package "Domain (ImageConfig)" <<Rectangle>> {
+            class ImageConfigurationUseCase<MovieRepository> {
+                # MovieRepository repository
+                __
+                + ImageConfigurationEntity getImageConfiguration()
+            }
+        }
+
+        abstract class MovieRepository {
+            + {abstract} MovieEntity[] getNowPlayingMovies()
+            ..
+            + {abstract} MovieEntity[] getTopRatedMovies()
+            ..
+            + {abstract} ImageConfigurationEntity getImageConfiguration()
+        }
+
+    }
+
+    package "Data" <<Rectangle>> {
+        class RemoteMovieRepository {
+            - TmdbApiClient apiClient
+            --
+            + MovieEntity[] getNowPlayingMovies()
+            ..
+            + MovieEntity[] getTopRatedMovies()
+            ..
+            + ImageConfigurationEntity getImageConfiguration()
+        }
+
+        class TmdbApiClient {
+            + MovieModel[] getNowPlayingMovies()
+            ..
+            + MovieModel[] getTopRatedMovies()
+            ..
+            + ImageConfigurationModel getImageConfiguration()
+        }
+    }
+}
+
+package Location {
+    package Presentation <<Rectangle>> {
+        class AddressCubit {
+            - LocationUseCase useCase
+            --
+            + void loadCurrentAddress()
+        }
+    }
+
+    package Domain <<Rectangle>> {
+        class LocationUseCase {
+            # LocationRepository repository
+            __
+            + LocationEntity loadLocation()
+        }
+
+        abstract class LocationRepository {
+            + {abstract} LatLngEntity loadLatLng()
+            + {abstract} AddressEntity reverseGeocode(lat, lng)
+        }
+    }
+
+    package Data <<Rectangle>> {
+        class DeviceLocationRepository {
+            # GeoLocator geoLocator
+            # Geocoder geocoder
+            --
+            + LatLngEntity loadLatLng()
+            + AddressEntity reverseGeocode(lat, lng)
+        }
+
+        class Geolocator
+
+        class Geocoder
+    }
+}
+
+'CONNECTING COMPONENTS
+DeviceLocationRepository::Geolocator .right.> Geolocator
+DeviceLocationRepository::Geocoder .left.> Geocoder
+
+DeviceLocationRepository -u-|> LocationRepository
+LocationUseCase::repository .left.> LocationRepository
+
+AddressCubit::useCase .d.> LocationUseCase
+
+NowPlayingMoviesBloc::useCase .down.> NowPlayingMoviesUseCase
+TopRatedMoviesBloc::useCase .down.> TopRatedMoviesUseCase
+
+NowPlayingMoviesUseCase -down-|> MovieUseCase
+TopRatedMoviesUseCase -down-|> MovieUseCase
+
+ImageConfigurationCubit::useCase ..d.> ImageConfigurationUseCase
+
+ImageConfigurationUseCase::repository ..d.> MovieRepository
+MovieUseCase::repository .d.> MovieRepository
+'TopRatedMoviesUseCase::repository .down.> MovieRepository
+'NowPlayingMoviesUseCase::repository .down.> MovieRepository
+
+RemoteMovieRepository -up-|> MovieRepository
+TmdbApiClient .up.> RemoteMovieRepository::apiClient
+
+AddressCubit -u[hidden]-|> TmdbApiClient
+
+@enduml

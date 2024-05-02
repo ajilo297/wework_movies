@@ -24,3 +24,7 @@ dart run build_runner build --delete-conflicting-outputs
 ```bash
 flutter run --dart-define=TMDB_API_KEY=<API-KEY>
 ```
+
+## Technical Design
+
+[Design Document](./technical_design/DESIGN.md)

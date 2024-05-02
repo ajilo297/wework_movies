@@ -14,14 +14,14 @@ part 'movie_list_state.dart';
 
 typedef _MovieListEmitter = Emitter<MovieListState>;
 
-abstract base class MovieListBloc extends HydratedBloc<MovieListEvent, MovieListState> {
+abstract base class MovieListBloc<T extends MovieUseCase> extends HydratedBloc<MovieListEvent, MovieListState> {
   MovieListBloc({required this.useCase}) : super(const MovieListEmptyState()) {
     on<LoadMovieListEvent>(_loadMovies);
     on<SearchMovieListEvent>(_searchMovies, transformer: restartable());
     on<LoadMoreMovieListEvent>(_loadMore, transformer: droppable());
   }
 
-  final MovieUseCase useCase;
+  final T useCase;
 
   void _loadMovies(LoadMovieListEvent event, _MovieListEmitter emit) async {
     final initialState = state;

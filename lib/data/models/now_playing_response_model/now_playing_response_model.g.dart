@@ -1,7 +1,3 @@
-// Copyright (c) 2024 Ajil Oommen. All Rights Reserved.
-//
-// Last modified 02/05/24, 9:28 am
-
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 part of 'now_playing_response_model.dart';
@@ -10,16 +6,22 @@ part of 'now_playing_response_model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$NowPlayingResponseModelImpl _$$NowPlayingResponseModelImplFromJson(Map<String, dynamic> json) =>
+_$NowPlayingResponseModelImpl _$$NowPlayingResponseModelImplFromJson(
+        Map<String, dynamic> json) =>
     _$NowPlayingResponseModelImpl(
-      dates: json['dates'] == null ? null : DateRangeModel.fromJson(json['dates'] as Map<String, dynamic>),
+      dates: json['dates'] == null
+          ? null
+          : DateRangeModel.fromJson(json['dates'] as Map<String, dynamic>),
       page: (json['page'] as num).toInt(),
-      results: (json['results'] as List<dynamic>).map((e) => MovieModel.fromJson(e as Map<String, dynamic>)).toList(),
+      results: (json['results'] as List<dynamic>)
+          .map((e) => MovieModel.fromJson(e as Map<String, dynamic>))
+          .toList(),
       totalPages: (json['total_pages'] as num).toInt(),
       totalResults: (json['total_results'] as num).toInt(),
     );
 
-Map<String, dynamic> _$$NowPlayingResponseModelImplToJson(_$NowPlayingResponseModelImpl instance) {
+Map<String, dynamic> _$$NowPlayingResponseModelImplToJson(
+    _$NowPlayingResponseModelImpl instance) {
   final val = <String, dynamic>{};
 
   void writeNotNull(String key, dynamic value) {
@@ -36,12 +38,15 @@ Map<String, dynamic> _$$NowPlayingResponseModelImplToJson(_$NowPlayingResponseMo
   return val;
 }
 
-_$DateRangeModelImpl _$$DateRangeModelImplFromJson(Map<String, dynamic> json) => _$DateRangeModelImpl(
+_$DateRangeModelImpl _$$DateRangeModelImplFromJson(Map<String, dynamic> json) =>
+    _$DateRangeModelImpl(
       minimum: DateTime.parse(json['minimum'] as String),
       maximum: DateTime.parse(json['maximum'] as String),
     );
 
-Map<String, dynamic> _$$DateRangeModelImplToJson(_$DateRangeModelImpl instance) => <String, dynamic>{
+Map<String, dynamic> _$$DateRangeModelImplToJson(
+        _$DateRangeModelImpl instance) =>
+    <String, dynamic>{
       'minimum': instance.minimum.toIso8601String(),
       'maximum': instance.maximum.toIso8601String(),
     };

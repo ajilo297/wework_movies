@@ -1,7 +1,3 @@
-// Copyright (c) 2024 Ajil Oommen. All Rights Reserved.
-//
-// Last modified 02/05/24, 9:28 am
-
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -18,7 +14,8 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
-ImageConfigurationState _$ImageConfigurationStateFromJson(Map<String, dynamic> json) {
+ImageConfigurationState _$ImageConfigurationStateFromJson(
+    Map<String, dynamic> json) {
   switch (json['runtimeType']) {
     case 'empty':
       return ImageConfigurationEmptyState.fromJson(json);
@@ -29,7 +26,10 @@ ImageConfigurationState _$ImageConfigurationStateFromJson(Map<String, dynamic> j
 
     default:
       throw CheckedFromJsonException(
-          json, 'runtimeType', 'ImageConfigurationState', 'Invalid union type "${json['runtimeType']}"!');
+          json,
+          'runtimeType',
+          'ImageConfigurationState',
+          'Invalid union type "${json['runtimeType']}"!');
   }
 }
 
@@ -84,12 +84,14 @@ mixin _$ImageConfigurationState {
 
 /// @nodoc
 abstract class $ImageConfigurationStateCopyWith<$Res> {
-  factory $ImageConfigurationStateCopyWith(ImageConfigurationState value, $Res Function(ImageConfigurationState) then) =
+  factory $ImageConfigurationStateCopyWith(ImageConfigurationState value,
+          $Res Function(ImageConfigurationState) then) =
       _$ImageConfigurationStateCopyWithImpl<$Res, ImageConfigurationState>;
 }
 
 /// @nodoc
-class _$ImageConfigurationStateCopyWithImpl<$Res, $Val extends ImageConfigurationState>
+class _$ImageConfigurationStateCopyWithImpl<$Res,
+        $Val extends ImageConfigurationState>
     implements $ImageConfigurationStateCopyWith<$Res> {
   _$ImageConfigurationStateCopyWithImpl(this._value, this._then);
 
@@ -102,25 +104,31 @@ class _$ImageConfigurationStateCopyWithImpl<$Res, $Val extends ImageConfiguratio
 /// @nodoc
 abstract class _$$ImageConfigurationEmptyStateImplCopyWith<$Res> {
   factory _$$ImageConfigurationEmptyStateImplCopyWith(
-          _$ImageConfigurationEmptyStateImpl value, $Res Function(_$ImageConfigurationEmptyStateImpl) then) =
+          _$ImageConfigurationEmptyStateImpl value,
+          $Res Function(_$ImageConfigurationEmptyStateImpl) then) =
       __$$ImageConfigurationEmptyStateImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
 class __$$ImageConfigurationEmptyStateImplCopyWithImpl<$Res>
-    extends _$ImageConfigurationStateCopyWithImpl<$Res, _$ImageConfigurationEmptyStateImpl>
+    extends _$ImageConfigurationStateCopyWithImpl<$Res,
+        _$ImageConfigurationEmptyStateImpl>
     implements _$$ImageConfigurationEmptyStateImplCopyWith<$Res> {
   __$$ImageConfigurationEmptyStateImplCopyWithImpl(
-      _$ImageConfigurationEmptyStateImpl _value, $Res Function(_$ImageConfigurationEmptyStateImpl) _then)
+      _$ImageConfigurationEmptyStateImpl _value,
+      $Res Function(_$ImageConfigurationEmptyStateImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 @JsonSerializable()
-class _$ImageConfigurationEmptyStateImpl implements ImageConfigurationEmptyState {
-  const _$ImageConfigurationEmptyStateImpl({final String? $type}) : $type = $type ?? 'empty';
+class _$ImageConfigurationEmptyStateImpl
+    implements ImageConfigurationEmptyState {
+  const _$ImageConfigurationEmptyStateImpl({final String? $type})
+      : $type = $type ?? 'empty';
 
-  factory _$ImageConfigurationEmptyStateImpl.fromJson(Map<String, dynamic> json) =>
+  factory _$ImageConfigurationEmptyStateImpl.fromJson(
+          Map<String, dynamic> json) =>
       _$$ImageConfigurationEmptyStateImplFromJson(json);
 
   @JsonKey(name: 'runtimeType')
@@ -133,7 +141,9 @@ class _$ImageConfigurationEmptyStateImpl implements ImageConfigurationEmptyState
 
   @override
   bool operator ==(Object other) {
-    return identical(this, other) || (other.runtimeType == runtimeType && other is _$ImageConfigurationEmptyStateImpl);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ImageConfigurationEmptyStateImpl);
   }
 
   @JsonKey(ignore: true)
@@ -217,7 +227,8 @@ class _$ImageConfigurationEmptyStateImpl implements ImageConfigurationEmptyState
 }
 
 abstract class ImageConfigurationEmptyState implements ImageConfigurationState {
-  const factory ImageConfigurationEmptyState() = _$ImageConfigurationEmptyStateImpl;
+  const factory ImageConfigurationEmptyState() =
+      _$ImageConfigurationEmptyStateImpl;
 
   factory ImageConfigurationEmptyState.fromJson(Map<String, dynamic> json) =
       _$ImageConfigurationEmptyStateImpl.fromJson;
@@ -226,25 +237,31 @@ abstract class ImageConfigurationEmptyState implements ImageConfigurationState {
 /// @nodoc
 abstract class _$$ImageConfigurationLoadingStateImplCopyWith<$Res> {
   factory _$$ImageConfigurationLoadingStateImplCopyWith(
-          _$ImageConfigurationLoadingStateImpl value, $Res Function(_$ImageConfigurationLoadingStateImpl) then) =
+          _$ImageConfigurationLoadingStateImpl value,
+          $Res Function(_$ImageConfigurationLoadingStateImpl) then) =
       __$$ImageConfigurationLoadingStateImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
 class __$$ImageConfigurationLoadingStateImplCopyWithImpl<$Res>
-    extends _$ImageConfigurationStateCopyWithImpl<$Res, _$ImageConfigurationLoadingStateImpl>
+    extends _$ImageConfigurationStateCopyWithImpl<$Res,
+        _$ImageConfigurationLoadingStateImpl>
     implements _$$ImageConfigurationLoadingStateImplCopyWith<$Res> {
   __$$ImageConfigurationLoadingStateImplCopyWithImpl(
-      _$ImageConfigurationLoadingStateImpl _value, $Res Function(_$ImageConfigurationLoadingStateImpl) _then)
+      _$ImageConfigurationLoadingStateImpl _value,
+      $Res Function(_$ImageConfigurationLoadingStateImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 @JsonSerializable()
-class _$ImageConfigurationLoadingStateImpl implements ImageConfigurationLoadingState {
-  const _$ImageConfigurationLoadingStateImpl({final String? $type}) : $type = $type ?? 'loading';
+class _$ImageConfigurationLoadingStateImpl
+    implements ImageConfigurationLoadingState {
+  const _$ImageConfigurationLoadingStateImpl({final String? $type})
+      : $type = $type ?? 'loading';
 
-  factory _$ImageConfigurationLoadingStateImpl.fromJson(Map<String, dynamic> json) =>
+  factory _$ImageConfigurationLoadingStateImpl.fromJson(
+          Map<String, dynamic> json) =>
       _$$ImageConfigurationLoadingStateImplFromJson(json);
 
   @JsonKey(name: 'runtimeType')
@@ -258,7 +275,8 @@ class _$ImageConfigurationLoadingStateImpl implements ImageConfigurationLoadingS
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$ImageConfigurationLoadingStateImpl);
+        (other.runtimeType == runtimeType &&
+            other is _$ImageConfigurationLoadingStateImpl);
   }
 
   @JsonKey(ignore: true)
@@ -341,8 +359,10 @@ class _$ImageConfigurationLoadingStateImpl implements ImageConfigurationLoadingS
   }
 }
 
-abstract class ImageConfigurationLoadingState implements ImageConfigurationState {
-  const factory ImageConfigurationLoadingState() = _$ImageConfigurationLoadingStateImpl;
+abstract class ImageConfigurationLoadingState
+    implements ImageConfigurationState {
+  const factory ImageConfigurationLoadingState() =
+      _$ImageConfigurationLoadingStateImpl;
 
   factory ImageConfigurationLoadingState.fromJson(Map<String, dynamic> json) =
       _$ImageConfigurationLoadingStateImpl.fromJson;
@@ -351,7 +371,8 @@ abstract class ImageConfigurationLoadingState implements ImageConfigurationState
 /// @nodoc
 abstract class _$$ImageConfigurationDataStateImplCopyWith<$Res> {
   factory _$$ImageConfigurationDataStateImplCopyWith(
-          _$ImageConfigurationDataStateImpl value, $Res Function(_$ImageConfigurationDataStateImpl) then) =
+          _$ImageConfigurationDataStateImpl value,
+          $Res Function(_$ImageConfigurationDataStateImpl) then) =
       __$$ImageConfigurationDataStateImplCopyWithImpl<$Res>;
   @useResult
   $Res call({ImageConfigurationEntity data});
@@ -361,10 +382,12 @@ abstract class _$$ImageConfigurationDataStateImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$ImageConfigurationDataStateImplCopyWithImpl<$Res>
-    extends _$ImageConfigurationStateCopyWithImpl<$Res, _$ImageConfigurationDataStateImpl>
+    extends _$ImageConfigurationStateCopyWithImpl<$Res,
+        _$ImageConfigurationDataStateImpl>
     implements _$$ImageConfigurationDataStateImplCopyWith<$Res> {
   __$$ImageConfigurationDataStateImplCopyWithImpl(
-      _$ImageConfigurationDataStateImpl _value, $Res Function(_$ImageConfigurationDataStateImpl) _then)
+      _$ImageConfigurationDataStateImpl _value,
+      $Res Function(_$ImageConfigurationDataStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -392,9 +415,11 @@ class __$$ImageConfigurationDataStateImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$ImageConfigurationDataStateImpl implements ImageConfigurationDataState {
-  const _$ImageConfigurationDataStateImpl(this.data, {final String? $type}) : $type = $type ?? 'data';
+  const _$ImageConfigurationDataStateImpl(this.data, {final String? $type})
+      : $type = $type ?? 'data';
 
-  factory _$ImageConfigurationDataStateImpl.fromJson(Map<String, dynamic> json) =>
+  factory _$ImageConfigurationDataStateImpl.fromJson(
+          Map<String, dynamic> json) =>
       _$$ImageConfigurationDataStateImplFromJson(json);
 
   @override
@@ -423,8 +448,9 @@ class _$ImageConfigurationDataStateImpl implements ImageConfigurationDataState {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$ImageConfigurationDataStateImplCopyWith<_$ImageConfigurationDataStateImpl> get copyWith =>
-      __$$ImageConfigurationDataStateImplCopyWithImpl<_$ImageConfigurationDataStateImpl>(this, _$identity);
+  _$$ImageConfigurationDataStateImplCopyWith<_$ImageConfigurationDataStateImpl>
+      get copyWith => __$$ImageConfigurationDataStateImplCopyWithImpl<
+          _$ImageConfigurationDataStateImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -503,12 +529,14 @@ class _$ImageConfigurationDataStateImpl implements ImageConfigurationDataState {
 }
 
 abstract class ImageConfigurationDataState implements ImageConfigurationState {
-  const factory ImageConfigurationDataState(final ImageConfigurationEntity data) = _$ImageConfigurationDataStateImpl;
+  const factory ImageConfigurationDataState(
+      final ImageConfigurationEntity data) = _$ImageConfigurationDataStateImpl;
 
-  factory ImageConfigurationDataState.fromJson(Map<String, dynamic> json) = _$ImageConfigurationDataStateImpl.fromJson;
+  factory ImageConfigurationDataState.fromJson(Map<String, dynamic> json) =
+      _$ImageConfigurationDataStateImpl.fromJson;
 
   ImageConfigurationEntity get data;
   @JsonKey(ignore: true)
-  _$$ImageConfigurationDataStateImplCopyWith<_$ImageConfigurationDataStateImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$ImageConfigurationDataStateImplCopyWith<_$ImageConfigurationDataStateImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }

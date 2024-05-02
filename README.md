@@ -1,16 +1,26 @@
 # wework_movies
 
-A flutter interview app for WeWork
+A flutter app for WeWork
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+To get started, you will need to have Flutter installed on your machine. You can find instructions on how to install Flutter [here](https://flutter.dev/docs/get-started/install).
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+### Get dependencies
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+```bash
+dart pub get
+```
+
+### Generate files
+
+```bash
+dart run build_runner build --delete-conflicting-outputs
+```
+
+### Run the app
+
+```bash
+flutter run
+```

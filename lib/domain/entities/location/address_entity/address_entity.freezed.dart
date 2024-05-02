@@ -1,7 +1,3 @@
-// Copyright (c) 2024 Ajil Oommen. All Rights Reserved.
-//
-// Last modified 02/05/24, 9:28 am
-
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -29,19 +25,22 @@ mixin _$AddressEntity {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $AddressEntityCopyWith<AddressEntity> get copyWith => throw _privateConstructorUsedError;
+  $AddressEntityCopyWith<AddressEntity> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $AddressEntityCopyWith<$Res> {
-  factory $AddressEntityCopyWith(AddressEntity value, $Res Function(AddressEntity) then) =
+  factory $AddressEntityCopyWith(
+          AddressEntity value, $Res Function(AddressEntity) then) =
       _$AddressEntityCopyWithImpl<$Res, AddressEntity>;
   @useResult
   $Res call({String addressLine1, String addressLine2});
 }
 
 /// @nodoc
-class _$AddressEntityCopyWithImpl<$Res, $Val extends AddressEntity> implements $AddressEntityCopyWith<$Res> {
+class _$AddressEntityCopyWithImpl<$Res, $Val extends AddressEntity>
+    implements $AddressEntityCopyWith<$Res> {
   _$AddressEntityCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -69,8 +68,10 @@ class _$AddressEntityCopyWithImpl<$Res, $Val extends AddressEntity> implements $
 }
 
 /// @nodoc
-abstract class _$$AddressEntityImplCopyWith<$Res> implements $AddressEntityCopyWith<$Res> {
-  factory _$$AddressEntityImplCopyWith(_$AddressEntityImpl value, $Res Function(_$AddressEntityImpl) then) =
+abstract class _$$AddressEntityImplCopyWith<$Res>
+    implements $AddressEntityCopyWith<$Res> {
+  factory _$$AddressEntityImplCopyWith(
+          _$AddressEntityImpl value, $Res Function(_$AddressEntityImpl) then) =
       __$$AddressEntityImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -78,9 +79,11 @@ abstract class _$$AddressEntityImplCopyWith<$Res> implements $AddressEntityCopyW
 }
 
 /// @nodoc
-class __$$AddressEntityImplCopyWithImpl<$Res> extends _$AddressEntityCopyWithImpl<$Res, _$AddressEntityImpl>
+class __$$AddressEntityImplCopyWithImpl<$Res>
+    extends _$AddressEntityCopyWithImpl<$Res, _$AddressEntityImpl>
     implements _$$AddressEntityImplCopyWith<$Res> {
-  __$$AddressEntityImplCopyWithImpl(_$AddressEntityImpl _value, $Res Function(_$AddressEntityImpl) _then)
+  __$$AddressEntityImplCopyWithImpl(
+      _$AddressEntityImpl _value, $Res Function(_$AddressEntityImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -105,9 +108,11 @@ class __$$AddressEntityImplCopyWithImpl<$Res> extends _$AddressEntityCopyWithImp
 /// @nodoc
 @JsonSerializable()
 class _$AddressEntityImpl implements _AddressEntity {
-  const _$AddressEntityImpl({required this.addressLine1, required this.addressLine2});
+  const _$AddressEntityImpl(
+      {required this.addressLine1, required this.addressLine2});
 
-  factory _$AddressEntityImpl.fromJson(Map<String, dynamic> json) => _$$AddressEntityImplFromJson(json);
+  factory _$AddressEntityImpl.fromJson(Map<String, dynamic> json) =>
+      _$$AddressEntityImplFromJson(json);
 
   @override
   final String addressLine1;
@@ -124,8 +129,10 @@ class _$AddressEntityImpl implements _AddressEntity {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AddressEntityImpl &&
-            (identical(other.addressLine1, addressLine1) || other.addressLine1 == addressLine1) &&
-            (identical(other.addressLine2, addressLine2) || other.addressLine2 == addressLine2));
+            (identical(other.addressLine1, addressLine1) ||
+                other.addressLine1 == addressLine1) &&
+            (identical(other.addressLine2, addressLine2) ||
+                other.addressLine2 == addressLine2));
   }
 
   @JsonKey(ignore: true)
@@ -147,10 +154,12 @@ class _$AddressEntityImpl implements _AddressEntity {
 }
 
 abstract class _AddressEntity implements AddressEntity {
-  const factory _AddressEntity({required final String addressLine1, required final String addressLine2}) =
-      _$AddressEntityImpl;
+  const factory _AddressEntity(
+      {required final String addressLine1,
+      required final String addressLine2}) = _$AddressEntityImpl;
 
-  factory _AddressEntity.fromJson(Map<String, dynamic> json) = _$AddressEntityImpl.fromJson;
+  factory _AddressEntity.fromJson(Map<String, dynamic> json) =
+      _$AddressEntityImpl.fromJson;
 
   @override
   String get addressLine1;
@@ -158,5 +167,6 @@ abstract class _AddressEntity implements AddressEntity {
   String get addressLine2;
   @override
   @JsonKey(ignore: true)
-  _$$AddressEntityImplCopyWith<_$AddressEntityImpl> get copyWith => throw _privateConstructorUsedError;
+  _$$AddressEntityImplCopyWith<_$AddressEntityImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }

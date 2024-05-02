@@ -22,5 +22,5 @@ dart run build_runner build --delete-conflicting-outputs
 ### Run the app
 
 ```bash
-flutter run
+flutter run --dart-define=TMDB_API_KEY=<API-KEY>
 ```

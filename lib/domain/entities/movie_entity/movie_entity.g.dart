@@ -1,3 +1,7 @@
+// Copyright (c) 2024 Ajil Oommen. All Rights Reserved.
+//
+// Last modified 02/05/24, 9:28 am
+
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 part of 'movie_entity.dart';
@@ -6,8 +10,7 @@ part of 'movie_entity.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$MovieEntityImpl _$$MovieEntityImplFromJson(Map<String, dynamic> json) =>
-    _$MovieEntityImpl(
+_$MovieEntityImpl _$$MovieEntityImplFromJson(Map<String, dynamic> json) => _$MovieEntityImpl(
       id: (json['id'] as num).toInt(),
       name: json['name'] as String,
       description: json['description'] as String? ?? '',

@@ -1,3 +1,7 @@
+// Copyright (c) 2024 Ajil Oommen. All Rights Reserved.
+//
+// Last modified 02/05/24, 9:28 am
+
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 part of 'movie_model.dart';
@@ -6,8 +10,7 @@ part of 'movie_model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$MovieModelImpl _$$MovieModelImplFromJson(Map<String, dynamic> json) =>
-    _$MovieModelImpl(
+_$MovieModelImpl _$$MovieModelImplFromJson(Map<String, dynamic> json) => _$MovieModelImpl(
       id: (json['id'] as num).toInt(),
       originalLanguage: json['original_language'] as String,
       originalTitle: json['original_title'] as String,
@@ -15,10 +18,7 @@ _$MovieModelImpl _$$MovieModelImplFromJson(Map<String, dynamic> json) =>
       title: json['title'] as String,
       adult: json['adult'] as bool? ?? false,
       video: json['video'] as bool? ?? false,
-      genreIds: (json['genre_ids'] as List<dynamic>?)
-              ?.map((e) => (e as num).toInt())
-              .toList() ??
-          const [],
+      genreIds: (json['genre_ids'] as List<dynamic>?)?.map((e) => (e as num).toInt()).toList() ?? const [],
       popularity: (json['popularity'] as num?)?.toDouble(),
       posterPath: json['poster_path'] as String?,
       backdropPath: json['backdrop_path'] as String?,

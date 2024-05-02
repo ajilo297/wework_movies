@@ -1,6 +1,6 @@
-/*
- * Copyright (c) 2024 Ajil Oommen. All Rights Reserved.
- */
+// Copyright (c) 2024 Ajil Oommen. All Rights Reserved.
+//
+// Last modified 02/05/24, 9:28 am
 
 export 'home_app_bar.dart';
 export 'home_scaffold.dart';

@@ -1,3 +1,7 @@
+// Copyright (c) 2024 Ajil Oommen. All Rights Reserved.
+//
+// Last modified 02/05/24, 9:28 am
+
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -27,18 +31,15 @@ mixin _$TopRatedMoviesModel {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $TopRatedMoviesModelCopyWith<TopRatedMoviesModel> get copyWith =>
-      throw _privateConstructorUsedError;
+  $TopRatedMoviesModelCopyWith<TopRatedMoviesModel> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $TopRatedMoviesModelCopyWith<$Res> {
-  factory $TopRatedMoviesModelCopyWith(
-          TopRatedMoviesModel value, $Res Function(TopRatedMoviesModel) then) =
+  factory $TopRatedMoviesModelCopyWith(TopRatedMoviesModel value, $Res Function(TopRatedMoviesModel) then) =
       _$TopRatedMoviesModelCopyWithImpl<$Res, TopRatedMoviesModel>;
   @useResult
-  $Res call(
-      {int page, List<MovieModel> results, int totalPages, int totalResults});
+  $Res call({int page, List<MovieModel> results, int totalPages, int totalResults});
 }
 
 /// @nodoc
@@ -81,23 +82,21 @@ class _$TopRatedMoviesModelCopyWithImpl<$Res, $Val extends TopRatedMoviesModel>
 }
 
 /// @nodoc
-abstract class _$$TopRatedMoviesModelImplCopyWith<$Res>
-    implements $TopRatedMoviesModelCopyWith<$Res> {
-  factory _$$TopRatedMoviesModelImplCopyWith(_$TopRatedMoviesModelImpl value,
-          $Res Function(_$TopRatedMoviesModelImpl) then) =
+abstract class _$$TopRatedMoviesModelImplCopyWith<$Res> implements $TopRatedMoviesModelCopyWith<$Res> {
+  factory _$$TopRatedMoviesModelImplCopyWith(
+          _$TopRatedMoviesModelImpl value, $Res Function(_$TopRatedMoviesModelImpl) then) =
       __$$TopRatedMoviesModelImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {int page, List<MovieModel> results, int totalPages, int totalResults});
+  $Res call({int page, List<MovieModel> results, int totalPages, int totalResults});
 }
 
 /// @nodoc
 class __$$TopRatedMoviesModelImplCopyWithImpl<$Res>
     extends _$TopRatedMoviesModelCopyWithImpl<$Res, _$TopRatedMoviesModelImpl>
     implements _$$TopRatedMoviesModelImplCopyWith<$Res> {
-  __$$TopRatedMoviesModelImplCopyWithImpl(_$TopRatedMoviesModelImpl _value,
-      $Res Function(_$TopRatedMoviesModelImpl) _then)
+  __$$TopRatedMoviesModelImplCopyWithImpl(
+      _$TopRatedMoviesModelImpl _value, $Res Function(_$TopRatedMoviesModelImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -133,14 +132,10 @@ class __$$TopRatedMoviesModelImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$TopRatedMoviesModelImpl implements _TopRatedMoviesModel {
   const _$TopRatedMoviesModelImpl(
-      {this.page = 1,
-      final List<MovieModel> results = const [],
-      this.totalPages = 1,
-      this.totalResults = 0})
+      {this.page = 1, final List<MovieModel> results = const [], this.totalPages = 1, this.totalResults = 0})
       : _results = results;
 
-  factory _$TopRatedMoviesModelImpl.fromJson(Map<String, dynamic> json) =>
-      _$$TopRatedMoviesModelImplFromJson(json);
+  factory _$TopRatedMoviesModelImpl.fromJson(Map<String, dynamic> json) => _$$TopRatedMoviesModelImplFromJson(json);
 
   @override
   @JsonKey()
@@ -173,23 +168,20 @@ class _$TopRatedMoviesModelImpl implements _TopRatedMoviesModel {
             other is _$TopRatedMoviesModelImpl &&
             (identical(other.page, page) || other.page == page) &&
             const DeepCollectionEquality().equals(other._results, _results) &&
-            (identical(other.totalPages, totalPages) ||
-                other.totalPages == totalPages) &&
-            (identical(other.totalResults, totalResults) ||
-                other.totalResults == totalResults));
+            (identical(other.totalPages, totalPages) || other.totalPages == totalPages) &&
+            (identical(other.totalResults, totalResults) || other.totalResults == totalResults));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, page,
-      const DeepCollectionEquality().hash(_results), totalPages, totalResults);
+  int get hashCode =>
+      Object.hash(runtimeType, page, const DeepCollectionEquality().hash(_results), totalPages, totalResults);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$TopRatedMoviesModelImplCopyWith<_$TopRatedMoviesModelImpl> get copyWith =>
-      __$$TopRatedMoviesModelImplCopyWithImpl<_$TopRatedMoviesModelImpl>(
-          this, _$identity);
+      __$$TopRatedMoviesModelImplCopyWithImpl<_$TopRatedMoviesModelImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -206,8 +198,7 @@ abstract class _TopRatedMoviesModel implements TopRatedMoviesModel {
       final int totalPages,
       final int totalResults}) = _$TopRatedMoviesModelImpl;
 
-  factory _TopRatedMoviesModel.fromJson(Map<String, dynamic> json) =
-      _$TopRatedMoviesModelImpl.fromJson;
+  factory _TopRatedMoviesModel.fromJson(Map<String, dynamic> json) = _$TopRatedMoviesModelImpl.fromJson;
 
   @override
   int get page;
@@ -219,6 +210,5 @@ abstract class _TopRatedMoviesModel implements TopRatedMoviesModel {
   int get totalResults;
   @override
   @JsonKey(ignore: true)
-  _$$TopRatedMoviesModelImplCopyWith<_$TopRatedMoviesModelImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$TopRatedMoviesModelImplCopyWith<_$TopRatedMoviesModelImpl> get copyWith => throw _privateConstructorUsedError;
 }

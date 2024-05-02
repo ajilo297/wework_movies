@@ -1,3 +1,7 @@
+// Copyright (c) 2024 Ajil Oommen. All Rights Reserved.
+//
+// Last modified 02/05/24, 9:28 am
+
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -25,14 +29,12 @@ mixin _$ConfigurationModel {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $ConfigurationModelCopyWith<ConfigurationModel> get copyWith =>
-      throw _privateConstructorUsedError;
+  $ConfigurationModelCopyWith<ConfigurationModel> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $ConfigurationModelCopyWith<$Res> {
-  factory $ConfigurationModelCopyWith(
-          ConfigurationModel value, $Res Function(ConfigurationModel) then) =
+  factory $ConfigurationModelCopyWith(ConfigurationModel value, $Res Function(ConfigurationModel) then) =
       _$ConfigurationModelCopyWithImpl<$Res, ConfigurationModel>;
   @useResult
   $Res call({ImageConfigurationModel images, List<String> changeKeys});
@@ -78,10 +80,9 @@ class _$ConfigurationModelCopyWithImpl<$Res, $Val extends ConfigurationModel>
 }
 
 /// @nodoc
-abstract class _$$ConfigurationModelImplCopyWith<$Res>
-    implements $ConfigurationModelCopyWith<$Res> {
-  factory _$$ConfigurationModelImplCopyWith(_$ConfigurationModelImpl value,
-          $Res Function(_$ConfigurationModelImpl) then) =
+abstract class _$$ConfigurationModelImplCopyWith<$Res> implements $ConfigurationModelCopyWith<$Res> {
+  factory _$$ConfigurationModelImplCopyWith(
+          _$ConfigurationModelImpl value, $Res Function(_$ConfigurationModelImpl) then) =
       __$$ConfigurationModelImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -95,8 +96,7 @@ abstract class _$$ConfigurationModelImplCopyWith<$Res>
 class __$$ConfigurationModelImplCopyWithImpl<$Res>
     extends _$ConfigurationModelCopyWithImpl<$Res, _$ConfigurationModelImpl>
     implements _$$ConfigurationModelImplCopyWith<$Res> {
-  __$$ConfigurationModelImplCopyWithImpl(_$ConfigurationModelImpl _value,
-      $Res Function(_$ConfigurationModelImpl) _then)
+  __$$ConfigurationModelImplCopyWithImpl(_$ConfigurationModelImpl _value, $Res Function(_$ConfigurationModelImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -121,12 +121,10 @@ class __$$ConfigurationModelImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$ConfigurationModelImpl implements _ConfigurationModel {
-  const _$ConfigurationModelImpl(
-      {required this.images, final List<String> changeKeys = const []})
+  const _$ConfigurationModelImpl({required this.images, final List<String> changeKeys = const []})
       : _changeKeys = changeKeys;
 
-  factory _$ConfigurationModelImpl.fromJson(Map<String, dynamic> json) =>
-      _$$ConfigurationModelImplFromJson(json);
+  factory _$ConfigurationModelImpl.fromJson(Map<String, dynamic> json) => _$$ConfigurationModelImplFromJson(json);
 
   @override
   final ImageConfigurationModel images;
@@ -150,21 +148,18 @@ class _$ConfigurationModelImpl implements _ConfigurationModel {
         (other.runtimeType == runtimeType &&
             other is _$ConfigurationModelImpl &&
             (identical(other.images, images) || other.images == images) &&
-            const DeepCollectionEquality()
-                .equals(other._changeKeys, _changeKeys));
+            const DeepCollectionEquality().equals(other._changeKeys, _changeKeys));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType, images, const DeepCollectionEquality().hash(_changeKeys));
+  int get hashCode => Object.hash(runtimeType, images, const DeepCollectionEquality().hash(_changeKeys));
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$ConfigurationModelImplCopyWith<_$ConfigurationModelImpl> get copyWith =>
-      __$$ConfigurationModelImplCopyWithImpl<_$ConfigurationModelImpl>(
-          this, _$identity);
+      __$$ConfigurationModelImplCopyWithImpl<_$ConfigurationModelImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -175,12 +170,10 @@ class _$ConfigurationModelImpl implements _ConfigurationModel {
 }
 
 abstract class _ConfigurationModel implements ConfigurationModel {
-  const factory _ConfigurationModel(
-      {required final ImageConfigurationModel images,
-      final List<String> changeKeys}) = _$ConfigurationModelImpl;
+  const factory _ConfigurationModel({required final ImageConfigurationModel images, final List<String> changeKeys}) =
+      _$ConfigurationModelImpl;
 
-  factory _ConfigurationModel.fromJson(Map<String, dynamic> json) =
-      _$ConfigurationModelImpl.fromJson;
+  factory _ConfigurationModel.fromJson(Map<String, dynamic> json) = _$ConfigurationModelImpl.fromJson;
 
   @override
   ImageConfigurationModel get images;
@@ -188,12 +181,10 @@ abstract class _ConfigurationModel implements ConfigurationModel {
   List<String> get changeKeys;
   @override
   @JsonKey(ignore: true)
-  _$$ConfigurationModelImplCopyWith<_$ConfigurationModelImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$ConfigurationModelImplCopyWith<_$ConfigurationModelImpl> get copyWith => throw _privateConstructorUsedError;
 }
 
-ImageConfigurationModel _$ImageConfigurationModelFromJson(
-    Map<String, dynamic> json) {
+ImageConfigurationModel _$ImageConfigurationModelFromJson(Map<String, dynamic> json) {
   return _ImageConfigurationModel.fromJson(json);
 }
 
@@ -209,14 +200,12 @@ mixin _$ImageConfigurationModel {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $ImageConfigurationModelCopyWith<ImageConfigurationModel> get copyWith =>
-      throw _privateConstructorUsedError;
+  $ImageConfigurationModelCopyWith<ImageConfigurationModel> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $ImageConfigurationModelCopyWith<$Res> {
-  factory $ImageConfigurationModelCopyWith(ImageConfigurationModel value,
-          $Res Function(ImageConfigurationModel) then) =
+  factory $ImageConfigurationModelCopyWith(ImageConfigurationModel value, $Res Function(ImageConfigurationModel) then) =
       _$ImageConfigurationModelCopyWithImpl<$Res, ImageConfigurationModel>;
   @useResult
   $Res call(
@@ -230,8 +219,7 @@ abstract class $ImageConfigurationModelCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$ImageConfigurationModelCopyWithImpl<$Res,
-        $Val extends ImageConfigurationModel>
+class _$ImageConfigurationModelCopyWithImpl<$Res, $Val extends ImageConfigurationModel>
     implements $ImageConfigurationModelCopyWith<$Res> {
   _$ImageConfigurationModelCopyWithImpl(this._value, this._then);
 
@@ -285,11 +273,9 @@ class _$ImageConfigurationModelCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$ImageConfigurationModelImplCopyWith<$Res>
-    implements $ImageConfigurationModelCopyWith<$Res> {
+abstract class _$$ImageConfigurationModelImplCopyWith<$Res> implements $ImageConfigurationModelCopyWith<$Res> {
   factory _$$ImageConfigurationModelImplCopyWith(
-          _$ImageConfigurationModelImpl value,
-          $Res Function(_$ImageConfigurationModelImpl) then) =
+          _$ImageConfigurationModelImpl value, $Res Function(_$ImageConfigurationModelImpl) then) =
       __$$ImageConfigurationModelImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -305,12 +291,10 @@ abstract class _$$ImageConfigurationModelImplCopyWith<$Res>
 
 /// @nodoc
 class __$$ImageConfigurationModelImplCopyWithImpl<$Res>
-    extends _$ImageConfigurationModelCopyWithImpl<$Res,
-        _$ImageConfigurationModelImpl>
+    extends _$ImageConfigurationModelCopyWithImpl<$Res, _$ImageConfigurationModelImpl>
     implements _$$ImageConfigurationModelImplCopyWith<$Res> {
   __$$ImageConfigurationModelImplCopyWithImpl(
-      _$ImageConfigurationModelImpl _value,
-      $Res Function(_$ImageConfigurationModelImpl) _then)
+      _$ImageConfigurationModelImpl _value, $Res Function(_$ImageConfigurationModelImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -437,18 +421,12 @@ class _$ImageConfigurationModelImpl implements _ImageConfigurationModel {
         (other.runtimeType == runtimeType &&
             other is _$ImageConfigurationModelImpl &&
             (identical(other.baseUrl, baseUrl) || other.baseUrl == baseUrl) &&
-            (identical(other.secureBaseUrl, secureBaseUrl) ||
-                other.secureBaseUrl == secureBaseUrl) &&
-            const DeepCollectionEquality()
-                .equals(other._backdropSizes, _backdropSizes) &&
-            const DeepCollectionEquality()
-                .equals(other._logoSizes, _logoSizes) &&
-            const DeepCollectionEquality()
-                .equals(other._posterSizes, _posterSizes) &&
-            const DeepCollectionEquality()
-                .equals(other._profileSizes, _profileSizes) &&
-            const DeepCollectionEquality()
-                .equals(other._stillSizes, _stillSizes));
+            (identical(other.secureBaseUrl, secureBaseUrl) || other.secureBaseUrl == secureBaseUrl) &&
+            const DeepCollectionEquality().equals(other._backdropSizes, _backdropSizes) &&
+            const DeepCollectionEquality().equals(other._logoSizes, _logoSizes) &&
+            const DeepCollectionEquality().equals(other._posterSizes, _posterSizes) &&
+            const DeepCollectionEquality().equals(other._profileSizes, _profileSizes) &&
+            const DeepCollectionEquality().equals(other._stillSizes, _stillSizes));
   }
 
   @JsonKey(ignore: true)
@@ -466,9 +444,8 @@ class _$ImageConfigurationModelImpl implements _ImageConfigurationModel {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$ImageConfigurationModelImplCopyWith<_$ImageConfigurationModelImpl>
-      get copyWith => __$$ImageConfigurationModelImplCopyWithImpl<
-          _$ImageConfigurationModelImpl>(this, _$identity);
+  _$$ImageConfigurationModelImplCopyWith<_$ImageConfigurationModelImpl> get copyWith =>
+      __$$ImageConfigurationModelImplCopyWithImpl<_$ImageConfigurationModelImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -488,8 +465,7 @@ abstract class _ImageConfigurationModel implements ImageConfigurationModel {
       final List<String> profileSizes,
       final List<String> stillSizes}) = _$ImageConfigurationModelImpl;
 
-  factory _ImageConfigurationModel.fromJson(Map<String, dynamic> json) =
-      _$ImageConfigurationModelImpl.fromJson;
+  factory _ImageConfigurationModel.fromJson(Map<String, dynamic> json) = _$ImageConfigurationModelImpl.fromJson;
 
   @override
   String get baseUrl;
@@ -507,6 +483,6 @@ abstract class _ImageConfigurationModel implements ImageConfigurationModel {
   List<String> get stillSizes;
   @override
   @JsonKey(ignore: true)
-  _$$ImageConfigurationModelImplCopyWith<_$ImageConfigurationModelImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  _$$ImageConfigurationModelImplCopyWith<_$ImageConfigurationModelImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }

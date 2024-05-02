@@ -1,3 +1,7 @@
+// Copyright (c) 2024 Ajil Oommen. All Rights Reserved.
+//
+// Last modified 02/05/24, 9:28 am
+
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -31,14 +35,12 @@ mixin _$MovieEntity {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $MovieEntityCopyWith<MovieEntity> get copyWith =>
-      throw _privateConstructorUsedError;
+  $MovieEntityCopyWith<MovieEntity> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $MovieEntityCopyWith<$Res> {
-  factory $MovieEntityCopyWith(
-          MovieEntity value, $Res Function(MovieEntity) then) =
+  factory $MovieEntityCopyWith(MovieEntity value, $Res Function(MovieEntity) then) =
       _$MovieEntityCopyWithImpl<$Res, MovieEntity>;
   @useResult
   $Res call(
@@ -53,8 +55,7 @@ abstract class $MovieEntityCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$MovieEntityCopyWithImpl<$Res, $Val extends MovieEntity>
-    implements $MovieEntityCopyWith<$Res> {
+class _$MovieEntityCopyWithImpl<$Res, $Val extends MovieEntity> implements $MovieEntityCopyWith<$Res> {
   _$MovieEntityCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -112,10 +113,8 @@ class _$MovieEntityCopyWithImpl<$Res, $Val extends MovieEntity>
 }
 
 /// @nodoc
-abstract class _$$MovieEntityImplCopyWith<$Res>
-    implements $MovieEntityCopyWith<$Res> {
-  factory _$$MovieEntityImplCopyWith(
-          _$MovieEntityImpl value, $Res Function(_$MovieEntityImpl) then) =
+abstract class _$$MovieEntityImplCopyWith<$Res> implements $MovieEntityCopyWith<$Res> {
+  factory _$$MovieEntityImplCopyWith(_$MovieEntityImpl value, $Res Function(_$MovieEntityImpl) then) =
       __$$MovieEntityImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -131,11 +130,9 @@ abstract class _$$MovieEntityImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$MovieEntityImplCopyWithImpl<$Res>
-    extends _$MovieEntityCopyWithImpl<$Res, _$MovieEntityImpl>
+class __$$MovieEntityImplCopyWithImpl<$Res> extends _$MovieEntityCopyWithImpl<$Res, _$MovieEntityImpl>
     implements _$$MovieEntityImplCopyWith<$Res> {
-  __$$MovieEntityImplCopyWithImpl(
-      _$MovieEntityImpl _value, $Res Function(_$MovieEntityImpl) _then)
+  __$$MovieEntityImplCopyWithImpl(_$MovieEntityImpl _value, $Res Function(_$MovieEntityImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -200,8 +197,7 @@ class _$MovieEntityImpl implements _MovieEntity {
       this.posterPath,
       this.backdropPath});
 
-  factory _$MovieEntityImpl.fromJson(Map<String, dynamic> json) =>
-      _$$MovieEntityImplFromJson(json);
+  factory _$MovieEntityImpl.fromJson(Map<String, dynamic> json) => _$$MovieEntityImplFromJson(json);
 
   @override
   final int id;
@@ -236,24 +232,18 @@ class _$MovieEntityImpl implements _MovieEntity {
             other is _$MovieEntityImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
-            (identical(other.description, description) ||
-                other.description == description) &&
-            (identical(other.language, language) ||
-                other.language == language) &&
-            (identical(other.voteCount, voteCount) ||
-                other.voteCount == voteCount) &&
-            (identical(other.averageVotes, averageVotes) ||
-                other.averageVotes == averageVotes) &&
-            (identical(other.posterPath, posterPath) ||
-                other.posterPath == posterPath) &&
-            (identical(other.backdropPath, backdropPath) ||
-                other.backdropPath == backdropPath));
+            (identical(other.description, description) || other.description == description) &&
+            (identical(other.language, language) || other.language == language) &&
+            (identical(other.voteCount, voteCount) || other.voteCount == voteCount) &&
+            (identical(other.averageVotes, averageVotes) || other.averageVotes == averageVotes) &&
+            (identical(other.posterPath, posterPath) || other.posterPath == posterPath) &&
+            (identical(other.backdropPath, backdropPath) || other.backdropPath == backdropPath));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, id, name, description, language,
-      voteCount, averageVotes, posterPath, backdropPath);
+  int get hashCode =>
+      Object.hash(runtimeType, id, name, description, language, voteCount, averageVotes, posterPath, backdropPath);
 
   @JsonKey(ignore: true)
   @override
@@ -280,8 +270,7 @@ abstract class _MovieEntity implements MovieEntity {
       final String? posterPath,
       final String? backdropPath}) = _$MovieEntityImpl;
 
-  factory _MovieEntity.fromJson(Map<String, dynamic> json) =
-      _$MovieEntityImpl.fromJson;
+  factory _MovieEntity.fromJson(Map<String, dynamic> json) = _$MovieEntityImpl.fromJson;
 
   @override
   int get id;
@@ -301,6 +290,5 @@ abstract class _MovieEntity implements MovieEntity {
   String? get backdropPath;
   @override
   @JsonKey(ignore: true)
-  _$$MovieEntityImplCopyWith<_$MovieEntityImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$MovieEntityImplCopyWith<_$MovieEntityImpl> get copyWith => throw _privateConstructorUsedError;
 }

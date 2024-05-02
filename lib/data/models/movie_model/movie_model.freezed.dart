@@ -1,3 +1,7 @@
+// Copyright (c) 2024 Ajil Oommen. All Rights Reserved.
+//
+// Last modified 02/05/24, 9:28 am
+
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -37,14 +41,12 @@ mixin _$MovieModel {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $MovieModelCopyWith<MovieModel> get copyWith =>
-      throw _privateConstructorUsedError;
+  $MovieModelCopyWith<MovieModel> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $MovieModelCopyWith<$Res> {
-  factory $MovieModelCopyWith(
-          MovieModel value, $Res Function(MovieModel) then) =
+  factory $MovieModelCopyWith(MovieModel value, $Res Function(MovieModel) then) =
       _$MovieModelCopyWithImpl<$Res, MovieModel>;
   @useResult
   $Res call(
@@ -65,8 +67,7 @@ abstract class $MovieModelCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$MovieModelCopyWithImpl<$Res, $Val extends MovieModel>
-    implements $MovieModelCopyWith<$Res> {
+class _$MovieModelCopyWithImpl<$Res, $Val extends MovieModel> implements $MovieModelCopyWith<$Res> {
   _$MovieModelCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -154,10 +155,8 @@ class _$MovieModelCopyWithImpl<$Res, $Val extends MovieModel>
 }
 
 /// @nodoc
-abstract class _$$MovieModelImplCopyWith<$Res>
-    implements $MovieModelCopyWith<$Res> {
-  factory _$$MovieModelImplCopyWith(
-          _$MovieModelImpl value, $Res Function(_$MovieModelImpl) then) =
+abstract class _$$MovieModelImplCopyWith<$Res> implements $MovieModelCopyWith<$Res> {
+  factory _$$MovieModelImplCopyWith(_$MovieModelImpl value, $Res Function(_$MovieModelImpl) then) =
       __$$MovieModelImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -179,12 +178,9 @@ abstract class _$$MovieModelImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$MovieModelImplCopyWithImpl<$Res>
-    extends _$MovieModelCopyWithImpl<$Res, _$MovieModelImpl>
+class __$$MovieModelImplCopyWithImpl<$Res> extends _$MovieModelCopyWithImpl<$Res, _$MovieModelImpl>
     implements _$$MovieModelImplCopyWith<$Res> {
-  __$$MovieModelImplCopyWithImpl(
-      _$MovieModelImpl _value, $Res Function(_$MovieModelImpl) _then)
-      : super(_value, _then);
+  __$$MovieModelImplCopyWithImpl(_$MovieModelImpl _value, $Res Function(_$MovieModelImpl) _then) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -285,8 +281,7 @@ class _$MovieModelImpl implements _MovieModel {
       this.voteCount})
       : _genreIds = genreIds;
 
-  factory _$MovieModelImpl.fromJson(Map<String, dynamic> json) =>
-      _$$MovieModelImplFromJson(json);
+  factory _$MovieModelImpl.fromJson(Map<String, dynamic> json) => _$$MovieModelImplFromJson(json);
 
   @override
   final int id;
@@ -337,28 +332,19 @@ class _$MovieModelImpl implements _MovieModel {
         (other.runtimeType == runtimeType &&
             other is _$MovieModelImpl &&
             (identical(other.id, id) || other.id == id) &&
-            (identical(other.originalLanguage, originalLanguage) ||
-                other.originalLanguage == originalLanguage) &&
-            (identical(other.originalTitle, originalTitle) ||
-                other.originalTitle == originalTitle) &&
-            (identical(other.overview, overview) ||
-                other.overview == overview) &&
+            (identical(other.originalLanguage, originalLanguage) || other.originalLanguage == originalLanguage) &&
+            (identical(other.originalTitle, originalTitle) || other.originalTitle == originalTitle) &&
+            (identical(other.overview, overview) || other.overview == overview) &&
             (identical(other.title, title) || other.title == title) &&
             (identical(other.adult, adult) || other.adult == adult) &&
             (identical(other.video, video) || other.video == video) &&
             const DeepCollectionEquality().equals(other._genreIds, _genreIds) &&
-            (identical(other.popularity, popularity) ||
-                other.popularity == popularity) &&
-            (identical(other.posterPath, posterPath) ||
-                other.posterPath == posterPath) &&
-            (identical(other.backdropPath, backdropPath) ||
-                other.backdropPath == backdropPath) &&
-            (identical(other.releaseDate, releaseDate) ||
-                other.releaseDate == releaseDate) &&
-            (identical(other.voteAverage, voteAverage) ||
-                other.voteAverage == voteAverage) &&
-            (identical(other.voteCount, voteCount) ||
-                other.voteCount == voteCount));
+            (identical(other.popularity, popularity) || other.popularity == popularity) &&
+            (identical(other.posterPath, posterPath) || other.posterPath == posterPath) &&
+            (identical(other.backdropPath, backdropPath) || other.backdropPath == backdropPath) &&
+            (identical(other.releaseDate, releaseDate) || other.releaseDate == releaseDate) &&
+            (identical(other.voteAverage, voteAverage) || other.voteAverage == voteAverage) &&
+            (identical(other.voteCount, voteCount) || other.voteCount == voteCount));
   }
 
   @JsonKey(ignore: true)
@@ -411,8 +397,7 @@ abstract class _MovieModel implements MovieModel {
       final double? voteAverage,
       final int? voteCount}) = _$MovieModelImpl;
 
-  factory _MovieModel.fromJson(Map<String, dynamic> json) =
-      _$MovieModelImpl.fromJson;
+  factory _MovieModel.fromJson(Map<String, dynamic> json) = _$MovieModelImpl.fromJson;
 
   @override
   int get id;
@@ -444,6 +429,5 @@ abstract class _MovieModel implements MovieModel {
   int? get voteCount;
   @override
   @JsonKey(ignore: true)
-  _$$MovieModelImplCopyWith<_$MovieModelImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$MovieModelImplCopyWith<_$MovieModelImpl> get copyWith => throw _privateConstructorUsedError;
 }

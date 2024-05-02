@@ -1,3 +1,7 @@
+// Copyright (c) 2024 Ajil Oommen. All Rights Reserved.
+//
+// Last modified 02/05/24, 9:28 am
+
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -25,22 +29,19 @@ mixin _$LatLngEntity {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $LatLngEntityCopyWith<LatLngEntity> get copyWith =>
-      throw _privateConstructorUsedError;
+  $LatLngEntityCopyWith<LatLngEntity> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $LatLngEntityCopyWith<$Res> {
-  factory $LatLngEntityCopyWith(
-          LatLngEntity value, $Res Function(LatLngEntity) then) =
+  factory $LatLngEntityCopyWith(LatLngEntity value, $Res Function(LatLngEntity) then) =
       _$LatLngEntityCopyWithImpl<$Res, LatLngEntity>;
   @useResult
   $Res call({double lat, double lng});
 }
 
 /// @nodoc
-class _$LatLngEntityCopyWithImpl<$Res, $Val extends LatLngEntity>
-    implements $LatLngEntityCopyWith<$Res> {
+class _$LatLngEntityCopyWithImpl<$Res, $Val extends LatLngEntity> implements $LatLngEntityCopyWith<$Res> {
   _$LatLngEntityCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -68,10 +69,8 @@ class _$LatLngEntityCopyWithImpl<$Res, $Val extends LatLngEntity>
 }
 
 /// @nodoc
-abstract class _$$LatLngEntityImplCopyWith<$Res>
-    implements $LatLngEntityCopyWith<$Res> {
-  factory _$$LatLngEntityImplCopyWith(
-          _$LatLngEntityImpl value, $Res Function(_$LatLngEntityImpl) then) =
+abstract class _$$LatLngEntityImplCopyWith<$Res> implements $LatLngEntityCopyWith<$Res> {
+  factory _$$LatLngEntityImplCopyWith(_$LatLngEntityImpl value, $Res Function(_$LatLngEntityImpl) then) =
       __$$LatLngEntityImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -79,11 +78,9 @@ abstract class _$$LatLngEntityImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$LatLngEntityImplCopyWithImpl<$Res>
-    extends _$LatLngEntityCopyWithImpl<$Res, _$LatLngEntityImpl>
+class __$$LatLngEntityImplCopyWithImpl<$Res> extends _$LatLngEntityCopyWithImpl<$Res, _$LatLngEntityImpl>
     implements _$$LatLngEntityImplCopyWith<$Res> {
-  __$$LatLngEntityImplCopyWithImpl(
-      _$LatLngEntityImpl _value, $Res Function(_$LatLngEntityImpl) _then)
+  __$$LatLngEntityImplCopyWithImpl(_$LatLngEntityImpl _value, $Res Function(_$LatLngEntityImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -110,8 +107,7 @@ class __$$LatLngEntityImplCopyWithImpl<$Res>
 class _$LatLngEntityImpl implements _LatLngEntity {
   const _$LatLngEntityImpl(this.lat, this.lng);
 
-  factory _$LatLngEntityImpl.fromJson(Map<String, dynamic> json) =>
-      _$$LatLngEntityImplFromJson(json);
+  factory _$LatLngEntityImpl.fromJson(Map<String, dynamic> json) => _$$LatLngEntityImplFromJson(json);
 
   @override
   final double lat;
@@ -151,11 +147,9 @@ class _$LatLngEntityImpl implements _LatLngEntity {
 }
 
 abstract class _LatLngEntity implements LatLngEntity {
-  const factory _LatLngEntity(final double lat, final double lng) =
-      _$LatLngEntityImpl;
+  const factory _LatLngEntity(final double lat, final double lng) = _$LatLngEntityImpl;
 
-  factory _LatLngEntity.fromJson(Map<String, dynamic> json) =
-      _$LatLngEntityImpl.fromJson;
+  factory _LatLngEntity.fromJson(Map<String, dynamic> json) = _$LatLngEntityImpl.fromJson;
 
   @override
   double get lat;
@@ -163,6 +157,5 @@ abstract class _LatLngEntity implements LatLngEntity {
   double get lng;
   @override
   @JsonKey(ignore: true)
-  _$$LatLngEntityImplCopyWith<_$LatLngEntityImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$LatLngEntityImplCopyWith<_$LatLngEntityImpl> get copyWith => throw _privateConstructorUsedError;
 }

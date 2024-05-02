@@ -1,3 +1,7 @@
+// Copyright (c) 2024 Ajil Oommen. All Rights Reserved.
+//
+// Last modified 02/05/24, 9:28 am
+
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -22,8 +26,8 @@ AddressState _$AddressStateFromJson(Map<String, dynamic> json) {
       return FullAddressState.fromJson(json);
 
     default:
-      throw CheckedFromJsonException(json, 'runtimeType', 'AddressState',
-          'Invalid union type "${json['runtimeType']}"!');
+      throw CheckedFromJsonException(
+          json, 'runtimeType', 'AddressState', 'Invalid union type "${json['runtimeType']}"!');
   }
 }
 
@@ -33,23 +37,19 @@ mixin _$AddressState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(bool loading) initial,
-    required TResult Function(
-            bool loading, String addressLine1, String addressLine2)
-        withFullAddress,
+    required TResult Function(bool loading, String addressLine1, String addressLine2) withFullAddress,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(bool loading)? initial,
-    TResult? Function(bool loading, String addressLine1, String addressLine2)?
-        withFullAddress,
+    TResult? Function(bool loading, String addressLine1, String addressLine2)? withFullAddress,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(bool loading)? initial,
-    TResult Function(bool loading, String addressLine1, String addressLine2)?
-        withFullAddress,
+    TResult Function(bool loading, String addressLine1, String addressLine2)? withFullAddress,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -74,22 +74,19 @@ mixin _$AddressState {
       throw _privateConstructorUsedError;
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $AddressStateCopyWith<AddressState> get copyWith =>
-      throw _privateConstructorUsedError;
+  $AddressStateCopyWith<AddressState> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $AddressStateCopyWith<$Res> {
-  factory $AddressStateCopyWith(
-          AddressState value, $Res Function(AddressState) then) =
+  factory $AddressStateCopyWith(AddressState value, $Res Function(AddressState) then) =
       _$AddressStateCopyWithImpl<$Res, AddressState>;
   @useResult
   $Res call({bool loading});
 }
 
 /// @nodoc
-class _$AddressStateCopyWithImpl<$Res, $Val extends AddressState>
-    implements $AddressStateCopyWith<$Res> {
+class _$AddressStateCopyWithImpl<$Res, $Val extends AddressState> implements $AddressStateCopyWith<$Res> {
   _$AddressStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -112,10 +109,9 @@ class _$AddressStateCopyWithImpl<$Res, $Val extends AddressState>
 }
 
 /// @nodoc
-abstract class _$$InitialAddressStateImplCopyWith<$Res>
-    implements $AddressStateCopyWith<$Res> {
-  factory _$$InitialAddressStateImplCopyWith(_$InitialAddressStateImpl value,
-          $Res Function(_$InitialAddressStateImpl) then) =
+abstract class _$$InitialAddressStateImplCopyWith<$Res> implements $AddressStateCopyWith<$Res> {
+  factory _$$InitialAddressStateImplCopyWith(
+          _$InitialAddressStateImpl value, $Res Function(_$InitialAddressStateImpl) then) =
       __$$InitialAddressStateImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -123,11 +119,10 @@ abstract class _$$InitialAddressStateImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$InitialAddressStateImplCopyWithImpl<$Res>
-    extends _$AddressStateCopyWithImpl<$Res, _$InitialAddressStateImpl>
+class __$$InitialAddressStateImplCopyWithImpl<$Res> extends _$AddressStateCopyWithImpl<$Res, _$InitialAddressStateImpl>
     implements _$$InitialAddressStateImplCopyWith<$Res> {
-  __$$InitialAddressStateImplCopyWithImpl(_$InitialAddressStateImpl _value,
-      $Res Function(_$InitialAddressStateImpl) _then)
+  __$$InitialAddressStateImplCopyWithImpl(
+      _$InitialAddressStateImpl _value, $Res Function(_$InitialAddressStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -147,11 +142,9 @@ class __$$InitialAddressStateImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$InitialAddressStateImpl implements InitialAddressState {
-  const _$InitialAddressStateImpl({this.loading = false, final String? $type})
-      : $type = $type ?? 'initial';
+  const _$InitialAddressStateImpl({this.loading = false, final String? $type}) : $type = $type ?? 'initial';
 
-  factory _$InitialAddressStateImpl.fromJson(Map<String, dynamic> json) =>
-      _$$InitialAddressStateImplFromJson(json);
+  factory _$InitialAddressStateImpl.fromJson(Map<String, dynamic> json) => _$$InitialAddressStateImplFromJson(json);
 
   @override
   @JsonKey()
@@ -181,16 +174,13 @@ class _$InitialAddressStateImpl implements InitialAddressState {
   @override
   @pragma('vm:prefer-inline')
   _$$InitialAddressStateImplCopyWith<_$InitialAddressStateImpl> get copyWith =>
-      __$$InitialAddressStateImplCopyWithImpl<_$InitialAddressStateImpl>(
-          this, _$identity);
+      __$$InitialAddressStateImplCopyWithImpl<_$InitialAddressStateImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(bool loading) initial,
-    required TResult Function(
-            bool loading, String addressLine1, String addressLine2)
-        withFullAddress,
+    required TResult Function(bool loading, String addressLine1, String addressLine2) withFullAddress,
   }) {
     return initial(loading);
   }
@@ -199,8 +189,7 @@ class _$InitialAddressStateImpl implements InitialAddressState {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(bool loading)? initial,
-    TResult? Function(bool loading, String addressLine1, String addressLine2)?
-        withFullAddress,
+    TResult? Function(bool loading, String addressLine1, String addressLine2)? withFullAddress,
   }) {
     return initial?.call(loading);
   }
@@ -209,8 +198,7 @@ class _$InitialAddressStateImpl implements InitialAddressState {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(bool loading)? initial,
-    TResult Function(bool loading, String addressLine1, String addressLine2)?
-        withFullAddress,
+    TResult Function(bool loading, String addressLine1, String addressLine2)? withFullAddress,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -259,25 +247,20 @@ class _$InitialAddressStateImpl implements InitialAddressState {
 }
 
 abstract class InitialAddressState implements AddressState {
-  const factory InitialAddressState({final bool loading}) =
-      _$InitialAddressStateImpl;
+  const factory InitialAddressState({final bool loading}) = _$InitialAddressStateImpl;
 
-  factory InitialAddressState.fromJson(Map<String, dynamic> json) =
-      _$InitialAddressStateImpl.fromJson;
+  factory InitialAddressState.fromJson(Map<String, dynamic> json) = _$InitialAddressStateImpl.fromJson;
 
   @override
   bool get loading;
   @override
   @JsonKey(ignore: true)
-  _$$InitialAddressStateImplCopyWith<_$InitialAddressStateImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$InitialAddressStateImplCopyWith<_$InitialAddressStateImpl> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$FullAddressStateImplCopyWith<$Res>
-    implements $AddressStateCopyWith<$Res> {
-  factory _$$FullAddressStateImplCopyWith(_$FullAddressStateImpl value,
-          $Res Function(_$FullAddressStateImpl) then) =
+abstract class _$$FullAddressStateImplCopyWith<$Res> implements $AddressStateCopyWith<$Res> {
+  factory _$$FullAddressStateImplCopyWith(_$FullAddressStateImpl value, $Res Function(_$FullAddressStateImpl) then) =
       __$$FullAddressStateImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -285,11 +268,9 @@ abstract class _$$FullAddressStateImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$FullAddressStateImplCopyWithImpl<$Res>
-    extends _$AddressStateCopyWithImpl<$Res, _$FullAddressStateImpl>
+class __$$FullAddressStateImplCopyWithImpl<$Res> extends _$AddressStateCopyWithImpl<$Res, _$FullAddressStateImpl>
     implements _$$FullAddressStateImplCopyWith<$Res> {
-  __$$FullAddressStateImplCopyWithImpl(_$FullAddressStateImpl _value,
-      $Res Function(_$FullAddressStateImpl) _then)
+  __$$FullAddressStateImplCopyWithImpl(_$FullAddressStateImpl _value, $Res Function(_$FullAddressStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -320,14 +301,10 @@ class __$$FullAddressStateImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$FullAddressStateImpl implements FullAddressState {
   const _$FullAddressStateImpl(
-      {this.loading = false,
-      required this.addressLine1,
-      required this.addressLine2,
-      final String? $type})
+      {this.loading = false, required this.addressLine1, required this.addressLine2, final String? $type})
       : $type = $type ?? 'withFullAddress';
 
-  factory _$FullAddressStateImpl.fromJson(Map<String, dynamic> json) =>
-      _$$FullAddressStateImplFromJson(json);
+  factory _$FullAddressStateImpl.fromJson(Map<String, dynamic> json) => _$$FullAddressStateImplFromJson(json);
 
   @override
   @JsonKey()
@@ -351,31 +328,25 @@ class _$FullAddressStateImpl implements FullAddressState {
         (other.runtimeType == runtimeType &&
             other is _$FullAddressStateImpl &&
             (identical(other.loading, loading) || other.loading == loading) &&
-            (identical(other.addressLine1, addressLine1) ||
-                other.addressLine1 == addressLine1) &&
-            (identical(other.addressLine2, addressLine2) ||
-                other.addressLine2 == addressLine2));
+            (identical(other.addressLine1, addressLine1) || other.addressLine1 == addressLine1) &&
+            (identical(other.addressLine2, addressLine2) || other.addressLine2 == addressLine2));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, loading, addressLine1, addressLine2);
+  int get hashCode => Object.hash(runtimeType, loading, addressLine1, addressLine2);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$FullAddressStateImplCopyWith<_$FullAddressStateImpl> get copyWith =>
-      __$$FullAddressStateImplCopyWithImpl<_$FullAddressStateImpl>(
-          this, _$identity);
+      __$$FullAddressStateImplCopyWithImpl<_$FullAddressStateImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(bool loading) initial,
-    required TResult Function(
-            bool loading, String addressLine1, String addressLine2)
-        withFullAddress,
+    required TResult Function(bool loading, String addressLine1, String addressLine2) withFullAddress,
   }) {
     return withFullAddress(loading, addressLine1, addressLine2);
   }
@@ -384,8 +355,7 @@ class _$FullAddressStateImpl implements FullAddressState {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(bool loading)? initial,
-    TResult? Function(bool loading, String addressLine1, String addressLine2)?
-        withFullAddress,
+    TResult? Function(bool loading, String addressLine1, String addressLine2)? withFullAddress,
   }) {
     return withFullAddress?.call(loading, addressLine1, addressLine2);
   }
@@ -394,8 +364,7 @@ class _$FullAddressStateImpl implements FullAddressState {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(bool loading)? initial,
-    TResult Function(bool loading, String addressLine1, String addressLine2)?
-        withFullAddress,
+    TResult Function(bool loading, String addressLine1, String addressLine2)? withFullAddress,
     required TResult orElse(),
   }) {
     if (withFullAddress != null) {
@@ -449,8 +418,7 @@ abstract class FullAddressState implements AddressState {
       required final String addressLine1,
       required final String addressLine2}) = _$FullAddressStateImpl;
 
-  factory FullAddressState.fromJson(Map<String, dynamic> json) =
-      _$FullAddressStateImpl.fromJson;
+  factory FullAddressState.fromJson(Map<String, dynamic> json) = _$FullAddressStateImpl.fromJson;
 
   @override
   bool get loading;
@@ -458,6 +426,5 @@ abstract class FullAddressState implements AddressState {
   String get addressLine2;
   @override
   @JsonKey(ignore: true)
-  _$$FullAddressStateImplCopyWith<_$FullAddressStateImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$FullAddressStateImplCopyWith<_$FullAddressStateImpl> get copyWith => throw _privateConstructorUsedError;
 }
